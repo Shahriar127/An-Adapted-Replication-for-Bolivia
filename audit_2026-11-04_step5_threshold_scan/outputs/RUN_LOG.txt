@@ -1,0 +1,87 @@
+2026-11-04T10:54:59+06:00 START threshold_scan.py
+[paper] done (11s)
+[disjoint] done (27s)
+          n_thresholds  n_any_change  n_material_change                                                                 top_models                                                                            se_choices
+protocol                                                                                                                                                                                                                
+disjoint            82            67                 48  {'SE OOB-selected': 53, 'QRF(q=0.40) fixed': 16, 'QRF(q=0.41) fixed': 13}                  {'QRF(0.39)': 16, 'QRF(0.40)': 38, 'QRF(0.41)': 17, 'QRF(0.42)': 11}
+paper               82            35                 29   {'QRF(q=0.41) fixed': 57, 'QRF(q=0.40) fixed': 20, 'SE OOB-selected': 5}  {'QRF(0.41)': 9, 'QRF(0.42)': 17, 'QRF(0.43)': 13, 'QRF(0.44)': 20, 'QRF(0.45)': 23}
+protocol  threshold                                                                                           material_flips
+   paper      170.0       QRF(q=0.41) fixed vs QRF(q=0.40) fixed; QRF(q=0.41) fixed vs IRIS_Q42; SE OOB-selected vs IRIS_Q42
+   paper      170.5       QRF(q=0.41) fixed vs QRF(q=0.40) fixed; QRF(q=0.41) fixed vs IRIS_Q42; SE OOB-selected vs IRIS_Q42
+   paper      171.0       QRF(q=0.41) fixed vs QRF(q=0.40) fixed; QRF(q=0.41) fixed vs IRIS_Q42; SE OOB-selected vs IRIS_Q42
+   paper      171.5       QRF(q=0.41) fixed vs QRF(q=0.40) fixed; QRF(q=0.41) fixed vs IRIS_Q42; SE OOB-selected vs IRIS_Q42
+   paper      172.0       QRF(q=0.41) fixed vs QRF(q=0.40) fixed; QRF(q=0.41) fixed vs IRIS_Q42; SE OOB-selected vs IRIS_Q42
+   paper      172.5       QRF(q=0.41) fixed vs QRF(q=0.40) fixed; QRF(q=0.41) fixed vs IRIS_Q42; SE OOB-selected vs IRIS_Q42
+   paper      173.0                                                                   QRF(q=0.41) fixed vs QRF(q=0.40) fixed
+   paper      173.5                                                                   QRF(q=0.41) fixed vs QRF(q=0.40) fixed
+   paper      174.0                                                                   QRF(q=0.41) fixed vs QRF(q=0.40) fixed
+   paper      174.5                                      QRF(q=0.41) fixed vs QRF(q=0.40) fixed; SE OOB-selected vs IRIS_Q42
+   paper      175.0                                      QRF(q=0.41) fixed vs QRF(q=0.40) fixed; SE OOB-selected vs IRIS_Q42
+   paper      175.5        QRF(q=0.41) fixed vs QRF(q=0.40) fixed; SE OOB-selected vs IRIS_Q42; DecisionTree vs RandomForest
+   paper      176.0        QRF(q=0.41) fixed vs QRF(q=0.40) fixed; SE OOB-selected vs IRIS_Q42; DecisionTree vs RandomForest
+   paper      176.5        QRF(q=0.41) fixed vs QRF(q=0.40) fixed; SE OOB-selected vs IRIS_Q42; DecisionTree vs RandomForest
+   paper      177.0        QRF(q=0.41) fixed vs QRF(q=0.40) fixed; SE OOB-selected vs IRIS_Q42; DecisionTree vs RandomForest
+   paper      177.5        QRF(q=0.41) fixed vs QRF(q=0.40) fixed; SE OOB-selected vs IRIS_Q42; DecisionTree vs RandomForest
+   paper      178.0                                                                             DecisionTree vs RandomForest
+   paper      178.5                                                                             DecisionTree vs RandomForest
+   paper      179.0                                                                             DecisionTree vs RandomForest
+   paper      179.5                                                                             DecisionTree vs RandomForest
+   paper      180.0                                                                             DecisionTree vs RandomForest
+   paper      180.5                                       QRF(q=0.40) fixed vs SE OOB-selected; DecisionTree vs RandomForest
+   paper      181.0 QRF(q=0.41) fixed vs SE OOB-selected; QRF(q=0.40) fixed vs SE OOB-selected; DecisionTree vs RandomForest
+   paper      181.5                                                                             DecisionTree vs RandomForest
+   paper      182.0                                       QRF(q=0.40) fixed vs SE OOB-selected; DecisionTree vs RandomForest
+   paper      182.5                                                                     QRF(q=0.40) fixed vs SE OOB-selected
+   paper      183.0                                                                     QRF(q=0.40) fixed vs SE OOB-selected
+   paper      191.5                                                                   QRF(q=0.41) fixed vs QRF(q=0.40) fixed
+   paper      192.0                                                                   QRF(q=0.41) fixed vs QRF(q=0.40) fixed
+disjoint      178.0                                                                     SE OOB-selected vs QRF(q=0.40) fixed
+disjoint      178.5                                                                     SE OOB-selected vs QRF(q=0.40) fixed
+disjoint      180.5                                                                     SE OOB-selected vs QRF(q=0.40) fixed
+disjoint      181.0                                                                     SE OOB-selected vs QRF(q=0.40) fixed
+disjoint      181.5                                                                     SE OOB-selected vs QRF(q=0.40) fixed
+disjoint      182.0                                       SE OOB-selected vs QRF(q=0.40) fixed; DecisionTree vs RandomForest
+disjoint      182.5                                                                             DecisionTree vs RandomForest
+disjoint      183.0                                                                             DecisionTree vs RandomForest
+disjoint      183.5                                                                             DecisionTree vs RandomForest
+disjoint      184.0                                                                     SE OOB-selected vs QRF(q=0.40) fixed
+disjoint      184.5                                                                     SE OOB-selected vs QRF(q=0.40) fixed
+disjoint      185.0                                                                     SE OOB-selected vs QRF(q=0.40) fixed
+disjoint      191.5                                                                             DecisionTree vs RandomForest
+disjoint      192.0                                                                             DecisionTree vs RandomForest
+disjoint      192.5                                                                             DecisionTree vs RandomForest
+disjoint      193.0                                                                             DecisionTree vs RandomForest
+disjoint      194.5                                                                             DecisionTree vs RandomForest
+disjoint      195.0                                                                             DecisionTree vs RandomForest
+disjoint      195.5                                                                             DecisionTree vs RandomForest
+disjoint      196.0                                                                             DecisionTree vs RandomForest
+disjoint      196.5                                                                             DecisionTree vs RandomForest
+disjoint      197.0                                                                             DecisionTree vs RandomForest
+disjoint      197.5                                     QRF(q=0.40) fixed vs QRF(q=0.41) fixed; DecisionTree vs RandomForest
+disjoint      198.0                                                                   QRF(q=0.40) fixed vs QRF(q=0.41) fixed
+disjoint      198.5                                                                   QRF(q=0.40) fixed vs QRF(q=0.41) fixed
+disjoint      199.0                                                                   QRF(q=0.40) fixed vs QRF(q=0.41) fixed
+disjoint      199.5                                                                   QRF(q=0.40) fixed vs QRF(q=0.41) fixed
+disjoint      200.0                                                                   QRF(q=0.40) fixed vs QRF(q=0.41) fixed
+disjoint      200.5                                                                   QRF(q=0.40) fixed vs QRF(q=0.41) fixed
+disjoint      201.0                                                                   QRF(q=0.40) fixed vs QRF(q=0.41) fixed
+disjoint      201.5                                                                   QRF(q=0.40) fixed vs QRF(q=0.41) fixed
+disjoint      202.0                                                                   QRF(q=0.40) fixed vs QRF(q=0.41) fixed
+disjoint      202.5                                                                   QRF(q=0.40) fixed vs QRF(q=0.41) fixed
+disjoint      203.0                                                                   QRF(q=0.40) fixed vs QRF(q=0.41) fixed
+disjoint      203.5                                                                   QRF(q=0.40) fixed vs QRF(q=0.41) fixed
+disjoint      204.0                                                                   QRF(q=0.40) fixed vs QRF(q=0.41) fixed
+disjoint      204.5                                                                   QRF(q=0.40) fixed vs QRF(q=0.41) fixed
+disjoint      205.0                                                                   QRF(q=0.40) fixed vs QRF(q=0.41) fixed
+disjoint      205.5                                                                   QRF(q=0.40) fixed vs QRF(q=0.41) fixed
+disjoint      206.0                                                                   QRF(q=0.40) fixed vs QRF(q=0.41) fixed
+disjoint      206.5                                                                   QRF(q=0.40) fixed vs QRF(q=0.41) fixed
+disjoint      207.0                                                                   QRF(q=0.40) fixed vs QRF(q=0.41) fixed
+disjoint      207.5                                                                   QRF(q=0.40) fixed vs QRF(q=0.41) fixed
+disjoint      208.0                                                                   QRF(q=0.40) fixed vs QRF(q=0.41) fixed
+disjoint      208.5                                                                   QRF(q=0.40) fixed vs QRF(q=0.41) fixed
+disjoint      209.0                                                                   QRF(q=0.40) fixed vs QRF(q=0.41) fixed
+disjoint      209.5                                                                   QRF(q=0.40) fixed vs QRF(q=0.41) fixed
+disjoint      210.0                                                                   QRF(q=0.40) fixed vs QRF(q=0.41) fixed
+done in 28s
+2026-11-04T10:55:29+06:00 END

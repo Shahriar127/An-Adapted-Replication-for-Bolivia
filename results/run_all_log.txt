@@ -1,0 +1,1237 @@
+data/bolivia/EH2005.rar: OK
+data/bolivia/BASE_EH_2005_(Pob_y_Viv).sav: OK
+data/bolivia/Bolivia_Equipamiento.sav: OK
+data/bolivia/Bolivia_Pecuaria.sav: OK
+..................
+----------------------------------------------------------------------
+Ran 18 tests in 0.810s
+
+OK
+1. Household-level variables (person file) — is groupby('folio').first() exact?
+  [OK ] miembros    constant within every household (numero de miembros del hogar (Total))
+  [OK ] G_TOTAL_pc  constant within every household (GASTO CORRIENTE TOTAL DEL HOGAR (BS/MES) per cápita (Bs/mes))
+  [OK ] urb_rur     constant within every household (area urbana y rural)
+  [OK ] depto       constant within every household (departamento)
+  [OK ] s7_02       constant within every household (2. la vivienda que ocupa el hogar es:)
+  [OK ] s7_05       constant within every household (5. material predominante en las paredes de la vivienda)
+  [OK ] s7_08       constant within every household (8. cual es el material mas utilizado en los pisos)
+  [OK ] s7_19       constant within every household (19. tiene un cuarto solo para cocinar?)
+  [OK ] miembros equals number of person rows per household
+  [OK ] s1_05==1 is 'jefe o jefa del hogar'
+  [OK ] exactly one head per household
+
+2. Value labels used for binary features
+  [OK ] urb_rur==2 -> 'rural'
+  [OK ] s7_02==1 -> 'alquilada'
+  [OK ] s7_05==1 -> 'ladrillo/bloques de cemento/hormigón'
+  [OK ] s7_05==5 -> 'madera'
+  [OK ] s7_08==1 -> 'tierra'
+  [OK ] s7_08==5 -> 'cemento'
+  [OK ] s7_19==1 -> 'si'
+
+3. Durable goods (Equipamiento) — one record per (household, item)?
+  [OK ] exactly one row per (folio, s6_16cod) → .first() loses nothing
+  [OK ] all 22 items recorded for every household
+  [OK ] s6_16: 1=Si (owns), 2=No
+  [OK ] s6_16cod==1 -> 'Catre o cama'
+  [OK ] s6_16cod==7 -> 'Refrigerador o Freezer'
+  [OK ] s6_16cod==9 -> 'Computadora'
+  [OK ] s6_16cod==10 -> 'Radiograbador'
+  [OK ] s6_16cod==12 -> 'Televisor'
+  [OK ] s6_16cod==13 -> 'Reproductor de video, VHS, DVD, etc'
+  [OK ] s6_16cod==18 -> 'Ventilador'
+  [OK ] s6_16cod==22 -> 'Automovil (para uso del hogar'
+  [OK ] item 1: count s6_17 present and >=1 whenever owned
+  [OK ] item 9: count s6_17 present and >=1 whenever owned
+  [info] fridge owned but count missing: 1 (irrelevant: fridge is binary)
+
+4. Livestock (Pecuaria) — sheep
+  [OK ] codb=='B' -> 'Ovinos' (sheep)
+  [OK ] one sheep record per household (sum == value)
+  [OK ] s8_10 (stock last month) present iff s8_05==1 (raised sheep)
+  [info] duplicate (folio,codb) rows: 2 — categories ['H'] (not used)
+  [info] households in livestock module: 1340 of 4086; others get sheep=0
+  [info] sheep stock = s8_10 'CUANTOS ANIMALES TENIA HASTA EL MES ANTERIOR'
+
+5. Known approximations (not errors, but not verifiable against the paper)
+  - num_kitchens: s7_19 is binary (dedicated kitchen yes/no); paper says 'number'
+  - sublease: s7_02==1 'alquilada' (rented); no sublease category exists
+  - regions: depto 1–9 (ordinal for trees, dummies for IRIS)
+  - G_TOTAL_pc == 0 for 1 household(s)
+
+ALL CHECKS PASSED
+                     config protocol                model     PA     UC     LE    BPAC  BPAC_lo  BPAC_hi
+      train_models.py (old)    paper                   DT 0.4877 0.5123 0.2029  0.1784   0.0781   0.2762
+      train_models.py (old)    paper                   RF 0.4813 0.5187 0.1116  0.0742  -0.0284   0.1723
+      train_models.py (old)    paper QRF(test-sel q=0.40) 0.7050 0.2950 0.3097  0.6737   0.6133   0.7219
+      train_models.py (old)    paper          QRF(q=0.40) 0.7050 0.2950 0.3097  0.6737   0.6133   0.7219
+      train_models.py (old)    paper          QRF(q=0.45) 0.6628 0.3372 0.2443  0.5699   0.4651   0.6617
+      train_models.py (old) disjoint                   DT 0.4039 0.5961 0.1498 -0.0424  -0.1307   0.0435
+      train_models.py (old) disjoint                   RF 0.4209 0.5791 0.1095 -0.0487  -0.1420   0.0429
+      train_models.py (old) disjoint QRF(test-sel q=0.40) 0.6553 0.3447 0.3500  0.6250   0.5522   0.6727
+      train_models.py (old) disjoint          QRF(q=0.40) 0.6553 0.3447 0.3500  0.6250   0.5522   0.6727
+      train_models.py (old) disjoint          QRF(q=0.45) 0.5963 0.4037 0.2849  0.4774   0.3726   0.5835
+replication_report.py (old)    paper                   DT 0.7803 0.2197 0.2425  0.7491   0.7032   0.7865
+replication_report.py (old)    paper                   RF 0.5982 0.4018 0.0760  0.2724   0.1863   0.3604
+replication_report.py (old)    paper QRF(test-sel q=0.40) 0.8444 0.1556 0.2154  0.7844   0.7373   0.8253
+replication_report.py (old)    paper          QRF(q=0.40) 0.8444 0.1556 0.2154  0.7844   0.7373   0.8253
+replication_report.py (old)    paper          QRF(q=0.45) 0.8066 0.1934 0.1635  0.7732   0.7058   0.8303
+replication_report.py (old) disjoint                   DT 0.5730 0.4270 0.5432  0.4567   0.3718   0.5401
+replication_report.py (old) disjoint                   RF 0.4492 0.5508 0.1399  0.0383  -0.0577   0.1380
+replication_report.py (old) disjoint QRF(test-sel q=0.40) 0.6727 0.3273 0.4129  0.5864   0.5153   0.6509
+replication_report.py (old) disjoint          QRF(q=0.40) 0.6727 0.3273 0.4129  0.5864   0.5153   0.6509
+replication_report.py (old) disjoint          QRF(q=0.45) 0.6203 0.3797 0.3225  0.5610   0.4576   0.6471
+
+════════════════════════════════════════════════════════════
+  COUNTRY: BOLIVIA
+════════════════════════════════════════════════════════════
+  Loading Bolivia SPSS files ...
+    N = 4086 households | features = 21
+    Poverty line: 189.0915 Bs -> 24.20% poor
+
+  Full dataset: N=4086  |  poverty_line=189.09  |  poverty_rate=24.2%
+  Train=2043  Test=2043  (N/2 bootstrap samples with replacement, seed=42)
+
+  [1/3] Decision Tree ...
+
+────────────────────────────────────────────────────────────
+  Decision Tree
+────────────────────────────────────────────────────────────
+  Regression (point estimate on test set):
+    RMSE=343.91  MAE=192.99  R²=0.4917
+  Targeting metrics  (mean ± 95% CI over 1000 bootstrap samples):
+    TA     0.8342  [0.8184, 0.8512]  ↑
+    PA     0.4877  [0.4434, 0.5323]  ↑
+    UC     0.5123  [0.4677, 0.5566]  ↓
+    LE     0.2029  [0.1618, 0.2511]  ↓
+    BPAC   0.1784  [0.0781, 0.2762]  ↑
+
+  [2/3] Random Forest  (500 trees) ...
+
+────────────────────────────────────────────────────────────
+  Random Forest
+────────────────────────────────────────────────────────────
+  Regression (point estimate on test set):
+    RMSE=286.15  MAE=165.53  R²=0.6481
+  Targeting metrics  (mean ± 95% CI over 1000 bootstrap samples):
+    TA     0.8539  [0.8394, 0.8679]  ↑
+    PA     0.4813  [0.4346, 0.5234]  ↑
+    UC     0.5187  [0.4766, 0.5654]  ↓
+    LE     0.1116  [0.0819, 0.1429]  ↓
+    BPAC   0.0742  [-0.0284, 0.1723]  ↑
+    OOB R² = 0.6095
+
+  Feature importances (RF):
+    hhsize2                 0.1430  ███████
+    hhsize                  0.1412  ███████
+    num_computers           0.1366  ██████
+    fridge                  0.1064  █████
+    car                     0.0711  ███
+    brick_wall              0.0653  ███
+    age_head                0.0496  ██
+    age_head2               0.0474  ██
+    num_beds                0.0434  ██
+    dvd                     0.0339  █
+    dirt_floor              0.0305  █
+    regions                 0.0295  █
+    cement_floor            0.0235  █
+    fan                     0.0232  █
+    rural                   0.0175  
+    tv                      0.0138  
+    radio                   0.0072  
+    num_kitchens            0.0064  
+    sheep                   0.0056  
+    sublease                0.0035  
+    wood_wall               0.0013  
+
+  [3/3] QRF  (500 trees) — quantile search ...
+
+  OOB BPAC on training sample [S7]: RF = 0.0312; QRF by quantile:
+  >> Preferred stochastic-ensemble model (best OOB BPAC): QRF(0.43)
+    q=0.05  BPAC=-0.6569
+    q=0.10  BPAC=-0.2300
+    q=0.15  BPAC=0.0370
+    q=0.20  BPAC=0.2164
+    q=0.25  BPAC=0.3450
+    q=0.30  BPAC=0.4620
+    q=0.35  BPAC=0.5945
+    q=0.38  BPAC=0.6394
+    q=0.39  BPAC=0.6589
+    q=0.40  BPAC=0.6706
+    q=0.41  BPAC=0.6862
+    q=0.42  BPAC=0.6998
+    q=0.43  BPAC=0.7096  ← BEST
+    q=0.44  BPAC=0.7076
+    q=0.45  BPAC=0.6550
+    q=0.46  BPAC=0.6140
+    q=0.47  BPAC=0.5867
+    q=0.48  BPAC=0.5614
+    q=0.50  BPAC=0.4600
+    q=0.55  BPAC=0.2456
+    q=0.60  BPAC=0.0702
+    q=0.65  BPAC=-0.1209
+    q=0.70  BPAC=-0.3606
+    q=0.75  BPAC=-0.4717
+    q=0.80  BPAC=-0.5867
+    q=0.85  BPAC=-0.7135
+    q=0.90  BPAC=-0.7739
+    q=0.95  BPAC=-0.9142
+
+────────────────────────────────────────────────────────────
+  QRF (q=0.43)
+────────────────────────────────────────────────────────────
+  Regression (point estimate on test set):
+    RMSE=326.23  MAE=159.40  R²=0.5426
+  Targeting metrics  (mean ± 95% CI over 1000 bootstrap samples):
+    TA     0.8608  [0.8463, 0.8752]  ↑
+    PA     0.6880  [0.6422, 0.7292]  ↑
+    UC     0.3120  [0.2708, 0.3578]  ↓
+    LE     0.2887  [0.2372, 0.3442]  ↓
+    BPAC   0.6530  [0.5579, 0.7134]  ↑
+
+    10–90% interval: coverage=87.9%  avg_width=584.0
+
+════════════════════════════════════════════════════════════
+  COMPARISON TABLE — Bolivia
+════════════════════════════════════════════════════════════
+        Model   RMSE    MAE     R²     TA     PA     UC     LE   BPAC
+Decision Tree 343.91 192.99 0.4917 0.8342 0.4877 0.5123 0.2029 0.1784
+Random Forest 286.15 165.53 0.6481 0.8539 0.4813 0.5187 0.1116 0.0742
+ QRF (q=0.43) 326.23 159.40 0.5426 0.8608 0.6880 0.3120 0.2887 0.6530
+  Plots saved: /home/shahriar127/Downloads/Research/Model_Training/results/Bolivia/
+
+  Saved results → /home/shahriar127/Downloads/Research/Model_Training/results/Bolivia/
+
+════════════════════════════════════════════════════════════
+  COUNTRY: EAST TIMOR
+════════════════════════════════════════════════════════════
+
+────────────────────────────────────────────────────────────
+  SKIPPING East Timor:
+  East Timor TLSS 2001 data not found.
+  Download steps:
+    1. Register (free) at https://microdata.worldbank.org
+    2. Search catalog ID: TLS_2001_TLSS_v01_M
+    3. Request access → download files
+    4. Place .dta/.sav files in data/timor_leste/
+    5. Implement load_timor_leste() following load_bolivia() pattern
+────────────────────────────────────────────────────────────
+
+════════════════════════════════════════════════════════════
+  COUNTRY: MALAWI
+════════════════════════════════════════════════════════════
+
+────────────────────────────────────────────────────────────
+  SKIPPING Malawi:
+  Malawi IHS2 2004-2005 data not found.
+  Download steps:
+    1. Register (free) at https://microdata.worldbank.org
+    2. Search: 'MWI_2004_IHS-II_v01_M'
+    3. Complete Data Access Agreement → download files
+    4. Place files in data/malawi/
+    5. Implement load_malawi() following load_bolivia() pattern
+────────────────────────────────────────────────────────────
+
+════════════════════════════════════════════════════════════
+  METHODOLOGY NOTES
+════════════════════════════════════════════════════════════
+
+Split strategy:
+  Paper:  Two independent bootstrap samples of size N/2 (WITH replacement).
+          Test set evaluated on B=1000 bootstrapped re-draws.
+  This script follows that procedure. NB: train and test overlap (~40%
+  of unique test households also appear in training).
+
+Metrics (Table 2 formulas):
+  PA   = TP/(TP+FP)         ← denominator is PREDICTED poor
+  UC   = FN/(TP+FN)         ← denominator is TRUE poor
+  LE   = FP/(TP+FN)         ← IRIS unconventional; can exceed 1 (footnote 7)
+  BPAC = TP/(TP+FP) - |FN/(TP+FP) - FP/(TP+FP)|
+         All three sub-terms use TP+FP; NOT the same as standalone UC/LE.
+
+Poverty line (Bolivia):
+  Calibrated to 24.2th percentile of G_TOTAL_pc (full sample, data-derived)
+  → matches the paper's
+  reported 24.2% poverty rate.  Does NOT use any official threshold.
+
+QRF quantile selection:
+  Best OOB BPAC on the TRAINING sample over RF and QRF(0.01..0.99),
+  per McBride & Nichols (2018, p.539) [S7][S8]. The test set is never
+  used for selection. Metrics follow the published Table 2 (p.534):
+  PA, UC, LE and BPAC all use the denominator TP+FN. See sensitivity_analysis.py for
+  fixed QRF(40) vs QRF(45) and test-selected comparisons.
+
+Configuration:
+  All hyper-parameters, seeds and the split come from common.py and
+  are written to results/<country>/config.json.
+
+"num_kitchens" approximation:
+  Paper lists "number kitchens" for Bolivia.  Bolivia EH 2005 only
+  has a binary indicator (s7_19: dedicated kitchen room YES/NO).
+  We use this binary as a proxy; a continuous count is not available.
+
+"sublease" mapping:
+  Paper's variable corresponds to rented tenure (s7_02==1, "alquilada").
+  Bolivia EH 2005 does not distinguish renting from sub-leasing.
+
+East Timor / Malawi:
+  Datasets require free World Bank registration + download.
+  Implement load_timor_leste() and load_malawi() once files are in place.
+
+✓  Done.  Results in: /home/shahriar127/Downloads/Research/Model_Training/results
+========================================================================
+ADAPTED REPLICATION REPORT
+McBride & Nichols (2015): Improved Poverty Targeting Through ML
+Adapted replication using a reconstructed poverty threshold and
+documented implementation choices. Not an exact replication: the paper's
+seed, household subset, threshold and preprocessing are not public.
+========================================================================
+
+Dataset: Bolivia Encuesta de Hogares 2005 (EH 2005)
+Source:  https://siip.produccion.gob.bo/repSIIP2/files/encuesta_hogares/EH2005.rar
+Files:   BASE_EH_2005_(Pob_y_Viv).sav  +  Bolivia_Equipamiento.sav  +
+         Bolivia_Pecuaria.sav
+
+Loading SPSS files ...
+Done.
+Configuration (common.py — identical in train_models.py):
+  DecisionTree  {'max_depth': 10, 'min_samples_leaf': 20}
+  RandomForest  {'n_estimators': 500, 'max_features': 0.3333333333333333, 'min_samples_leaf': 5, 'oob_score': True}
+  QRF           {'n_estimators': 500, 'max_features': 0.3333333333333333, 'min_samples_leaf': 5, 'max_samples_leaf': None}
+  IRIS_QR       {'quantile': 0.42, 'alpha': 0.0, 'solver': 'highs', 'fit_intercept': True}
+  seed=42  boot_seed=42  B=1000  split=paper N/2 with replacement (np.random.RandomState)
+  SE model selection: best OOB BPAC on the training sample over RF and QRF(0.01..0.99)
+  Reference: McBride & Nichols (2018) WBER 32(3):531-550. Decisions: METHODOLOGY_REFERENCE.md
+
+────────────────────────────────────────────────────────────────────────
+SECTION 1: DATASET VERIFICATION
+────────────────────────────────────────────────────────────────────────
+  Person-level rows:       16,895
+  Unique households (HH):  4,086
+  Paper claims N = 4,086:  MATCH ✓
+  Equipment rows:          89,892  (4086 HH × 22 items/HH)
+  Livestock rows:          10,720  (1340 HH have livestock records)
+
+────────────────────────────────────────────────────────────────────────
+SECTION 2: VARIABLE MAPPING  (Paper Table 3 → Bolivia EH 2005)
+────────────────────────────────────────────────────────────────────────
+  Paper variable     EH 2005 source               Status   Notes
+  ----------------- --------------------------- ------- ----------------------------
+  hhsize             miembros                     ✓ DIRECT Members in household
+  hhsize2            miembros^2                   Δ DERIVED Polynomial term
+  age_head           s1_03 where s1_05=1          ✓ DIRECT Jefe/jefa age
+  age_head2          age_head^2                   Δ DERIVED Polynomial term
+  regions            depto  (codes 1–9)           ~ APPROX Ordinal; OLS needs dummies
+  rural              urb_rur == 2                 ✓ DIRECT 2=rural, 1=urban
+  sublease           s7_02 == 1  (alquilada)      ~ APPROX 'Rented' used; no 'sublease' code
+  brick_wall         s7_05 == 1                   ✓ DIRECT Ladrillo/bloque de cemento
+  wood_wall          s7_05 == 5                   ✓ DIRECT Madera
+  dirt_floor         s7_08 == 1                   ✓ DIRECT Tierra
+  cement_floor       s7_08 == 5                   ✓ DIRECT Cemento
+  fridge             Equip s6_16cod=7             ✓ DIRECT Refrigerador/Freezer
+  radio              Equip s6_16cod=10            ✓ DIRECT Radiograbador
+  tv                 Equip s6_16cod=12            ✓ DIRECT Televisor
+  dvd                Equip s6_16cod=13            ✓ DIRECT Reproductor VHS/DVD
+  fan                Equip s6_16cod=18            ✓ DIRECT Ventilador
+  car                Equip s6_16cod=22            ✓ DIRECT Automóvil
+  num_beds           Equip s6_16cod=1, count      ✓ DIRECT Count catre/cama (s6_17)
+  num_kitchens       s7_19 == 1  (binary)         ~ APPROX Paper says count; EH has binary
+  num_computers      Equip s6_16cod=9, count      ✓ DIRECT Count computadora (s6_17)
+  sheep              Pecuaria codb='B', sum       ✓ DIRECT Ovinos stock (s8_10)
+
+  DIRECT = survey variable matches the paper's variable name/meaning per the
+  EH 2005 codebook (checked by data_construction_audit.py). It does NOT prove
+  the paper's authors built the variable the same way.
+  Summary: 16 direct (codebook-verified) | 2 derived | 3 approximations
+  Approximations flagged:
+    'regions': Ordinal; OLS needs dummies
+    'sublease': 'Rented' used; no 'sublease' code
+    'num_kitchens': Paper says count; EH has binary
+
+────────────────────────────────────────────────────────────────────────
+SECTION 3: TARGET VARIABLE CONSTRUCTION
+────────────────────────────────────────────────────────────────────────
+  Variable: G_TOTAL_pc
+  Full label: GASTO CORRIENTE TOTAL DEL HOGAR (BS/MES) per cápita (Bs/mes)
+  Components:
+    G_ALIM_DENTRO_pc               — TOTAL ALIMENTOS Y BEBIDAS DENTRO DEL HOGAR  per cá
+    G_ALIM_FUERA_pc                — Gasto en Alimentos y Bebidas consumidas Fuera del 
+    G_NO_ALIMENTARIO_pc            — GASTO NO ALIMENTARIO per cápita (Bs/mes)
+    G_VIVIENDA_pc                  — GASTO EN VIVIENDA Y SERVICIOS BÁSICOS per cápita (
+
+  Poverty line construction:
+    Method: 24.2th percentile of G_TOTAL_pc across all 4086 HH
+    Value:  189.0915 Bs/month per capita
+    Resulting poverty rate: 0.2420 (24.20%)
+    Paper's 24.2% rate is reproduced BY CONSTRUCTION (threshold chosen to hit it).
+    LIMITATION: the threshold is DATA-DERIVED from the FULL sample, so test
+    households help define it. Train-derived P24.2 for the seed-42 paper split
+    = 185.08 Bs; its effect is reported in results/sensitivity/.
+  Distribution of G_TOTAL_pc:
+    Mean: 457.09  Median: 329.42  Min: 0.00  Max: 5499.21
+
+────────────────────────────────────────────────────────────────────────
+SECTION 4: MISSING VALUE AUDIT — MERGE PIPELINE
+────────────────────────────────────────────────────────────────────────
+  Step 1–3 — collapse to HH, merge head age, equipment, livestock: 4,086 HH
+    Missing G_TOTAL_pc:  0
+    Missing age_head:    0
+    Feature NaN (any):   0
+    HH with sheep>0:     692
+    HH with G_TOTAL_pc == 0: 1
+  Step 4 — drop missing G_TOTAL_pc or age_head: 4,086 HH
+    Dropped: 0
+  FINAL analysis N = 4,086  (matches paper N=4,086: YES ✓)
+
+────────────────────────────────────────────────────────────────────────
+SECTION 5: BOOTSTRAP PROCEDURE VERIFICATION
+────────────────────────────────────────────────────────────────────────
+  Total households N = 4086
+  Bootstrap sample size = N/2 = 2043
+  Resampling: WITH replacement (2018 paper p.539) [S1]
+  Test evaluations B = 1000 bootstrap re-draws
+
+  Theoretical expected unique fraction (k=N/2 draws from N with replacement):
+    E[unique/k] = 2*(1 - e^(-0.5)) = 0.7869  (≈78.69%)
+
+  Observed mean unique fraction (20 draws): 0.7872
+  Expected:                                 0.7869
+  Bootstrap N/2 verified: YES ✓
+  NOTE: train and test are independent draws, so they overlap:
+    39.8% of unique test households also appear in training
+    (see results/sensitivity/ for an untouched-test-set protocol)
+
+────────────────────────────────────────────────────────────────────────
+SECTION 6: BPAC FORMULA VERIFICATION
+────────────────────────────────────────────────────────────────────────
+  Published Table 2 formulas (McBride & Nichols 2018, p.534) [M2-M6]:
+    TA   = (TP+TN) / N
+    PA   = TP / (TP+FN)          denominator = TRUE very poor
+    UC   = FN / (TP+FN)          denominator = TRUE very poor
+    LE   = FP / (TP+FN)          IRIS convention; can exceed 1 (fn 6, p.535)
+    BPAC = TP/(TP+FN) − |FN/(TP+FN) − FP/(TP+FN)|  =  PA − |UC − LE|
+
+  NB: the 2015 working paper's Table 2 printed TP+FP for PA and BPAC. That
+  contradicts its own text and Table A1 numbers, and the published version.
+  Every point row of published Table A1 satisfies PA+UC=100 and
+  BPAC = PA−|UC−LE| (see tests/test_methodology.py).
+
+  Hand-worked examples (expected values computed by hand):
+  Balanced:  TP=17 FP=7 FN=7 TN=69   (true poor = 24)
+    PA=17/24=0.7083  UC=7/24=0.2917  LE=7/24=0.2917
+    BPAC = 0.7083 − |0.2917 − 0.2917| = 0.7083   hand calculation MATCH ✓
+  Unbalanced:  TP=30 FP=20 FN=10 TN=40   (true poor = 40)
+    PA=30/40=0.7500  UC=10/40=0.2500  LE=20/40=0.5000
+    BPAC = 0.7500 − |0.2500 − 0.5000| = 0.5000   hand calculation MATCH ✓
+  Leakage>1:  TP=5 FP=30 FN=5 TN=60   (true poor = 10)
+    PA=5/10=0.5000  UC=5/10=0.5000  LE=30/10=3.0000
+    BPAC = 0.5000 − |0.5000 − 3.0000| = -2.0000   hand calculation MATCH ✓
+
+────────────────────────────────────────────────────────────────────────
+SECTION 7: IRIS Q(42) BASELINE — Quantile Regression at 42nd Percentile
+────────────────────────────────────────────────────────────────────────
+  IRIS method = USAID's quantile regression benchmark (paper Table 4).
+  Bolivia: IRIS Q(42) — fit at quantile=0.42, same 21 variables.
+  'regions' encoded as 9 dummy variables for the linear model.
+  Evaluated with 1000 bootstrap re-draws of the test set.
+
+  Feature count: 28 (20 non-region + 8 region dummies; reference
+  region = Chuquisaca, + intercept). The previous 9-dummies+intercept design was
+  rank-deficient (29/30); it gave identical predictions, so earlier IRIS targeting
+  metrics are unaffected, but coefficients are only identified in the new design.
+  Fitting IRIS Q(42) ...
+  Point-estimate (no bootstrap): PA=0.6337  UC=0.3663  LE=0.3242  BPAC=0.5916
+  IRIS Q(42) results (mean ± 95% CI, B=1000):
+    TA     = 0.8399  [0.8238, 0.8551]
+    PA     = 0.6334  [0.5887, 0.6760]
+    UC     = 0.3666  [0.3240, 0.4113]
+    LE     = 0.3243  [0.2646, 0.3870]
+    BPAC   = 0.5858  [0.4855, 0.6572]
+
+────────────────────────────────────────────────────────────────────────
+SECTION 8: MODEL TRAINING AND EVALUATION
+────────────────────────────────────────────────────────────────────────
+  Training Decision Tree (ADAPTED, not in paper) ...
+  Training Random Forest (500 trees) ...
+  Training QRF (500 trees, all leaf observations kept [F6]) ...
+  OOB BPAC on training sample [S7]: RF = 0.0312; best QRF = QRF(0.43) at 0.7096
+  Preferred stochastic-ensemble (SE) model: QRF(0.43)
+  Published SE choice for Bolivia: QRF(0.41) (Table A1 row 9)
+
+────────────────────────────────────────────────────────────────────────
+SECTION 9: MODEL COMPARISON (mean ± 95% CI from 1000 bootstrap re-draws)
+────────────────────────────────────────────────────────────────────────
+  Model                            TA                     PA                     UC                     LE                   BPAC
+  ----------- ---------------------- ---------------------- ---------------------- ---------------------- ----------------------
+  IRIS Q(42)      0.840 [0.824,0.855]    0.633 [0.589,0.676]    0.367 [0.324,0.411]    0.324 [0.265,0.387]    0.586 [0.486,0.657]
+  DTree*          0.834 [0.818,0.851]    0.488 [0.443,0.532]    0.512 [0.468,0.557]    0.203 [0.162,0.251]    0.178 [0.078,0.276]
+  RF(500)         0.854 [0.839,0.868]    0.481 [0.435,0.523]    0.519 [0.477,0.565]    0.112 [0.082,0.143]   0.074 [-0.028,0.172]
+  QRF(41) fix     0.859 [0.844,0.874]    0.707 [0.663,0.746]    0.293 [0.254,0.337]    0.314 [0.260,0.371]    0.673 [0.614,0.722]
+  SE QRF(0.43)    0.861 [0.846,0.875]    0.688 [0.642,0.729]    0.312 [0.271,0.358]    0.289 [0.237,0.344]    0.653 [0.558,0.713]
+
+  Confusion matrices (full test sample, point estimate):
+  Model             TP    FP    FN    TN
+  IRIS Q(42)       301   154   174  1414
+  DTree*           232    96   243  1472
+  RF(500)          229    53   246  1515
+  QRF(41) fix      336   149   139  1419
+  SE QRF(0.43)     327   137   148  1431
+
+  Published Table A1 — Bolivia 2005 EH (McBride & Nichols 2018, p.545):
+  ────────────────────────────────────────────────────────────────────────
+  Source                         TA        PA        UC        LE       BPAC
+  ────────────────────────────────────────────────────────────────────────
+  1) IRIS QR(0.42) in-sample½   83.65     67.18     32.82     33.29    66.71
+  2) IRIS QR(0.42)^             81.88     57.58     42.42     34.30    49.33
+  4) IRIS QR(0.42)+          [79.78,   [52.51,   [37.35,   [27.60,  [36.73,
+                               83.68]    62.65]    47.49]    41.66]   60.48]
+  5) Rep QR(0.42) full sample   82.45     60.69     39.30     33.71    55.10
+  6) CV QR(0.38)^               81.76     63.37     36.63     41.61    57.94
+  8) CV QR(0.38)+            [80.10,   [58.84,   [32.12,   [35.15,  [50.61,
+                               83.32]    67.88]    41.15]    48.24]   63.44]
+  9) SE QRF(0.41)^              80.17     55.33     44.67     40.44    50.18
+  11) SE QRF(0.41)+          [78.25,   [50.51,   [39.88,   [33.59,  [39.26,
+                               82.03]    60.12]    49.49]    48.11]   58.57]
+  ────────────────────────────────────────────────────────────────────────
+  CV QR(0.38) (rows 6-8) is NOT IMPLEMENTED here [S11].
+  * DTree is not part of the paper (ADAPTED).
+
+  Note: ^ = bootstrapped 1000×, with replacement (mean reported)
+        + = 95% CI, lower = 2.5th pct, upper = 97.5th pct
+        All Table A1 values are in percentage (×100).
+
+────────────────────────────────────────────────────────────────────────
+SECTION 10: POVERTY-LINE RECONSTRUCTION AND COMPARABILITY
+────────────────────────────────────────────────────────────────────────
+
+  The original Bolivian poverty-line value in Bolivianos is not reported in
+  the paper. The paper states that the USAID-defined "very poor" rate in
+  Bolivia was 24.2%. The IRIS 2005 document describes the "very poor"
+  threshold as the median consumption expenditure of households classified
+  as poor under the official poverty line.
+
+  Applying this methodology approximately to Bolivia EH 2005 suggests a
+  threshold around 189–194 Bolivianos, depending on the official poverty-line
+  value used:
+    Official line ~320 Bs → median of poor ≈ 189.05 Bs → 24.18% very poor
+    Official line ~328 Bs → median of poor ≈ 194.10 Bs → 24.91% very poor
+
+  Our reconstructed threshold of 189.09 Bolivianos, defined as the 24.2th
+  percentile of G_TOTAL_pc, is therefore numerically consistent with one
+  plausible application of the IRIS methodology. However, the original Bolivia
+  PAT threshold and expenditure aggregate remain unverified.
+
+  Poverty rate in the published paper: the text (p.538) says 24.2%, but
+  Table 3 (p.538) says 24.03% (ambiguity A2). P24.03 = 188.77 Bs; its effect
+  is reported in results/sensitivity/.
+
+  We consequently treat 189.09 Bolivianos as a reconstructed approximation,
+  not as the confirmed original IRIS threshold.
+
+────────────────────────────────────────────────────────────────────────
+SECTION 11: ADAPTED REPLICATION AND RESULTS
+────────────────────────────────────────────────────────────────────────
+
+  Our implementation reproduces the broad methodological framework but does
+  not establish an exact replication of the original Bolivia PAT. The paper
+  reports that IRIS used a randomly selected subset of the Bolivian data and
+  acknowledges that its own replication estimates did not perform as well as
+  IRIS. The original subset, random seed, and exact expenditure aggregate
+  are not available in the information currently verified.
+
+
+  Gap analysis vs published Table A1 (IRIS row 2: PA 57.58, BPAC 49.33; SE QRF(0.41) row 9: PA 55.33, BPAC 50.18):
+    PA:   our IRIS QR(0.42) = 63.34%  vs 57.58%  (+5.8)
+    BPAC: our IRIS QR(0.42) = 58.58%  vs 49.33%  (+9.3)
+    PA:   our QRF(0.41) fix = 70.74%  vs 55.33%  (+15.4)
+    BPAC: our QRF(0.41) fix = 67.31%  vs 50.18%  (+17.1)
+    BPAC: our SE choice QRF(0.43) = 65.30%
+
+  Whether poverty-line differences (188.77–194.10 Bs) matter is tested
+  empirically in sensitivity_analysis.py (results/sensitivity/).
+  Possible causes of the remaining gaps (hypotheses, not tested):
+    1. Unknown random seed — paper's split may produce a harder test set.
+    2. IRIS trained on a private randomly selected subset (not full 4,086 HH).
+    3. R randomForest vs Python quantile-forest implementation differences.
+    4. 3 variable approximations (regions ordinal, sublease, num_kitchens).
+
+  These explanations remain hypotheses and require further investigation.
+
+  REPLICATION LABEL:
+  "Adapted replication of McBride & Nichols (2015), Bolivia EH 2005.
+   Poverty line reconstructed as the 24.2th percentile of G_TOTAL_pc
+   (≈189.09 Bs/month per capita), per the stated poverty rate of 24.2%.
+   The exact IRIS-defined threshold was not publicly available; the IRIS
+   'median of officially-poor' methodology (IRIS 2005) would yield ≈189–194 Bs
+   depending on the official poverty line applied. Results are not directly
+   comparable to Table A1 due to: unknown random seed, IRIS private training
+   subset, and R vs Python QRF implementation differences."
+
+────────────────────────────────────────────────────────────────────────
+SECTION 12: KNOWN APPROXIMATIONS AND LIMITATIONS
+────────────────────────────────────────────────────────────────────────
+  1. 'regions' encoded as ordinal integer (depto 1–9) for tree models.
+     Paper may use 8 regional dummies for IRIS OLS but trees handle ordinal.
+     IRIS model here uses 8 dummies + intercept (reference: Chuquisaca).
+
+  2. 'sublease' coded as s7_02==1 (alquilada = rented tenure).
+     Bolivia EH 2005 does not distinguish sublease from plain rental.
+
+  3. 'num_kitchens' coded as binary (s7_19==1 = has dedicated kitchen).
+     Paper lists it as count; survey variable is binary in EH 2005.
+
+  4. Bootstrap seed not published; our 1000-rep CIs differ from paper's.
+
+  8. Poverty threshold (189.09 Bs) is the 24.2th percentile of the FULL
+     sample — data-derived, and the test sample contributes to it. The
+     alternatives 189.05 / 194.10 Bs are likewise computed on this sample.
+     No externally published 'very poor' line in Bs was available to us.
+
+  7. Paper split draws train and test independently WITH replacement, so
+     ~40% of unique test households also appear in training. Flexible
+     models (deep trees, small leaves) are optimistic under this protocol.
+     results/sensitivity/ reports an untouched (disjoint) test-set protocol.
+
+  5. East Timor and Malawi results not reproduced (data requires World Bank
+     registration — see load_timor_leste() / load_malawi() in train_models.py).
+
+  6. IRIS built Bolivia PAT on a randomly selected subset of 4,086 HH.
+     Exact subset unknown; we use all 4,086 HH as the authors also did.
+
+
+========================================================================
+Report saved → /home/shahriar127/Downloads/Research/Model_Training/results/Bolivia/replication_report.txt
+========================================================================
+    N = 4086 households | features = 21
+    Poverty line: 189.0915 Bs -> 24.20% poor
+
+=== PRIMARY RUN (seed 42) ===
+
+[paper] train=2043 test=2043 unique-test-HH-also-in-train=39.8%
+  fitted in 7.5s
+
+[disjoint] train=2043 test=2043 unique-test-HH-also-in-train=0.0%
+  fitted in 5.6s
+
+=== REPEATED SPLITS (n=30 per protocol) ===
+  [paper] split 1/30 done
+  [paper] split 2/30 done
+  [paper] split 3/30 done
+  [paper] split 4/30 done
+  [paper] split 5/30 done
+  [paper] split 6/30 done
+  [paper] split 7/30 done
+  [paper] split 8/30 done
+  [paper] split 9/30 done
+  [paper] split 10/30 done
+  [paper] split 11/30 done
+  [paper] split 12/30 done
+  [paper] split 13/30 done
+  [paper] split 14/30 done
+  [paper] split 15/30 done
+  [paper] split 16/30 done
+  [paper] split 17/30 done
+  [paper] split 18/30 done
+  [paper] split 19/30 done
+  [paper] split 20/30 done
+  [paper] split 21/30 done
+  [paper] split 22/30 done
+  [paper] split 23/30 done
+  [paper] split 24/30 done
+  [paper] split 25/30 done
+  [paper] split 26/30 done
+  [paper] split 27/30 done
+  [paper] split 28/30 done
+  [paper] split 29/30 done
+  [paper] split 30/30 done
+  [disjoint] split 1/30 done
+  [disjoint] split 2/30 done
+  [disjoint] split 3/30 done
+  [disjoint] split 4/30 done
+  [disjoint] split 5/30 done
+  [disjoint] split 6/30 done
+  [disjoint] split 7/30 done
+  [disjoint] split 8/30 done
+  [disjoint] split 9/30 done
+  [disjoint] split 10/30 done
+  [disjoint] split 11/30 done
+  [disjoint] split 12/30 done
+  [disjoint] split 13/30 done
+  [disjoint] split 14/30 done
+  [disjoint] split 15/30 done
+  [disjoint] split 16/30 done
+  [disjoint] split 17/30 done
+  [disjoint] split 18/30 done
+  [disjoint] split 19/30 done
+  [disjoint] split 20/30 done
+  [disjoint] split 21/30 done
+  [disjoint] split 22/30 done
+  [disjoint] split 23/30 done
+  [disjoint] split 24/30 done
+  [disjoint] split 25/30 done
+  [disjoint] split 26/30 done
+  [disjoint] split 27/30 done
+  [disjoint] split 28/30 done
+  [disjoint] split 29/30 done
+  [disjoint] split 30/30 done
+
+Done in 325s → /home/shahriar127/Downloads/Research/Model_Training/results/sensitivity
+# Sensitivity analysis — Bolivia EH 2005
+
+Metrics follow published Table 2 (McBride & Nichols 2018, p.534): PA, UC, LE and BPAC use the denominator TP+FN. Mean of 1000 bootstrap re-draws of the test sample, 95% percentile CI in brackets.
+Seed 42. `paper` = overlapping N/2 bootstrap split; `disjoint` = untouched 50/50 test set.
+
+## Protocol: paper
+
+### Threshold 189.09 (full-sample P24.2) — test poverty rate 23.25%
+
+| Model | PA | UC | LE | BPAC |
+|---|---|---|---|---|
+| DecisionTree | 0.488 [0.443, 0.532] | 0.512 [0.468, 0.557] | 0.203 [0.162, 0.251] | 0.178 [0.078, 0.276] |
+| RandomForest | 0.481 [0.435, 0.523] | 0.519 [0.477, 0.565] | 0.112 [0.082, 0.143] | 0.074 [-0.028, 0.172] |
+| IRIS_Q42 | 0.633 [0.589, 0.676] | 0.367 [0.324, 0.411] | 0.324 [0.265, 0.387] | 0.586 [0.486, 0.657] |
+| QRF(q=0.40) fixed | 0.712 [0.670, 0.753] | 0.288 [0.247, 0.330] | 0.327 [0.271, 0.387] | 0.667 [0.610, 0.715] |
+| QRF(q=0.41) fixed | 0.707 [0.663, 0.746] | 0.293 [0.254, 0.337] | 0.314 [0.260, 0.371] | 0.673 [0.614, 0.722] |
+| QRF(q=0.45) fixed | 0.667 [0.623, 0.709] | 0.333 [0.291, 0.377] | 0.244 [0.198, 0.294] | 0.578 [0.469, 0.674] |
+| SE OOB-selected (QRF(0.43)) | 0.688 [0.642, 0.729] | 0.312 [0.271, 0.358] | 0.289 [0.237, 0.344] | 0.653 [0.558, 0.713] |
+| QRF test-selected (q=0.42) | 0.694 [0.649, 0.735] | 0.306 [0.265, 0.351] | 0.299 [0.246, 0.355] | 0.665 [0.583, 0.716] |
+
+### Threshold 188.77 (full-sample P24.03, published Table 3) — test poverty rate 23.01%
+
+| Model | PA | UC | LE | BPAC |
+|---|---|---|---|---|
+| DecisionTree | 0.457 [0.415, 0.499] | 0.543 [0.501, 0.585] | 0.199 [0.158, 0.246] | 0.112 [0.016, 0.211] |
+| RandomForest | 0.476 [0.428, 0.520] | 0.524 [0.480, 0.572] | 0.117 [0.088, 0.148] | 0.068 [-0.031, 0.165] |
+| IRIS_Q42 | 0.634 [0.589, 0.677] | 0.366 [0.323, 0.411] | 0.334 [0.274, 0.395] | 0.593 [0.494, 0.660] |
+| QRF(q=0.40) fixed | 0.713 [0.671, 0.752] | 0.287 [0.248, 0.329] | 0.328 [0.272, 0.387] | 0.667 [0.605, 0.716] |
+| QRF(q=0.41) fixed | 0.702 [0.658, 0.742] | 0.298 [0.258, 0.342] | 0.319 [0.265, 0.381] | 0.668 [0.608, 0.715] |
+| QRF(q=0.45) fixed | 0.663 [0.619, 0.705] | 0.337 [0.295, 0.381] | 0.251 [0.204, 0.301] | 0.577 [0.471, 0.676] |
+| SE OOB-selected (QRF(0.43)) | 0.689 [0.644, 0.729] | 0.311 [0.271, 0.356] | 0.294 [0.242, 0.348] | 0.657 [0.565, 0.713] |
+| QRF test-selected (q=0.42) | 0.695 [0.651, 0.736] | 0.305 [0.264, 0.349] | 0.309 [0.256, 0.367] | 0.666 [0.595, 0.714] |
+
+### Threshold 189.05 (IRIS recon., official ~320 Bs) — test poverty rate 23.20%
+
+| Model | PA | UC | LE | BPAC |
+|---|---|---|---|---|
+| DecisionTree | 0.489 [0.444, 0.532] | 0.511 [0.468, 0.556] | 0.203 [0.162, 0.251] | 0.181 [0.081, 0.279] |
+| RandomForest | 0.482 [0.437, 0.524] | 0.518 [0.476, 0.563] | 0.112 [0.082, 0.143] | 0.076 [-0.025, 0.174] |
+| IRIS_Q42 | 0.635 [0.591, 0.677] | 0.365 [0.323, 0.409] | 0.325 [0.265, 0.388] | 0.589 [0.489, 0.660] |
+| QRF(q=0.40) fixed | 0.713 [0.672, 0.753] | 0.287 [0.247, 0.328] | 0.327 [0.271, 0.388] | 0.667 [0.609, 0.716] |
+| QRF(q=0.41) fixed | 0.709 [0.665, 0.748] | 0.291 [0.252, 0.335] | 0.315 [0.261, 0.372] | 0.674 [0.616, 0.721] |
+| QRF(q=0.45) fixed | 0.668 [0.625, 0.709] | 0.332 [0.291, 0.375] | 0.245 [0.198, 0.294] | 0.581 [0.475, 0.676] |
+| SE OOB-selected (QRF(0.43)) | 0.689 [0.644, 0.730] | 0.311 [0.270, 0.356] | 0.289 [0.238, 0.345] | 0.655 [0.561, 0.715] |
+| QRF test-selected (q=0.42) | 0.696 [0.650, 0.736] | 0.304 [0.264, 0.350] | 0.300 [0.247, 0.356] | 0.666 [0.586, 0.717] |
+
+### Threshold 194.10 (IRIS recon., official ~328 Bs) — test poverty rate 24.62%
+
+| Model | PA | UC | LE | BPAC |
+|---|---|---|---|---|
+| DecisionTree | 0.495 [0.452, 0.536] | 0.505 [0.464, 0.548] | 0.194 [0.156, 0.239] | 0.183 [0.086, 0.275] |
+| RandomForest | 0.482 [0.440, 0.528] | 0.518 [0.472, 0.560] | 0.106 [0.079, 0.135] | 0.071 [-0.022, 0.163] |
+| IRIS_Q42 | 0.648 [0.605, 0.689] | 0.352 [0.311, 0.395] | 0.285 [0.233, 0.342] | 0.579 [0.475, 0.669] |
+| QRF(q=0.40) fixed | 0.726 [0.684, 0.766] | 0.274 [0.234, 0.316] | 0.305 [0.254, 0.360] | 0.687 [0.634, 0.731] |
+| QRF(q=0.41) fixed | 0.714 [0.672, 0.753] | 0.286 [0.247, 0.328] | 0.287 [0.236, 0.342] | 0.686 [0.616, 0.734] |
+| QRF(q=0.45) fixed | 0.674 [0.629, 0.715] | 0.326 [0.285, 0.371] | 0.255 [0.208, 0.305] | 0.602 [0.502, 0.695] |
+| SE OOB-selected (QRF(0.45)) | 0.674 [0.629, 0.715] | 0.326 [0.285, 0.371] | 0.255 [0.208, 0.305] | 0.602 [0.502, 0.695] |
+| QRF test-selected (q=0.41) | 0.714 [0.672, 0.753] | 0.286 [0.247, 0.328] | 0.287 [0.236, 0.342] | 0.686 [0.616, 0.734] |
+
+### Threshold train-sample P24.2 — test poverty rate 22.22%
+
+| Model | PA | UC | LE | BPAC |
+|---|---|---|---|---|
+| DecisionTree | 0.440 [0.398, 0.483] | 0.560 [0.517, 0.602] | 0.188 [0.146, 0.235] | 0.068 [-0.029, 0.169] |
+| RandomForest | 0.466 [0.422, 0.510] | 0.534 [0.490, 0.578] | 0.115 [0.084, 0.147] | 0.047 [-0.050, 0.148] |
+| IRIS_Q42 | 0.625 [0.581, 0.669] | 0.375 [0.331, 0.419] | 0.328 [0.267, 0.394] | 0.574 [0.467, 0.649] |
+| QRF(q=0.40) fixed | 0.700 [0.656, 0.741] | 0.300 [0.259, 0.344] | 0.328 [0.268, 0.393] | 0.662 [0.601, 0.711] |
+| QRF(q=0.41) fixed | 0.696 [0.653, 0.738] | 0.304 [0.262, 0.347] | 0.317 [0.261, 0.379] | 0.664 [0.599, 0.713] |
+| QRF(q=0.45) fixed | 0.658 [0.614, 0.701] | 0.342 [0.299, 0.386] | 0.244 [0.194, 0.297] | 0.560 [0.455, 0.662] |
+| SE OOB-selected (QRF(0.43)) | 0.685 [0.642, 0.727] | 0.315 [0.273, 0.358] | 0.295 [0.241, 0.352] | 0.651 [0.561, 0.708] |
+| QRF test-selected (q=0.42) | 0.693 [0.652, 0.735] | 0.307 [0.265, 0.348] | 0.308 [0.253, 0.367] | 0.664 [0.592, 0.713] |
+
+## Protocol: disjoint
+
+### Threshold 189.09 (full-sample P24.2) — test poverty rate 23.25%
+
+| Model | PA | UC | LE | BPAC |
+|---|---|---|---|---|
+| DecisionTree | 0.404 [0.363, 0.445] | 0.596 [0.555, 0.637] | 0.150 [0.114, 0.190] | -0.042 [-0.131, 0.044] |
+| RandomForest | 0.421 [0.376, 0.466] | 0.579 [0.534, 0.624] | 0.109 [0.080, 0.144] | -0.049 [-0.142, 0.043] |
+| IRIS_Q42 | 0.624 [0.578, 0.665] | 0.376 [0.335, 0.422] | 0.263 [0.211, 0.318] | 0.510 [0.407, 0.612] |
+| QRF(q=0.40) fixed | 0.666 [0.625, 0.707] | 0.334 [0.293, 0.375] | 0.359 [0.302, 0.424] | 0.630 [0.571, 0.677] |
+| QRF(q=0.41) fixed | 0.651 [0.608, 0.692] | 0.349 [0.308, 0.392] | 0.342 [0.287, 0.402] | 0.621 [0.541, 0.674] |
+| QRF(q=0.45) fixed | 0.611 [0.569, 0.654] | 0.389 [0.346, 0.431] | 0.283 [0.230, 0.339] | 0.505 [0.403, 0.604] |
+| SE OOB-selected (QRF(0.40)) | 0.666 [0.625, 0.707] | 0.334 [0.293, 0.375] | 0.359 [0.302, 0.424] | 0.630 [0.571, 0.677] |
+| QRF test-selected (q=0.40) | 0.666 [0.625, 0.707] | 0.334 [0.293, 0.375] | 0.359 [0.302, 0.424] | 0.630 [0.571, 0.677] |
+
+### Threshold 188.77 (full-sample P24.03, published Table 3) — test poverty rate 23.15%
+
+| Model | PA | UC | LE | BPAC |
+|---|---|---|---|---|
+| DecisionTree | 0.403 [0.364, 0.446] | 0.597 [0.554, 0.636] | 0.153 [0.117, 0.194] | -0.041 [-0.128, 0.046] |
+| RandomForest | 0.421 [0.375, 0.466] | 0.579 [0.534, 0.625] | 0.110 [0.080, 0.145] | -0.049 [-0.141, 0.045] |
+| IRIS_Q42 | 0.626 [0.581, 0.668] | 0.374 [0.332, 0.419] | 0.262 [0.211, 0.317] | 0.514 [0.413, 0.615] |
+| QRF(q=0.40) fixed | 0.658 [0.615, 0.699] | 0.342 [0.301, 0.385] | 0.354 [0.297, 0.419] | 0.627 [0.562, 0.676] |
+| QRF(q=0.41) fixed | 0.645 [0.603, 0.687] | 0.355 [0.313, 0.397] | 0.337 [0.281, 0.399] | 0.612 [0.525, 0.673] |
+| QRF(q=0.45) fixed | 0.603 [0.561, 0.646] | 0.397 [0.354, 0.439] | 0.278 [0.227, 0.333] | 0.484 [0.388, 0.590] |
+| SE OOB-selected (QRF(0.40)) | 0.658 [0.615, 0.699] | 0.342 [0.301, 0.385] | 0.354 [0.297, 0.419] | 0.627 [0.562, 0.676] |
+| QRF test-selected (q=0.40) | 0.658 [0.615, 0.699] | 0.342 [0.301, 0.385] | 0.354 [0.297, 0.419] | 0.627 [0.562, 0.676] |
+
+### Threshold 189.05 (IRIS recon., official ~320 Bs) — test poverty rate 23.20%
+
+| Model | PA | UC | LE | BPAC |
+|---|---|---|---|---|
+| DecisionTree | 0.405 [0.364, 0.447] | 0.595 [0.553, 0.636] | 0.150 [0.114, 0.190] | -0.040 [-0.128, 0.046] |
+| RandomForest | 0.422 [0.376, 0.467] | 0.578 [0.533, 0.624] | 0.110 [0.080, 0.144] | -0.047 [-0.140, 0.044] |
+| IRIS_Q42 | 0.625 [0.580, 0.667] | 0.375 [0.333, 0.420] | 0.263 [0.211, 0.319] | 0.513 [0.411, 0.613] |
+| QRF(q=0.40) fixed | 0.667 [0.625, 0.708] | 0.333 [0.292, 0.375] | 0.360 [0.303, 0.425] | 0.630 [0.570, 0.678] |
+| QRF(q=0.41) fixed | 0.652 [0.610, 0.693] | 0.348 [0.307, 0.390] | 0.343 [0.287, 0.403] | 0.622 [0.541, 0.674] |
+| QRF(q=0.45) fixed | 0.612 [0.570, 0.655] | 0.388 [0.345, 0.430] | 0.283 [0.231, 0.340] | 0.508 [0.407, 0.608] |
+| SE OOB-selected (QRF(0.40)) | 0.667 [0.625, 0.708] | 0.333 [0.292, 0.375] | 0.360 [0.303, 0.425] | 0.630 [0.570, 0.678] |
+| QRF test-selected (q=0.41) | 0.652 [0.610, 0.693] | 0.348 [0.307, 0.390] | 0.343 [0.287, 0.403] | 0.622 [0.541, 0.674] |
+
+### Threshold 194.10 (IRIS recon., official ~328 Bs) — test poverty rate 24.23%
+
+| Model | PA | UC | LE | BPAC |
+|---|---|---|---|---|
+| DecisionTree | 0.422 [0.382, 0.464] | 0.578 [0.536, 0.618] | 0.142 [0.108, 0.179] | -0.015 [-0.101, 0.074] |
+| RandomForest | 0.441 [0.395, 0.484] | 0.559 [0.516, 0.605] | 0.107 [0.079, 0.138] | -0.012 [-0.104, 0.077] |
+| IRIS_Q42 | 0.631 [0.587, 0.670] | 0.369 [0.330, 0.413] | 0.250 [0.204, 0.303] | 0.511 [0.417, 0.610] |
+| QRF(q=0.40) fixed | 0.682 [0.642, 0.720] | 0.318 [0.280, 0.358] | 0.330 [0.278, 0.392] | 0.652 [0.591, 0.697] |
+| QRF(q=0.41) fixed | 0.669 [0.630, 0.709] | 0.331 [0.291, 0.370] | 0.314 [0.263, 0.373] | 0.638 [0.556, 0.693] |
+| QRF(q=0.45) fixed | 0.619 [0.580, 0.660] | 0.381 [0.340, 0.420] | 0.261 [0.214, 0.314] | 0.499 [0.398, 0.595] |
+| SE OOB-selected (QRF(0.40)) | 0.682 [0.642, 0.720] | 0.318 [0.280, 0.358] | 0.330 [0.278, 0.392] | 0.652 [0.591, 0.697] |
+| QRF test-selected (q=0.40) | 0.682 [0.642, 0.720] | 0.318 [0.280, 0.358] | 0.330 [0.278, 0.392] | 0.652 [0.591, 0.697] |
+
+### Threshold train-sample P24.2 — test poverty rate 22.52%
+
+| Model | PA | UC | LE | BPAC |
+|---|---|---|---|---|
+| DecisionTree | 0.413 [0.372, 0.457] | 0.587 [0.543, 0.628] | 0.159 [0.121, 0.201] | -0.016 [-0.105, 0.077] |
+| RandomForest | 0.413 [0.365, 0.457] | 0.587 [0.543, 0.635] | 0.104 [0.075, 0.137] | -0.070 [-0.164, 0.021] |
+| IRIS_Q42 | 0.611 [0.567, 0.652] | 0.389 [0.348, 0.433] | 0.271 [0.219, 0.327] | 0.494 [0.395, 0.595] |
+| QRF(q=0.40) fixed | 0.651 [0.607, 0.694] | 0.349 [0.306, 0.393] | 0.357 [0.300, 0.421] | 0.620 [0.550, 0.669] |
+| QRF(q=0.41) fixed | 0.640 [0.597, 0.683] | 0.360 [0.317, 0.403] | 0.344 [0.286, 0.411] | 0.607 [0.522, 0.666] |
+| QRF(q=0.45) fixed | 0.600 [0.558, 0.646] | 0.400 [0.354, 0.442] | 0.288 [0.234, 0.346] | 0.488 [0.390, 0.598] |
+| SE OOB-selected (QRF(0.39)) | 0.659 [0.616, 0.701] | 0.341 [0.299, 0.384] | 0.366 [0.306, 0.433] | 0.622 [0.556, 0.670] |
+| QRF test-selected (q=0.40) | 0.651 [0.607, 0.694] | 0.349 [0.306, 0.393] | 0.357 [0.300, 0.421] | 0.620 [0.550, 0.669] |
+
+## Step 2 — paired difference QRF(40) − QRF(45)
+
+| Protocol | Threshold | Metric | Diff | 95% CI | CI excludes 0 |
+|---|---|---|---|---|---|
+| paper | 189.09 (full-sample P24.2) | PA | +0.0448 | [+0.0263, +0.0649] | yes |
+| paper | 189.09 (full-sample P24.2) | UC | -0.0448 | [-0.0649, -0.0263] | yes |
+| paper | 189.09 (full-sample P24.2) | LE | +0.0826 | [+0.0575, +0.1096] | yes |
+| paper | 189.09 (full-sample P24.2) | BPAC | +0.0897 | [-0.0478, +0.1869] | no |
+| paper | 188.77 (full-sample P24.03, published Table 3) | PA | +0.0496 | [+0.0301, +0.0710] | yes |
+| paper | 188.77 (full-sample P24.03, published Table 3) | UC | -0.0496 | [-0.0710, -0.0301] | yes |
+| paper | 188.77 (full-sample P24.03, published Table 3) | LE | +0.0771 | [+0.0528, +0.1020] | yes |
+| paper | 188.77 (full-sample P24.03, published Table 3) | BPAC | +0.0893 | [-0.0441, +0.1894] | no |
+| paper | 189.05 (IRIS recon., official ~320 Bs) | PA | +0.0449 | [+0.0263, +0.0651] | yes |
+| paper | 189.05 (IRIS recon., official ~320 Bs) | UC | -0.0449 | [-0.0651, -0.0263] | yes |
+| paper | 189.05 (IRIS recon., official ~320 Bs) | LE | +0.0828 | [+0.0576, +0.1096] | yes |
+| paper | 189.05 (IRIS recon., official ~320 Bs) | BPAC | +0.0863 | [-0.0511, +0.1864] | no |
+| paper | 194.10 (IRIS recon., official ~328 Bs) | PA | +0.0520 | [+0.0333, +0.0738] | yes |
+| paper | 194.10 (IRIS recon., official ~328 Bs) | UC | -0.0520 | [-0.0738, -0.0333] | yes |
+| paper | 194.10 (IRIS recon., official ~328 Bs) | LE | +0.0499 | [+0.0309, +0.0700] | yes |
+| paper | 194.10 (IRIS recon., official ~328 Bs) | BPAC | +0.0848 | [-0.0392, +0.1718] | no |
+| paper | train-sample P24.2 | PA | +0.0422 | [+0.0247, +0.0626] | yes |
+| paper | train-sample P24.2 | UC | -0.0422 | [-0.0626, -0.0247] | yes |
+| paper | train-sample P24.2 | LE | +0.0840 | [+0.0569, +0.1114] | yes |
+| paper | train-sample P24.2 | BPAC | +0.1015 | [-0.0315, +0.1903] | no |
+| disjoint | 189.09 (full-sample P24.2) | PA | +0.0549 | [+0.0358, +0.0763] | yes |
+| disjoint | 189.09 (full-sample P24.2) | UC | -0.0549 | [-0.0763, -0.0358] | yes |
+| disjoint | 189.09 (full-sample P24.2) | LE | +0.0760 | [+0.0516, +0.1046] | yes |
+| disjoint | 189.09 (full-sample P24.2) | BPAC | +0.1256 | [-0.0148, +0.2054] | no |
+| disjoint | 188.77 (full-sample P24.03, published Table 3) | PA | +0.0549 | [+0.0352, +0.0750] | yes |
+| disjoint | 188.77 (full-sample P24.03, published Table 3) | UC | -0.0549 | [-0.0750, -0.0352] | yes |
+| disjoint | 188.77 (full-sample P24.03, published Table 3) | LE | +0.0765 | [+0.0526, +0.1026] | yes |
+| disjoint | 188.77 (full-sample P24.03, published Table 3) | BPAC | +0.1432 | [+0.0125, +0.2149] | yes |
+| disjoint | 189.05 (IRIS recon., official ~320 Bs) | PA | +0.0551 | [+0.0360, +0.0766] | yes |
+| disjoint | 189.05 (IRIS recon., official ~320 Bs) | UC | -0.0551 | [-0.0766, -0.0360] | yes |
+| disjoint | 189.05 (IRIS recon., official ~320 Bs) | LE | +0.0761 | [+0.0518, +0.1048] | yes |
+| disjoint | 189.05 (IRIS recon., official ~320 Bs) | BPAC | +0.1228 | [-0.0194, +0.2047] | no |
+| disjoint | 194.10 (IRIS recon., official ~328 Bs) | PA | +0.0628 | [+0.0420, +0.0840] | yes |
+| disjoint | 194.10 (IRIS recon., official ~328 Bs) | UC | -0.0628 | [-0.0840, -0.0420] | yes |
+| disjoint | 194.10 (IRIS recon., official ~328 Bs) | LE | +0.0685 | [+0.0449, +0.0946] | yes |
+| disjoint | 194.10 (IRIS recon., official ~328 Bs) | BPAC | +0.1536 | [+0.0323, +0.2257] | yes |
+| disjoint | train-sample P24.2 | PA | +0.0501 | [+0.0308, +0.0704] | yes |
+| disjoint | train-sample P24.2 | UC | -0.0501 | [-0.0704, -0.0308] | yes |
+| disjoint | train-sample P24.2 | LE | +0.0698 | [+0.0459, +0.0943] | yes |
+| disjoint | train-sample P24.2 | BPAC | +0.1314 | [-0.0000, +0.2008] | no |
+
+## Step 3 — paired difference vs 189.09 Bs (same model, same test resamples)
+
+| Protocol | Model | Change | Metric | Diff | 95% CI | CI excludes 0 |
+|---|---|---|---|---|---|---|
+| paper | DecisionTree | 188.77 − 189.09 | PA | -0.0309 | [-0.0480, -0.0150] | yes |
+| paper | DecisionTree | 188.77 − 189.09 | UC | +0.0309 | [+0.0150, +0.0480] | yes |
+| paper | DecisionTree | 188.77 − 189.09 | LE | -0.0043 | [-0.0159, +0.0079] | no |
+| paper | DecisionTree | 188.77 − 189.09 | BPAC | -0.0660 | [-0.1021, -0.0336] | yes |
+| paper | RandomForest | 188.77 − 189.09 | PA | -0.0055 | [-0.0137, +0.0010] | no |
+| paper | RandomForest | 188.77 − 189.09 | UC | +0.0055 | [-0.0010, +0.0137] | no |
+| paper | RandomForest | 188.77 − 189.09 | LE | +0.0052 | [-0.0038, +0.0150] | no |
+| paper | RandomForest | 188.77 − 189.09 | BPAC | -0.0059 | [-0.0196, +0.0068] | no |
+| paper | IRIS_Q42 | 188.77 − 189.09 | PA | +0.0004 | [-0.0038, +0.0052] | no |
+| paper | IRIS_Q42 | 188.77 − 189.09 | UC | -0.0004 | [-0.0052, +0.0038] | no |
+| paper | IRIS_Q42 | 188.77 − 189.09 | LE | +0.0097 | [+0.0012, +0.0210] | yes |
+| paper | IRIS_Q42 | 188.77 − 189.09 | BPAC | +0.0070 | [-0.0156, +0.0201] | no |
+| paper | QRF(q=0.40) fixed | 188.77 − 189.09 | PA | +0.0012 | [-0.0028, +0.0062] | no |
+| paper | QRF(q=0.40) fixed | 188.77 − 189.09 | UC | -0.0012 | [-0.0062, +0.0028] | no |
+| paper | QRF(q=0.40) fixed | 188.77 − 189.09 | LE | +0.0013 | [-0.0109, +0.0146] | no |
+| paper | QRF(q=0.40) fixed | 188.77 − 189.09 | BPAC | -0.0007 | [-0.0138, +0.0116] | no |
+| paper | QRF(q=0.41) fixed | 188.77 − 189.09 | PA | -0.0054 | [-0.0146, +0.0027] | no |
+| paper | QRF(q=0.41) fixed | 188.77 − 189.09 | UC | +0.0054 | [-0.0027, +0.0146] | no |
+| paper | QRF(q=0.41) fixed | 188.77 − 189.09 | LE | +0.0054 | [-0.0054, +0.0175] | no |
+| paper | QRF(q=0.41) fixed | 188.77 − 189.09 | BPAC | -0.0056 | [-0.0209, +0.0071] | no |
+| paper | QRF(q=0.45) fixed | 188.77 − 189.09 | PA | -0.0035 | [-0.0112, +0.0035] | no |
+| paper | QRF(q=0.45) fixed | 188.77 − 189.09 | UC | +0.0035 | [-0.0035, +0.0112] | no |
+| paper | QRF(q=0.45) fixed | 188.77 − 189.09 | LE | +0.0068 | [-0.0019, +0.0179] | no |
+| paper | QRF(q=0.45) fixed | 188.77 − 189.09 | BPAC | -0.0003 | [-0.0173, +0.0158] | no |
+| paper | SE OOB-selected | 188.77 − 189.09 | PA | +0.0010 | [-0.0031, +0.0059] | no |
+| paper | SE OOB-selected | 188.77 − 189.09 | UC | -0.0010 | [-0.0059, +0.0031] | no |
+| paper | SE OOB-selected | 188.77 − 189.09 | LE | +0.0052 | [-0.0051, +0.0171] | no |
+| paper | SE OOB-selected | 188.77 − 189.09 | BPAC | +0.0035 | [-0.0126, +0.0181] | no |
+| paper | QRF test-selected | 188.77 − 189.09 | PA | +0.0011 | [-0.0031, +0.0060] | no |
+| paper | QRF test-selected | 188.77 − 189.09 | UC | -0.0011 | [-0.0060, +0.0031] | no |
+| paper | QRF test-selected | 188.77 − 189.09 | LE | +0.0094 | [+0.0011, +0.0204] | yes |
+| paper | QRF test-selected | 188.77 − 189.09 | BPAC | +0.0010 | [-0.0179, +0.0198] | no |
+| paper | DecisionTree | 189.05 − 189.09 | PA | +0.0010 | [+0.0000, +0.0032] | no |
+| paper | DecisionTree | 189.05 − 189.09 | UC | -0.0010 | [-0.0032, +0.0000] | no |
+| paper | DecisionTree | 189.05 − 189.09 | LE | +0.0004 | [+0.0000, +0.0014] | no |
+| paper | DecisionTree | 189.05 − 189.09 | BPAC | +0.0025 | [+0.0000, +0.0078] | no |
+| paper | RandomForest | 189.05 − 189.09 | PA | +0.0010 | [+0.0000, +0.0032] | no |
+| paper | RandomForest | 189.05 − 189.09 | UC | -0.0010 | [-0.0032, +0.0000] | no |
+| paper | RandomForest | 189.05 − 189.09 | LE | +0.0002 | [+0.0000, +0.0008] | no |
+| paper | RandomForest | 189.05 − 189.09 | BPAC | +0.0023 | [+0.0000, +0.0071] | no |
+| paper | IRIS_Q42 | 189.05 − 189.09 | PA | +0.0013 | [+0.0000, +0.0041] | no |
+| paper | IRIS_Q42 | 189.05 − 189.09 | UC | -0.0013 | [-0.0041, +0.0000] | no |
+| paper | IRIS_Q42 | 189.05 − 189.09 | LE | +0.0007 | [+0.0000, +0.0022] | no |
+| paper | IRIS_Q42 | 189.05 − 189.09 | BPAC | +0.0029 | [-0.0010, +0.0103] | no |
+| paper | QRF(q=0.40) fixed | 189.05 − 189.09 | PA | +0.0015 | [+0.0000, +0.0046] | no |
+| paper | QRF(q=0.40) fixed | 189.05 − 189.09 | UC | -0.0015 | [-0.0046, +0.0000] | no |
+| paper | QRF(q=0.40) fixed | 189.05 − 189.09 | LE | +0.0007 | [+0.0000, +0.0022] | no |
+| paper | QRF(q=0.40) fixed | 189.05 − 189.09 | BPAC | -0.0001 | [-0.0022, +0.0068] | no |
+| paper | QRF(q=0.41) fixed | 189.05 − 189.09 | PA | +0.0015 | [+0.0000, +0.0046] | no |
+| paper | QRF(q=0.41) fixed | 189.05 − 189.09 | UC | -0.0015 | [-0.0046, +0.0000] | no |
+| paper | QRF(q=0.41) fixed | 189.05 − 189.09 | LE | +0.0007 | [+0.0000, +0.0021] | no |
+| paper | QRF(q=0.41) fixed | 189.05 − 189.09 | BPAC | +0.0005 | [-0.0021, +0.0071] | no |
+| paper | QRF(q=0.45) fixed | 189.05 − 189.09 | PA | +0.0014 | [+0.0000, +0.0044] | no |
+| paper | QRF(q=0.45) fixed | 189.05 − 189.09 | UC | -0.0014 | [-0.0044, +0.0000] | no |
+| paper | QRF(q=0.45) fixed | 189.05 − 189.09 | LE | +0.0005 | [+0.0000, +0.0017] | no |
+| paper | QRF(q=0.45) fixed | 189.05 − 189.09 | BPAC | +0.0034 | [+0.0000, +0.0105] | no |
+| paper | SE OOB-selected | 189.05 − 189.09 | PA | +0.0015 | [+0.0000, +0.0045] | no |
+| paper | SE OOB-selected | 189.05 − 189.09 | UC | -0.0015 | [-0.0045, +0.0000] | no |
+| paper | SE OOB-selected | 189.05 − 189.09 | LE | +0.0006 | [+0.0000, +0.0020] | no |
+| paper | SE OOB-selected | 189.05 − 189.09 | BPAC | +0.0024 | [-0.0015, +0.0104] | no |
+| paper | QRF test-selected | 189.05 − 189.09 | PA | +0.0015 | [+0.0000, +0.0045] | no |
+| paper | QRF test-selected | 189.05 − 189.09 | UC | -0.0015 | [-0.0045, +0.0000] | no |
+| paper | QRF test-selected | 189.05 − 189.09 | LE | +0.0006 | [+0.0000, +0.0021] | no |
+| paper | QRF test-selected | 189.05 − 189.09 | BPAC | +0.0017 | [-0.0018, +0.0103] | no |
+| paper | DecisionTree | 194.10 − 189.09 | PA | +0.0069 | [-0.0093, +0.0234] | no |
+| paper | DecisionTree | 194.10 − 189.09 | UC | -0.0069 | [-0.0234, +0.0093] | no |
+| paper | DecisionTree | 194.10 − 189.09 | LE | -0.0091 | [-0.0279, +0.0082] | no |
+| paper | DecisionTree | 194.10 − 189.09 | BPAC | +0.0047 | [-0.0296, +0.0391] | no |
+| paper | RandomForest | 194.10 − 189.09 | PA | +0.0012 | [-0.0144, +0.0167] | no |
+| paper | RandomForest | 194.10 − 189.09 | UC | -0.0012 | [-0.0167, +0.0144] | no |
+| paper | RandomForest | 194.10 − 189.09 | LE | -0.0059 | [-0.0194, +0.0076] | no |
+| paper | RandomForest | 194.10 − 189.09 | BPAC | -0.0035 | [-0.0346, +0.0297] | no |
+| paper | IRIS_Q42 | 194.10 − 189.09 | PA | +0.0143 | [+0.0009, +0.0301] | yes |
+| paper | IRIS_Q42 | 194.10 − 189.09 | UC | -0.0143 | [-0.0301, -0.0009] | yes |
+| paper | IRIS_Q42 | 194.10 − 189.09 | LE | -0.0392 | [-0.0689, -0.0126] | yes |
+| paper | IRIS_Q42 | 194.10 − 189.09 | BPAC | -0.0064 | [-0.0421, +0.0408] | no |
+| paper | QRF(q=0.40) fixed | 194.10 − 189.09 | PA | +0.0141 | [-0.0056, +0.0322] | no |
+| paper | QRF(q=0.40) fixed | 194.10 − 189.09 | UC | -0.0141 | [-0.0322, +0.0056] | no |
+| paper | QRF(q=0.40) fixed | 194.10 − 189.09 | LE | -0.0214 | [-0.0470, +0.0026] | no |
+| paper | QRF(q=0.40) fixed | 194.10 − 189.09 | BPAC | +0.0198 | [-0.0091, +0.0470] | no |
+| paper | QRF(q=0.41) fixed | 194.10 − 189.09 | PA | +0.0064 | [-0.0096, +0.0227] | no |
+| paper | QRF(q=0.41) fixed | 194.10 − 189.09 | UC | -0.0064 | [-0.0227, +0.0096] | no |
+| paper | QRF(q=0.41) fixed | 194.10 − 189.09 | LE | -0.0266 | [-0.0517, -0.0053] | yes |
+| paper | QRF(q=0.41) fixed | 194.10 − 189.09 | BPAC | +0.0128 | [-0.0325, +0.0474] | no |
+| paper | QRF(q=0.45) fixed | 194.10 − 189.09 | PA | +0.0069 | [-0.0096, +0.0234] | no |
+| paper | QRF(q=0.45) fixed | 194.10 − 189.09 | UC | -0.0069 | [-0.0234, +0.0096] | no |
+| paper | QRF(q=0.45) fixed | 194.10 − 189.09 | LE | +0.0113 | [-0.0141, +0.0367] | no |
+| paper | QRF(q=0.45) fixed | 194.10 − 189.09 | BPAC | +0.0248 | [-0.0177, +0.0660] | no |
+| paper | SE OOB-selected | 194.10 − 189.09 | PA | -0.0143 | [-0.0291, -0.0001] | yes |
+| paper | SE OOB-selected | 194.10 − 189.09 | UC | +0.0143 | [+0.0001, +0.0291] | yes |
+| paper | SE OOB-selected | 194.10 − 189.09 | LE | -0.0333 | [-0.0563, -0.0116] | yes |
+| paper | SE OOB-selected | 194.10 − 189.09 | BPAC | -0.0507 | [-0.0929, +0.0254] | no |
+| paper | QRF test-selected | 194.10 − 189.09 | PA | +0.0194 | [+0.0001, +0.0395] | yes |
+| paper | QRF test-selected | 194.10 − 189.09 | UC | -0.0194 | [-0.0395, -0.0001] | yes |
+| paper | QRF test-selected | 194.10 − 189.09 | LE | -0.0120 | [-0.0356, +0.0114] | no |
+| paper | QRF test-selected | 194.10 − 189.09 | BPAC | +0.0214 | [-0.0099, +0.0632] | no |
+| paper | DecisionTree | train-sample P24.2 minus 189.09 − 189.09 | PA | -0.0478 | [-0.0708, -0.0264] | yes |
+| paper | DecisionTree | train-sample P24.2 minus 189.09 − 189.09 | UC | +0.0478 | [+0.0264, +0.0708] | yes |
+| paper | DecisionTree | train-sample P24.2 minus 189.09 − 189.09 | LE | -0.0149 | [-0.0372, +0.0069] | no |
+| paper | DecisionTree | train-sample P24.2 minus 189.09 − 189.09 | BPAC | -0.1105 | [-0.1569, -0.0636] | yes |
+| paper | RandomForest | train-sample P24.2 minus 189.09 − 189.09 | PA | -0.0152 | [-0.0328, +0.0028] | no |
+| paper | RandomForest | train-sample P24.2 minus 189.09 − 189.09 | UC | +0.0152 | [-0.0028, +0.0328] | no |
+| paper | RandomForest | train-sample P24.2 minus 189.09 − 189.09 | LE | +0.0029 | [-0.0087, +0.0146] | no |
+| paper | RandomForest | train-sample P24.2 minus 189.09 − 189.09 | BPAC | -0.0275 | [-0.0628, +0.0082] | no |
+| paper | IRIS_Q42 | train-sample P24.2 minus 189.09 − 189.09 | PA | -0.0085 | [-0.0251, +0.0074] | no |
+| paper | IRIS_Q42 | train-sample P24.2 minus 189.09 − 189.09 | UC | +0.0085 | [-0.0074, +0.0251] | no |
+| paper | IRIS_Q42 | train-sample P24.2 minus 189.09 − 189.09 | LE | +0.0042 | [-0.0172, +0.0275] | no |
+| paper | IRIS_Q42 | train-sample P24.2 minus 189.09 − 189.09 | BPAC | -0.0121 | [-0.0504, +0.0237] | no |
+| paper | QRF(q=0.40) fixed | train-sample P24.2 minus 189.09 − 189.09 | PA | -0.0114 | [-0.0262, +0.0022] | no |
+| paper | QRF(q=0.40) fixed | train-sample P24.2 minus 189.09 − 189.09 | UC | +0.0114 | [-0.0022, +0.0262] | no |
+| paper | QRF(q=0.40) fixed | train-sample P24.2 minus 189.09 − 189.09 | LE | +0.0017 | [-0.0215, +0.0261] | no |
+| paper | QRF(q=0.40) fixed | train-sample P24.2 minus 189.09 − 189.09 | BPAC | -0.0055 | [-0.0354, +0.0200] | no |
+| paper | QRF(q=0.41) fixed | train-sample P24.2 minus 189.09 − 189.09 | PA | -0.0116 | [-0.0250, +0.0019] | no |
+| paper | QRF(q=0.41) fixed | train-sample P24.2 minus 189.09 − 189.09 | UC | +0.0116 | [-0.0019, +0.0250] | no |
+| paper | QRF(q=0.41) fixed | train-sample P24.2 minus 189.09 − 189.09 | LE | +0.0032 | [-0.0195, +0.0267] | no |
+| paper | QRF(q=0.41) fixed | train-sample P24.2 minus 189.09 − 189.09 | BPAC | -0.0092 | [-0.0419, +0.0179] | no |
+| paper | QRF(q=0.45) fixed | train-sample P24.2 minus 189.09 − 189.09 | PA | -0.0087 | [-0.0237, +0.0053] | no |
+| paper | QRF(q=0.45) fixed | train-sample P24.2 minus 189.09 − 189.09 | UC | +0.0087 | [-0.0053, +0.0237] | no |
+| paper | QRF(q=0.45) fixed | train-sample P24.2 minus 189.09 − 189.09 | LE | +0.0003 | [-0.0233, +0.0233] | no |
+| paper | QRF(q=0.45) fixed | train-sample P24.2 minus 189.09 − 189.09 | BPAC | -0.0172 | [-0.0530, +0.0181] | no |
+| paper | SE OOB-selected | train-sample P24.2 minus 189.09 − 189.09 | PA | -0.0034 | [-0.0170, +0.0107] | no |
+| paper | SE OOB-selected | train-sample P24.2 minus 189.09 − 189.09 | UC | +0.0034 | [-0.0107, +0.0170] | no |
+| paper | SE OOB-selected | train-sample P24.2 minus 189.09 − 189.09 | LE | +0.0064 | [-0.0142, +0.0292] | no |
+| paper | SE OOB-selected | train-sample P24.2 minus 189.09 − 189.09 | BPAC | -0.0024 | [-0.0291, +0.0307] | no |
+| paper | QRF test-selected | train-sample P24.2 minus 189.09 − 189.09 | PA | -0.0009 | [-0.0121, +0.0104] | no |
+| paper | QRF test-selected | train-sample P24.2 minus 189.09 − 189.09 | UC | +0.0009 | [-0.0104, +0.0121] | no |
+| paper | QRF test-selected | train-sample P24.2 minus 189.09 − 189.09 | LE | +0.0089 | [-0.0120, +0.0310] | no |
+| paper | QRF test-selected | train-sample P24.2 minus 189.09 − 189.09 | BPAC | -0.0007 | [-0.0274, +0.0285] | no |
+| disjoint | DecisionTree | 188.77 − 189.09 | PA | -0.0005 | [-0.0037, +0.0025] | no |
+| disjoint | DecisionTree | 188.77 − 189.09 | UC | +0.0005 | [-0.0025, +0.0037] | no |
+| disjoint | DecisionTree | 188.77 − 189.09 | LE | +0.0029 | [+0.0000, +0.0082] | no |
+| disjoint | DecisionTree | 188.77 − 189.09 | BPAC | +0.0019 | [-0.0003, +0.0063] | no |
+| disjoint | RandomForest | 188.77 − 189.09 | PA | -0.0003 | [-0.0053, +0.0037] | no |
+| disjoint | RandomForest | 188.77 − 189.09 | UC | +0.0003 | [-0.0037, +0.0053] | no |
+| disjoint | RandomForest | 188.77 − 189.09 | LE | +0.0005 | [+0.0000, +0.0012] | no |
+| disjoint | RandomForest | 188.77 − 189.09 | BPAC | -0.0002 | [-0.0104, +0.0083] | no |
+| disjoint | IRIS_Q42 | 188.77 − 189.09 | PA | +0.0027 | [+0.0000, +0.0066] | no |
+| disjoint | IRIS_Q42 | 188.77 − 189.09 | UC | -0.0027 | [-0.0066, +0.0000] | no |
+| disjoint | IRIS_Q42 | 188.77 − 189.09 | LE | -0.0010 | [-0.0059, +0.0024] | no |
+| disjoint | IRIS_Q42 | 188.77 − 189.09 | BPAC | +0.0043 | [-0.0043, +0.0148] | no |
+| disjoint | QRF(q=0.40) fixed | 188.77 − 189.09 | PA | -0.0080 | [-0.0171, -0.0007] | yes |
+| disjoint | QRF(q=0.40) fixed | 188.77 − 189.09 | UC | +0.0080 | [+0.0007, +0.0171] | yes |
+| disjoint | QRF(q=0.40) fixed | 188.77 − 189.09 | LE | -0.0046 | [-0.0148, +0.0048] | no |
+| disjoint | QRF(q=0.40) fixed | 188.77 − 189.09 | BPAC | -0.0034 | [-0.0326, +0.0144] | no |
+| disjoint | QRF(q=0.41) fixed | 188.77 − 189.09 | PA | -0.0060 | [-0.0145, +0.0006] | no |
+| disjoint | QRF(q=0.41) fixed | 188.77 − 189.09 | UC | +0.0060 | [-0.0006, +0.0145] | no |
+| disjoint | QRF(q=0.41) fixed | 188.77 − 189.09 | LE | -0.0050 | [-0.0159, +0.0047] | no |
+| disjoint | QRF(q=0.41) fixed | 188.77 − 189.09 | BPAC | -0.0089 | [-0.0332, +0.0122] | no |
+| disjoint | QRF(q=0.45) fixed | 188.77 − 189.09 | PA | -0.0079 | [-0.0172, -0.0003] | yes |
+| disjoint | QRF(q=0.45) fixed | 188.77 − 189.09 | UC | +0.0079 | [+0.0003, +0.0172] | yes |
+| disjoint | QRF(q=0.45) fixed | 188.77 − 189.09 | LE | -0.0051 | [-0.0151, +0.0046] | no |
+| disjoint | QRF(q=0.45) fixed | 188.77 − 189.09 | BPAC | -0.0210 | [-0.0400, -0.0035] | yes |
+| disjoint | SE OOB-selected | 188.77 − 189.09 | PA | -0.0080 | [-0.0171, -0.0007] | yes |
+| disjoint | SE OOB-selected | 188.77 − 189.09 | UC | +0.0080 | [+0.0007, +0.0171] | yes |
+| disjoint | SE OOB-selected | 188.77 − 189.09 | LE | -0.0046 | [-0.0148, +0.0048] | no |
+| disjoint | SE OOB-selected | 188.77 − 189.09 | BPAC | -0.0034 | [-0.0326, +0.0144] | no |
+| disjoint | QRF test-selected | 188.77 − 189.09 | PA | -0.0080 | [-0.0171, -0.0007] | yes |
+| disjoint | QRF test-selected | 188.77 − 189.09 | UC | +0.0080 | [+0.0007, +0.0171] | yes |
+| disjoint | QRF test-selected | 188.77 − 189.09 | LE | -0.0046 | [-0.0148, +0.0048] | no |
+| disjoint | QRF test-selected | 188.77 − 189.09 | BPAC | -0.0034 | [-0.0326, +0.0144] | no |
+| disjoint | DecisionTree | 189.05 − 189.09 | PA | +0.0008 | [+0.0000, +0.0027] | no |
+| disjoint | DecisionTree | 189.05 − 189.09 | UC | -0.0008 | [-0.0027, +0.0000] | no |
+| disjoint | DecisionTree | 189.05 − 189.09 | LE | +0.0003 | [+0.0000, +0.0010] | no |
+| disjoint | DecisionTree | 189.05 − 189.09 | BPAC | +0.0020 | [+0.0000, +0.0064] | no |
+| disjoint | RandomForest | 189.05 − 189.09 | PA | +0.0009 | [+0.0000, +0.0028] | no |
+| disjoint | RandomForest | 189.05 − 189.09 | UC | -0.0009 | [-0.0028, +0.0000] | no |
+| disjoint | RandomForest | 189.05 − 189.09 | LE | +0.0002 | [+0.0000, +0.0007] | no |
+| disjoint | RandomForest | 189.05 − 189.09 | BPAC | +0.0020 | [+0.0000, +0.0064] | no |
+| disjoint | IRIS_Q42 | 189.05 − 189.09 | PA | +0.0013 | [+0.0000, +0.0041] | no |
+| disjoint | IRIS_Q42 | 189.05 − 189.09 | UC | -0.0013 | [-0.0041, +0.0000] | no |
+| disjoint | IRIS_Q42 | 189.05 − 189.09 | LE | +0.0005 | [+0.0000, +0.0018] | no |
+| disjoint | IRIS_Q42 | 189.05 − 189.09 | BPAC | +0.0031 | [+0.0000, +0.0098] | no |
+| disjoint | QRF(q=0.40) fixed | 189.05 − 189.09 | PA | +0.0014 | [+0.0000, +0.0044] | no |
+| disjoint | QRF(q=0.40) fixed | 189.05 − 189.09 | UC | -0.0014 | [-0.0044, +0.0000] | no |
+| disjoint | QRF(q=0.40) fixed | 189.05 − 189.09 | LE | +0.0007 | [+0.0000, +0.0025] | no |
+| disjoint | QRF(q=0.40) fixed | 189.05 − 189.09 | BPAC | +0.0003 | [-0.0024, +0.0071] | no |
+| disjoint | QRF(q=0.41) fixed | 189.05 − 189.09 | PA | +0.0013 | [+0.0000, +0.0043] | no |
+| disjoint | QRF(q=0.41) fixed | 189.05 − 189.09 | UC | -0.0013 | [-0.0043, +0.0000] | no |
+| disjoint | QRF(q=0.41) fixed | 189.05 − 189.09 | LE | +0.0007 | [+0.0000, +0.0024] | no |
+| disjoint | QRF(q=0.41) fixed | 189.05 − 189.09 | BPAC | +0.0016 | [-0.0019, +0.0100] | no |
+| disjoint | QRF(q=0.45) fixed | 189.05 − 189.09 | PA | +0.0013 | [+0.0000, +0.0040] | no |
+| disjoint | QRF(q=0.45) fixed | 189.05 − 189.09 | UC | -0.0013 | [-0.0040, +0.0000] | no |
+| disjoint | QRF(q=0.45) fixed | 189.05 − 189.09 | LE | +0.0006 | [+0.0000, +0.0020] | no |
+| disjoint | QRF(q=0.45) fixed | 189.05 − 189.09 | BPAC | +0.0031 | [+0.0000, +0.0100] | no |
+| disjoint | SE OOB-selected | 189.05 − 189.09 | PA | +0.0014 | [+0.0000, +0.0044] | no |
+| disjoint | SE OOB-selected | 189.05 − 189.09 | UC | -0.0014 | [-0.0044, +0.0000] | no |
+| disjoint | SE OOB-selected | 189.05 − 189.09 | LE | +0.0007 | [+0.0000, +0.0025] | no |
+| disjoint | SE OOB-selected | 189.05 − 189.09 | BPAC | +0.0003 | [-0.0024, +0.0071] | no |
+| disjoint | QRF test-selected | 189.05 − 189.09 | PA | -0.0135 | [-0.0260, -0.0032] | yes |
+| disjoint | QRF test-selected | 189.05 − 189.09 | UC | +0.0135 | [+0.0032, +0.0260] | yes |
+| disjoint | QRF test-selected | 189.05 − 189.09 | LE | -0.0160 | [-0.0284, -0.0054] | yes |
+| disjoint | QRF test-selected | 189.05 − 189.09 | BPAC | -0.0078 | [-0.0631, +0.0267] | no |
+| disjoint | DecisionTree | 194.10 − 189.09 | PA | +0.0180 | [+0.0026, +0.0335] | yes |
+| disjoint | DecisionTree | 194.10 − 189.09 | UC | -0.0180 | [-0.0335, -0.0026] | yes |
+| disjoint | DecisionTree | 194.10 − 189.09 | LE | -0.0082 | [-0.0226, +0.0064] | no |
+| disjoint | DecisionTree | 194.10 − 189.09 | BPAC | +0.0279 | [-0.0029, +0.0588] | no |
+| disjoint | RandomForest | 194.10 − 189.09 | PA | +0.0197 | [+0.0038, +0.0382] | yes |
+| disjoint | RandomForest | 194.10 − 189.09 | UC | -0.0197 | [-0.0382, -0.0038] | yes |
+| disjoint | RandomForest | 194.10 − 189.09 | LE | -0.0024 | [-0.0175, +0.0121] | no |
+| disjoint | RandomForest | 194.10 − 189.09 | BPAC | +0.0369 | [+0.0055, +0.0700] | yes |
+| disjoint | IRIS_Q42 | 194.10 − 189.09 | PA | +0.0070 | [-0.0042, +0.0177] | no |
+| disjoint | IRIS_Q42 | 194.10 − 189.09 | UC | -0.0070 | [-0.0177, +0.0042] | no |
+| disjoint | IRIS_Q42 | 194.10 − 189.09 | LE | -0.0126 | [-0.0353, +0.0092] | no |
+| disjoint | IRIS_Q42 | 194.10 − 189.09 | BPAC | +0.0013 | [-0.0246, +0.0296] | no |
+| disjoint | QRF(q=0.40) fixed | 194.10 − 189.09 | PA | +0.0157 | [+0.0035, +0.0292] | yes |
+| disjoint | QRF(q=0.40) fixed | 194.10 − 189.09 | UC | -0.0157 | [-0.0292, -0.0035] | yes |
+| disjoint | QRF(q=0.40) fixed | 194.10 − 189.09 | LE | -0.0290 | [-0.0528, -0.0071] | yes |
+| disjoint | QRF(q=0.40) fixed | 194.10 − 189.09 | BPAC | +0.0222 | [-0.0113, +0.0508] | no |
+| disjoint | QRF(q=0.41) fixed | 194.10 − 189.09 | PA | +0.0184 | [+0.0047, +0.0327] | yes |
+| disjoint | QRF(q=0.41) fixed | 194.10 − 189.09 | UC | -0.0184 | [-0.0327, -0.0047] | yes |
+| disjoint | QRF(q=0.41) fixed | 194.10 − 189.09 | LE | -0.0283 | [-0.0514, -0.0066] | yes |
+| disjoint | QRF(q=0.41) fixed | 194.10 − 189.09 | BPAC | +0.0171 | [-0.0164, +0.0466] | no |
+| disjoint | QRF(q=0.45) fixed | 194.10 − 189.09 | PA | +0.0078 | [-0.0034, +0.0187] | no |
+| disjoint | QRF(q=0.45) fixed | 194.10 − 189.09 | UC | -0.0078 | [-0.0187, +0.0034] | no |
+| disjoint | QRF(q=0.45) fixed | 194.10 − 189.09 | LE | -0.0215 | [-0.0448, -0.0002] | yes |
+| disjoint | QRF(q=0.45) fixed | 194.10 − 189.09 | BPAC | -0.0057 | [-0.0313, +0.0185] | no |
+| disjoint | SE OOB-selected | 194.10 − 189.09 | PA | +0.0157 | [+0.0035, +0.0292] | yes |
+| disjoint | SE OOB-selected | 194.10 − 189.09 | UC | -0.0157 | [-0.0292, -0.0035] | yes |
+| disjoint | SE OOB-selected | 194.10 − 189.09 | LE | -0.0290 | [-0.0528, -0.0071] | yes |
+| disjoint | SE OOB-selected | 194.10 − 189.09 | BPAC | +0.0222 | [-0.0113, +0.0508] | no |
+| disjoint | QRF test-selected | 194.10 − 189.09 | PA | +0.0157 | [+0.0035, +0.0292] | yes |
+| disjoint | QRF test-selected | 194.10 − 189.09 | UC | -0.0157 | [-0.0292, -0.0035] | yes |
+| disjoint | QRF test-selected | 194.10 − 189.09 | LE | -0.0290 | [-0.0528, -0.0071] | yes |
+| disjoint | QRF test-selected | 194.10 − 189.09 | BPAC | +0.0222 | [-0.0113, +0.0508] | no |
+| disjoint | DecisionTree | train-sample P24.2 minus 189.09 − 189.09 | PA | +0.0087 | [+0.0021, +0.0156] | yes |
+| disjoint | DecisionTree | train-sample P24.2 minus 189.09 − 189.09 | UC | -0.0087 | [-0.0156, -0.0021] | yes |
+| disjoint | DecisionTree | train-sample P24.2 minus 189.09 − 189.09 | LE | +0.0092 | [+0.0030, +0.0171] | yes |
+| disjoint | DecisionTree | train-sample P24.2 minus 189.09 − 189.09 | BPAC | +0.0267 | [+0.0137, +0.0419] | yes |
+| disjoint | RandomForest | train-sample P24.2 minus 189.09 − 189.09 | PA | -0.0082 | [-0.0224, +0.0056] | no |
+| disjoint | RandomForest | train-sample P24.2 minus 189.09 − 189.09 | UC | +0.0082 | [-0.0056, +0.0224] | no |
+| disjoint | RandomForest | train-sample P24.2 minus 189.09 − 189.09 | LE | -0.0052 | [-0.0170, +0.0045] | no |
+| disjoint | RandomForest | train-sample P24.2 minus 189.09 − 189.09 | BPAC | -0.0215 | [-0.0508, +0.0063] | no |
+| disjoint | IRIS_Q42 | train-sample P24.2 minus 189.09 − 189.09 | PA | -0.0122 | [-0.0263, +0.0017] | no |
+| disjoint | IRIS_Q42 | train-sample P24.2 minus 189.09 − 189.09 | UC | +0.0122 | [-0.0017, +0.0263] | no |
+| disjoint | IRIS_Q42 | train-sample P24.2 minus 189.09 − 189.09 | LE | +0.0086 | [-0.0090, +0.0270] | no |
+| disjoint | IRIS_Q42 | train-sample P24.2 minus 189.09 − 189.09 | BPAC | -0.0157 | [-0.0474, +0.0158] | no |
+| disjoint | QRF(q=0.40) fixed | train-sample P24.2 minus 189.09 − 189.09 | PA | -0.0153 | [-0.0315, -0.0013] | yes |
+| disjoint | QRF(q=0.40) fixed | train-sample P24.2 minus 189.09 − 189.09 | UC | +0.0153 | [+0.0013, +0.0315] | yes |
+| disjoint | QRF(q=0.40) fixed | train-sample P24.2 minus 189.09 − 189.09 | LE | -0.0015 | [-0.0216, +0.0188] | no |
+| disjoint | QRF(q=0.40) fixed | train-sample P24.2 minus 189.09 − 189.09 | BPAC | -0.0104 | [-0.0560, +0.0174] | no |
+| disjoint | QRF(q=0.41) fixed | train-sample P24.2 minus 189.09 − 189.09 | PA | -0.0113 | [-0.0274, +0.0028] | no |
+| disjoint | QRF(q=0.41) fixed | train-sample P24.2 minus 189.09 − 189.09 | UC | +0.0113 | [-0.0028, +0.0274] | no |
+| disjoint | QRF(q=0.41) fixed | train-sample P24.2 minus 189.09 − 189.09 | LE | +0.0023 | [-0.0165, +0.0209] | no |
+| disjoint | QRF(q=0.41) fixed | train-sample P24.2 minus 189.09 − 189.09 | BPAC | -0.0142 | [-0.0472, +0.0122] | no |
+| disjoint | QRF(q=0.45) fixed | train-sample P24.2 minus 189.09 − 189.09 | PA | -0.0104 | [-0.0257, +0.0040] | no |
+| disjoint | QRF(q=0.45) fixed | train-sample P24.2 minus 189.09 − 189.09 | UC | +0.0104 | [-0.0040, +0.0257] | no |
+| disjoint | QRF(q=0.45) fixed | train-sample P24.2 minus 189.09 − 189.09 | LE | +0.0047 | [-0.0119, +0.0212] | no |
+| disjoint | QRF(q=0.45) fixed | train-sample P24.2 minus 189.09 − 189.09 | BPAC | -0.0162 | [-0.0493, +0.0171] | no |
+| disjoint | SE OOB-selected | train-sample P24.2 minus 189.09 − 189.09 | PA | -0.0066 | [-0.0221, +0.0070] | no |
+| disjoint | SE OOB-selected | train-sample P24.2 minus 189.09 − 189.09 | UC | +0.0066 | [-0.0070, +0.0221] | no |
+| disjoint | SE OOB-selected | train-sample P24.2 minus 189.09 − 189.09 | LE | +0.0070 | [-0.0132, +0.0274] | no |
+| disjoint | SE OOB-selected | train-sample P24.2 minus 189.09 − 189.09 | BPAC | -0.0078 | [-0.0324, +0.0144] | no |
+| disjoint | QRF test-selected | train-sample P24.2 minus 189.09 − 189.09 | PA | -0.0153 | [-0.0315, -0.0013] | yes |
+| disjoint | QRF test-selected | train-sample P24.2 minus 189.09 − 189.09 | UC | +0.0153 | [+0.0013, +0.0315] | yes |
+| disjoint | QRF test-selected | train-sample P24.2 minus 189.09 − 189.09 | LE | -0.0015 | [-0.0216, +0.0188] | no |
+| disjoint | QRF test-selected | train-sample P24.2 minus 189.09 − 189.09 | BPAC | -0.0104 | [-0.0560, +0.0174] | no |
+
+## SE model chosen by OOB BPAC, and test-selected quantile (seed 42)
+
+| protocol   | threshold                                      |    line | se_oob_selected   |   q_test_selected |
+|:-----------|:-----------------------------------------------|--------:|:------------------|------------------:|
+| paper      | 189.09 (full-sample P24.2)                     | 189.091 | QRF(0.43)         |              0.42 |
+| paper      | 188.77 (full-sample P24.03, published Table 3) | 188.774 | QRF(0.43)         |              0.42 |
+| paper      | 189.05 (IRIS recon., official ~320 Bs)         | 189.05  | QRF(0.43)         |              0.42 |
+| paper      | 194.10 (IRIS recon., official ~328 Bs)         | 194.1   | QRF(0.45)         |              0.41 |
+| paper      | train-sample P24.2                             | 185.08  | QRF(0.43)         |              0.42 |
+| disjoint   | 189.09 (full-sample P24.2)                     | 189.091 | QRF(0.40)         |              0.4  |
+| disjoint   | 188.77 (full-sample P24.03, published Table 3) | 188.774 | QRF(0.40)         |              0.4  |
+| disjoint   | 189.05 (IRIS recon., official ~320 Bs)         | 189.05  | QRF(0.40)         |              0.41 |
+| disjoint   | 194.10 (IRIS recon., official ~328 Bs)         | 194.1   | QRF(0.40)         |              0.4  |
+| disjoint   | train-sample P24.2                             | 185.52  | QRF(0.39)         |              0.4  |
+
+## Repeated splits — mean (SD) of point metrics over 30 random splits per protocol
+
+| Protocol | Threshold | Model | PA | UC | LE | BPAC |
+|---|---|---|---|---|---|---|
+| disjoint | 188.77 | DecisionTree | 0.457 (0.044) | 0.543 (0.044) | 0.184 (0.031) | 0.097 (0.109) |
+| disjoint | 188.77 | IRIS_Q42 | 0.611 (0.019) | 0.389 (0.019) | 0.263 (0.023) | 0.485 (0.054) |
+| disjoint | 188.77 | QRF test-selected | 0.673 (0.017) | 0.327 (0.017) | 0.334 (0.015) | 0.664 (0.016) |
+| disjoint | 188.77 | QRF(q=0.40) fixed | 0.672 (0.022) | 0.328 (0.022) | 0.335 (0.034) | 0.635 (0.035) |
+| disjoint | 188.77 | QRF(q=0.41) fixed | 0.659 (0.022) | 0.341 (0.022) | 0.319 (0.031) | 0.619 (0.044) |
+| disjoint | 188.77 | QRF(q=0.45) fixed | 0.610 (0.021) | 0.390 (0.021) | 0.260 (0.029) | 0.479 (0.061) |
+| disjoint | 188.77 | RandomForest | 0.418 (0.021) | 0.582 (0.021) | 0.111 (0.017) | -0.052 (0.054) |
+| disjoint | 188.77 | SE OOB-selected | 0.676 (0.023) | 0.324 (0.023) | 0.339 (0.032) | 0.640 (0.029) |
+| disjoint | 189.05 | DecisionTree | 0.457 (0.044) | 0.543 (0.044) | 0.180 (0.031) | 0.093 (0.109) |
+| disjoint | 189.05 | IRIS_Q42 | 0.611 (0.019) | 0.389 (0.019) | 0.260 (0.023) | 0.482 (0.054) |
+| disjoint | 189.05 | QRF test-selected | 0.675 (0.017) | 0.325 (0.017) | 0.331 (0.015) | 0.666 (0.015) |
+| disjoint | 189.05 | QRF(q=0.40) fixed | 0.675 (0.024) | 0.325 (0.024) | 0.333 (0.034) | 0.638 (0.035) |
+| disjoint | 189.05 | QRF(q=0.41) fixed | 0.664 (0.022) | 0.336 (0.022) | 0.318 (0.031) | 0.626 (0.044) |
+| disjoint | 189.05 | QRF(q=0.45) fixed | 0.615 (0.021) | 0.385 (0.021) | 0.259 (0.029) | 0.490 (0.060) |
+| disjoint | 189.05 | RandomForest | 0.419 (0.021) | 0.581 (0.021) | 0.110 (0.017) | -0.052 (0.053) |
+| disjoint | 189.05 | SE OOB-selected | 0.679 (0.024) | 0.321 (0.024) | 0.338 (0.031) | 0.644 (0.029) |
+| disjoint | 189.09 | DecisionTree | 0.456 (0.044) | 0.544 (0.044) | 0.180 (0.031) | 0.092 (0.109) |
+| disjoint | 189.09 | IRIS_Q42 | 0.611 (0.019) | 0.389 (0.019) | 0.260 (0.023) | 0.481 (0.054) |
+| disjoint | 189.09 | QRF test-selected | 0.675 (0.017) | 0.325 (0.017) | 0.333 (0.016) | 0.666 (0.016) |
+| disjoint | 189.09 | QRF(q=0.40) fixed | 0.674 (0.024) | 0.326 (0.024) | 0.333 (0.033) | 0.638 (0.035) |
+| disjoint | 189.09 | QRF(q=0.41) fixed | 0.663 (0.022) | 0.337 (0.022) | 0.319 (0.031) | 0.626 (0.044) |
+| disjoint | 189.09 | QRF(q=0.45) fixed | 0.615 (0.021) | 0.385 (0.021) | 0.260 (0.029) | 0.489 (0.060) |
+| disjoint | 189.09 | RandomForest | 0.419 (0.021) | 0.581 (0.021) | 0.110 (0.017) | -0.052 (0.053) |
+| disjoint | 189.09 | SE OOB-selected | 0.679 (0.024) | 0.321 (0.024) | 0.338 (0.031) | 0.643 (0.029) |
+| disjoint | 194.10 | DecisionTree | 0.473 (0.038) | 0.527 (0.038) | 0.179 (0.028) | 0.126 (0.093) |
+| disjoint | 194.10 | IRIS_Q42 | 0.623 (0.019) | 0.378 (0.019) | 0.257 (0.023) | 0.502 (0.052) |
+| disjoint | 194.10 | QRF test-selected | 0.682 (0.015) | 0.318 (0.015) | 0.324 (0.018) | 0.674 (0.017) |
+| disjoint | 194.10 | QRF(q=0.40) fixed | 0.684 (0.024) | 0.316 (0.024) | 0.330 (0.035) | 0.648 (0.036) |
+| disjoint | 194.10 | QRF(q=0.41) fixed | 0.673 (0.022) | 0.327 (0.022) | 0.315 (0.033) | 0.637 (0.039) |
+| disjoint | 194.10 | QRF(q=0.45) fixed | 0.626 (0.022) | 0.374 (0.022) | 0.257 (0.028) | 0.509 (0.062) |
+| disjoint | 194.10 | RandomForest | 0.438 (0.018) | 0.562 (0.018) | 0.113 (0.015) | -0.012 (0.046) |
+| disjoint | 194.10 | SE OOB-selected | 0.683 (0.022) | 0.317 (0.022) | 0.326 (0.031) | 0.651 (0.031) |
+| disjoint | train-sample P24.2 | DecisionTree | 0.462 (0.041) | 0.538 (0.041) | 0.181 (0.028) | 0.104 (0.097) |
+| disjoint | train-sample P24.2 | IRIS_Q42 | 0.615 (0.020) | 0.385 (0.020) | 0.262 (0.026) | 0.492 (0.050) |
+| disjoint | train-sample P24.2 | QRF test-selected | 0.676 (0.020) | 0.324 (0.020) | 0.330 (0.018) | 0.667 (0.018) |
+| disjoint | train-sample P24.2 | QRF(q=0.40) fixed | 0.676 (0.020) | 0.324 (0.020) | 0.333 (0.037) | 0.644 (0.032) |
+| disjoint | train-sample P24.2 | QRF(q=0.41) fixed | 0.665 (0.020) | 0.335 (0.020) | 0.317 (0.035) | 0.629 (0.033) |
+| disjoint | train-sample P24.2 | QRF(q=0.45) fixed | 0.617 (0.018) | 0.383 (0.018) | 0.260 (0.032) | 0.494 (0.051) |
+| disjoint | train-sample P24.2 | RandomForest | 0.428 (0.022) | 0.572 (0.022) | 0.114 (0.018) | -0.030 (0.051) |
+| disjoint | train-sample P24.2 | SE OOB-selected | 0.679 (0.023) | 0.321 (0.023) | 0.333 (0.038) | 0.643 (0.035) |
+| paper | 188.77 | DecisionTree | 0.475 (0.045) | 0.525 (0.045) | 0.170 (0.031) | 0.119 (0.112) |
+| paper | 188.77 | IRIS_Q42 | 0.613 (0.018) | 0.387 (0.018) | 0.261 (0.034) | 0.488 (0.054) |
+| paper | 188.77 | QRF test-selected | 0.710 (0.019) | 0.290 (0.019) | 0.300 (0.020) | 0.699 (0.019) |
+| paper | 188.77 | QRF(q=0.40) fixed | 0.707 (0.030) | 0.293 (0.030) | 0.298 (0.033) | 0.669 (0.041) |
+| paper | 188.77 | QRF(q=0.41) fixed | 0.696 (0.031) | 0.304 (0.031) | 0.283 (0.032) | 0.655 (0.054) |
+| paper | 188.77 | QRF(q=0.45) fixed | 0.650 (0.032) | 0.350 (0.032) | 0.230 (0.028) | 0.530 (0.073) |
+| paper | 188.77 | RandomForest | 0.458 (0.032) | 0.542 (0.032) | 0.098 (0.020) | 0.014 (0.074) |
+| paper | 188.77 | SE OOB-selected | 0.708 (0.026) | 0.292 (0.026) | 0.299 (0.026) | 0.677 (0.027) |
+| paper | 189.05 | DecisionTree | 0.476 (0.043) | 0.524 (0.043) | 0.168 (0.032) | 0.120 (0.109) |
+| paper | 189.05 | IRIS_Q42 | 0.614 (0.018) | 0.387 (0.018) | 0.257 (0.034) | 0.484 (0.053) |
+| paper | 189.05 | QRF test-selected | 0.711 (0.020) | 0.289 (0.020) | 0.296 (0.021) | 0.703 (0.021) |
+| paper | 189.05 | QRF(q=0.40) fixed | 0.709 (0.030) | 0.291 (0.030) | 0.297 (0.033) | 0.673 (0.040) |
+| paper | 189.05 | QRF(q=0.41) fixed | 0.699 (0.030) | 0.301 (0.030) | 0.280 (0.032) | 0.658 (0.053) |
+| paper | 189.05 | QRF(q=0.45) fixed | 0.653 (0.032) | 0.347 (0.032) | 0.229 (0.028) | 0.535 (0.072) |
+| paper | 189.05 | RandomForest | 0.460 (0.032) | 0.540 (0.032) | 0.096 (0.021) | 0.015 (0.074) |
+| paper | 189.05 | SE OOB-selected | 0.711 (0.027) | 0.289 (0.027) | 0.296 (0.028) | 0.680 (0.030) |
+| paper | 189.09 | DecisionTree | 0.476 (0.043) | 0.524 (0.043) | 0.167 (0.032) | 0.119 (0.109) |
+| paper | 189.09 | IRIS_Q42 | 0.613 (0.018) | 0.387 (0.018) | 0.257 (0.033) | 0.483 (0.052) |
+| paper | 189.09 | QRF test-selected | 0.710 (0.021) | 0.290 (0.021) | 0.295 (0.020) | 0.703 (0.021) |
+| paper | 189.09 | QRF(q=0.40) fixed | 0.709 (0.030) | 0.291 (0.030) | 0.296 (0.033) | 0.673 (0.040) |
+| paper | 189.09 | QRF(q=0.41) fixed | 0.698 (0.030) | 0.302 (0.030) | 0.281 (0.033) | 0.658 (0.053) |
+| paper | 189.09 | QRF(q=0.45) fixed | 0.653 (0.032) | 0.347 (0.032) | 0.229 (0.028) | 0.534 (0.072) |
+| paper | 189.09 | RandomForest | 0.459 (0.033) | 0.541 (0.033) | 0.095 (0.021) | 0.014 (0.074) |
+| paper | 189.09 | SE OOB-selected | 0.711 (0.027) | 0.289 (0.027) | 0.297 (0.028) | 0.679 (0.030) |
+| paper | 194.10 | DecisionTree | 0.493 (0.045) | 0.507 (0.045) | 0.173 (0.031) | 0.159 (0.110) |
+| paper | 194.10 | IRIS_Q42 | 0.625 (0.016) | 0.375 (0.016) | 0.252 (0.031) | 0.502 (0.047) |
+| paper | 194.10 | QRF test-selected | 0.715 (0.018) | 0.285 (0.018) | 0.289 (0.018) | 0.708 (0.017) |
+| paper | 194.10 | QRF(q=0.40) fixed | 0.721 (0.028) | 0.280 (0.028) | 0.302 (0.032) | 0.678 (0.034) |
+| paper | 194.10 | QRF(q=0.41) fixed | 0.710 (0.030) | 0.290 (0.030) | 0.287 (0.033) | 0.671 (0.047) |
+| paper | 194.10 | QRF(q=0.45) fixed | 0.665 (0.033) | 0.335 (0.033) | 0.233 (0.028) | 0.563 (0.077) |
+| paper | 194.10 | RandomForest | 0.477 (0.033) | 0.523 (0.033) | 0.101 (0.019) | 0.056 (0.074) |
+| paper | 194.10 | SE OOB-selected | 0.715 (0.026) | 0.285 (0.026) | 0.292 (0.026) | 0.686 (0.033) |
+| paper | train-sample P24.2 | DecisionTree | 0.478 (0.045) | 0.522 (0.045) | 0.170 (0.031) | 0.126 (0.110) |
+| paper | train-sample P24.2 | IRIS_Q42 | 0.614 (0.019) | 0.387 (0.019) | 0.262 (0.031) | 0.489 (0.053) |
+| paper | train-sample P24.2 | QRF test-selected | 0.709 (0.024) | 0.291 (0.024) | 0.296 (0.020) | 0.701 (0.022) |
+| paper | train-sample P24.2 | QRF(q=0.40) fixed | 0.708 (0.030) | 0.292 (0.030) | 0.297 (0.032) | 0.674 (0.043) |
+| paper | train-sample P24.2 | QRF(q=0.41) fixed | 0.695 (0.029) | 0.305 (0.029) | 0.282 (0.029) | 0.657 (0.050) |
+| paper | train-sample P24.2 | QRF(q=0.45) fixed | 0.651 (0.029) | 0.349 (0.029) | 0.232 (0.026) | 0.534 (0.066) |
+| paper | train-sample P24.2 | RandomForest | 0.459 (0.035) | 0.541 (0.035) | 0.099 (0.020) | 0.017 (0.077) |
+| paper | train-sample P24.2 | SE OOB-selected | 0.706 (0.028) | 0.294 (0.028) | 0.295 (0.029) | 0.677 (0.036) |
+
+### SE choice (OOB) and test-selected quantile across splits (value: count)
+
+| protocol   | threshold                                      | se_choice_mode   | se_choice_values                                                                                                 | q_test_values                                                                     |
+|:-----------|:-----------------------------------------------|:-----------------|:-----------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------|
+| disjoint   | 188.77 (full-sample P24.03, published Table 3) | QRF(0.40)        | {'QRF(0.37)': 1, 'QRF(0.38)': 4, 'QRF(0.39)': 7, 'QRF(0.40)': 13, 'QRF(0.41)': 1, 'QRF(0.42)': 4}                | {0.35: 1, 0.37: 1, 0.38: 4, 0.39: 6, 0.4: 10, 0.41: 2, 0.42: 4, 0.43: 1, 0.44: 1} |
+| disjoint   | 189.05 (IRIS recon., official ~320 Bs)         | QRF(0.40)        | {'QRF(0.37)': 1, 'QRF(0.38)': 4, 'QRF(0.39)': 8, 'QRF(0.40)': 12, 'QRF(0.41)': 1, 'QRF(0.42)': 4}                | {0.36: 1, 0.37: 1, 0.38: 4, 0.39: 6, 0.4: 8, 0.41: 3, 0.42: 5, 0.43: 1, 0.44: 1}  |
+| disjoint   | 189.09 (full-sample P24.2)                     | QRF(0.40)        | {'QRF(0.37)': 1, 'QRF(0.38)': 5, 'QRF(0.39)': 7, 'QRF(0.40)': 12, 'QRF(0.41)': 1, 'QRF(0.42)': 4}                | {0.36: 1, 0.37: 1, 0.38: 4, 0.39: 5, 0.4: 10, 0.41: 3, 0.42: 5, 0.44: 1}          |
+| disjoint   | 194.10 (IRIS recon., official ~328 Bs)         | QRF(0.40)        | {'QRF(0.38)': 4, 'QRF(0.39)': 3, 'QRF(0.40)': 13, 'QRF(0.41)': 5, 'QRF(0.42)': 4, 'QRF(0.43)': 1}                | {0.36: 1, 0.37: 1, 0.38: 1, 0.39: 6, 0.4: 10, 0.41: 4, 0.42: 4, 0.43: 2, 0.44: 1} |
+| disjoint   | train-sample P24.2                             | QRF(0.40)        | {'QRF(0.38)': 2, 'QRF(0.39)': 7, 'QRF(0.40)': 16, 'QRF(0.41)': 3, 'QRF(0.42)': 1, 'QRF(0.43)': 1}                | {0.36: 1, 0.37: 2, 0.38: 1, 0.39: 6, 0.4: 12, 0.41: 1, 0.42: 6, 0.44: 1}          |
+| paper      | 188.77 (full-sample P24.03, published Table 3) | QRF(0.39)        | {'QRF(0.37)': 1, 'QRF(0.38)': 3, 'QRF(0.39)': 8, 'QRF(0.40)': 8, 'QRF(0.41)': 7, 'QRF(0.42)': 2, 'QRF(0.43)': 1} | {0.36: 1, 0.38: 5, 0.39: 6, 0.4: 6, 0.41: 8, 0.42: 2, 0.43: 2}                    |
+| paper      | 189.05 (IRIS recon., official ~320 Bs)         | QRF(0.39)        | {'QRF(0.37)': 1, 'QRF(0.38)': 3, 'QRF(0.39)': 8, 'QRF(0.40)': 8, 'QRF(0.41)': 6, 'QRF(0.42)': 3, 'QRF(0.43)': 1} | {0.36: 1, 0.37: 1, 0.38: 5, 0.39: 5, 0.4: 5, 0.41: 9, 0.42: 1, 0.43: 2, 0.44: 1}  |
+| paper      | 189.09 (full-sample P24.2)                     | QRF(0.39)        | {'QRF(0.36)': 1, 'QRF(0.38)': 3, 'QRF(0.39)': 8, 'QRF(0.40)': 8, 'QRF(0.41)': 6, 'QRF(0.42)': 3, 'QRF(0.43)': 1} | {0.37: 2, 0.38: 5, 0.39: 5, 0.4: 5, 0.41: 9, 0.42: 1, 0.43: 2, 0.44: 1}           |
+| paper      | 194.10 (IRIS recon., official ~328 Bs)         | QRF(0.40)        | {'QRF(0.38)': 2, 'QRF(0.39)': 6, 'QRF(0.40)': 7, 'QRF(0.41)': 7, 'QRF(0.42)': 6, 'QRF(0.43)': 1, 'QRF(0.44)': 1} | {0.37: 1, 0.38: 3, 0.39: 5, 0.4: 4, 0.41: 8, 0.42: 5, 0.43: 2, 0.44: 1, 0.45: 1}  |
+| paper      | train-sample P24.2                             | QRF(0.40)        | {'QRF(0.38)': 4, 'QRF(0.39)': 7, 'QRF(0.40)': 9, 'QRF(0.41)': 4, 'QRF(0.42)': 5, 'QRF(0.43)': 1}                 | {0.37: 1, 0.38: 6, 0.39: 6, 0.4: 7, 0.41: 5, 0.42: 4, 0.43: 1}                    |

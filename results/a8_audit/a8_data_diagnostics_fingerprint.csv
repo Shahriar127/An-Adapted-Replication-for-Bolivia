@@ -1,0 +1,19 @@
+aggregate,base_percentile,half_rate,double_rate,L1_distance
+G_ALIMENTOS_pc,24.03,5.82,62.9,1.54
+G_ALIMENTOS_pc,24.2,5.82,63.04,1.69
+G_ALIM_DENTRO_pc + G_NO_ALIMENTARIO_pc,24.2,5.82,61.45,1.71
+G_ALIM_DENTRO_pc + G_NO_ALIMENTARIO_pc,24.03,5.7,61.14,1.91
+G_TOTAL / sqrt(hhsize),24.2,5.82,60.13,3.03
+G_TOTAL / sqrt(hhsize),24.03,5.73,59.86,3.2
+G_TOTAL / hhsize^0.75,24.2,5.75,59.01,4.08
+G_TOTAL_pc - G_VIVIENDA_pc,24.2,6.14,59.37,4.11
+G_TOTAL / hhsize^0.75,24.03,5.7,58.88,4.16
+G_TOTAL_pc - G_VIVIENDA_pc,24.03,6.07,59.13,4.28
+G_TOTAL_pc - G_EDUCACION_pc,24.2,6.17,58.17,5.33
+G_TOTAL_pc - G_EDUCACION_pc,24.03,6.12,57.95,5.5
+G_TOTAL_pc (frozen),24.2,6.09,57.1,6.34
+G_TOTAL_pc (frozen),24.03,6.07,57.0,6.41
+G_TOTAL household,24.2,6.66,56.44,7.56
+G_TOTAL household,24.03,6.63,56.31,7.66
+y_percapB (income),24.2,14.42,42.46,29.29
+y_percapB (income),24.03,14.37,42.02,29.68

@@ -1,0 +1,3 @@
+protocol,n_thresholds,n_any_change,n_material_change,top_models,se_choices
+disjoint,82,67,48,"{'SE OOB-selected': np.int64(53), 'QRF(q=0.40) fixed': np.int64(16), 'QRF(q=0.41) fixed': np.int64(13)}","{'QRF(0.39)': np.int64(16), 'QRF(0.40)': np.int64(38), 'QRF(0.41)': np.int64(17), 'QRF(0.42)': np.int64(11)}"
+paper,82,35,29,"{'QRF(q=0.41) fixed': np.int64(57), 'QRF(q=0.40) fixed': np.int64(20), 'SE OOB-selected': np.int64(5)}","{'QRF(0.41)': np.int64(9), 'QRF(0.42)': np.int64(17), 'QRF(0.43)': np.int64(13), 'QRF(0.44)': np.int64(20), 'QRF(0.45)': np.int64(23)}"

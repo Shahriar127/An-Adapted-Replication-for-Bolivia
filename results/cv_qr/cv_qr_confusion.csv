@@ -1,0 +1,7 @@
+protocol,line,model,TP,FP,FN,TN
+paper,base,CV QR(0.37),316,175,159,1393
+paper,half,CV QR(0.51),49,70,65,1859
+paper,double,CV QR(0.44),959,217,180,687
+disjoint,base,CV QR(0.34),322,176,153,1392
+disjoint,half,CV QR(0.48),55,64,69,1855
+disjoint,double,CV QR(0.45),969,205,180,689

@@ -1,0 +1,25 @@
+protocol,line,model,TP,FP,FN,TN
+paper,base,IRIS QR(0.38) in-sample best,313,172,162,1396
+paper,base,CV QR(0.37),316,175,159,1393
+paper,base,SE QRF(0.43),327,137,148,1431
+paper,base,IRIS QR(0.42) not re-tuned,301,154,174,1414
+paper,half,IRIS QR(0.51) in-sample best,49,70,65,1859
+paper,half,CV QR(0.51),49,70,65,1859
+paper,half,SE QRF(0.27),64,51,50,1878
+paper,half,IRIS QR(0.42) not re-tuned,66,86,48,1843
+paper,double,IRIS QR(0.45) in-sample best,943,209,196,695
+paper,double,CV QR(0.44),959,217,180,687
+paper,double,SE QRF(0.53),968,169,171,735
+paper,double,IRIS QR(0.42) not re-tuned,991,239,148,665
+disjoint,base,IRIS QR(0.36) in-sample best,317,160,158,1408
+disjoint,base,CV QR(0.34),322,176,153,1392
+disjoint,base,SE QRF(0.40),316,170,159,1398
+disjoint,base,IRIS QR(0.42) not re-tuned,296,125,179,1443
+disjoint,half,IRIS QR(0.44) in-sample best,63,73,61,1846
+disjoint,half,CV QR(0.48),55,64,69,1855
+disjoint,half,SE QRF(0.25),57,70,67,1849
+disjoint,half,IRIS QR(0.42) not re-tuned,64,77,60,1842
+disjoint,double,IRIS QR(0.46) in-sample best,958,196,191,698
+disjoint,double,CV QR(0.45),969,205,180,689
+disjoint,double,SE QRF(0.52),970,186,179,708
+disjoint,double,IRIS QR(0.42) not re-tuned,998,238,151,656

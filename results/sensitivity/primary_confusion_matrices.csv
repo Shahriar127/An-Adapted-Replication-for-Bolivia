@@ -1,0 +1,81 @@
+protocol,threshold,model,TP,FP,FN,TN
+paper,189.09 (full-sample P24.2),DecisionTree,232,96,243,1472
+paper,189.09 (full-sample P24.2),RandomForest,229,53,246,1515
+paper,189.09 (full-sample P24.2),IRIS_Q42,301,154,174,1414
+paper,189.09 (full-sample P24.2),QRF(q=0.40) fixed,338,155,137,1413
+paper,189.09 (full-sample P24.2),QRF(q=0.41) fixed,336,149,139,1419
+paper,189.09 (full-sample P24.2),QRF(q=0.45) fixed,317,116,158,1452
+paper,189.09 (full-sample P24.2),SE OOB-selected (QRF(0.43)),327,137,148,1431
+paper,189.09 (full-sample P24.2),QRF test-selected (q=0.42),330,142,145,1426
+paper,"188.77 (full-sample P24.03, published Table 3)",DecisionTree,215,93,255,1480
+paper,"188.77 (full-sample P24.03, published Table 3)",RandomForest,224,55,246,1518
+paper,"188.77 (full-sample P24.03, published Table 3)",IRIS_Q42,298,157,172,1416
+paper,"188.77 (full-sample P24.03, published Table 3)",QRF(q=0.40) fixed,335,154,135,1419
+paper,"188.77 (full-sample P24.03, published Table 3)",QRF(q=0.41) fixed,330,150,140,1423
+paper,"188.77 (full-sample P24.03, published Table 3)",QRF(q=0.45) fixed,312,118,158,1455
+paper,"188.77 (full-sample P24.03, published Table 3)",SE OOB-selected (QRF(0.43)),324,138,146,1435
+paper,"188.77 (full-sample P24.03, published Table 3)",QRF test-selected (q=0.42),327,145,143,1428
+paper,"189.05 (IRIS recon., official ~320 Bs)",DecisionTree,232,96,242,1473
+paper,"189.05 (IRIS recon., official ~320 Bs)",RandomForest,229,53,245,1516
+paper,"189.05 (IRIS recon., official ~320 Bs)",IRIS_Q42,301,154,173,1415
+paper,"189.05 (IRIS recon., official ~320 Bs)",QRF(q=0.40) fixed,338,155,136,1414
+paper,"189.05 (IRIS recon., official ~320 Bs)",QRF(q=0.41) fixed,336,149,138,1420
+paper,"189.05 (IRIS recon., official ~320 Bs)",QRF(q=0.45) fixed,317,116,157,1453
+paper,"189.05 (IRIS recon., official ~320 Bs)",SE OOB-selected (QRF(0.43)),327,137,147,1432
+paper,"189.05 (IRIS recon., official ~320 Bs)",QRF test-selected (q=0.42),330,142,144,1427
+paper,"194.10 (IRIS recon., official ~328 Bs)",DecisionTree,249,97,254,1443
+paper,"194.10 (IRIS recon., official ~328 Bs)",RandomForest,243,53,260,1487
+paper,"194.10 (IRIS recon., official ~328 Bs)",IRIS_Q42,326,143,177,1397
+paper,"194.10 (IRIS recon., official ~328 Bs)",QRF(q=0.40) fixed,365,153,138,1387
+paper,"194.10 (IRIS recon., official ~328 Bs)",QRF(q=0.41) fixed,359,144,144,1396
+paper,"194.10 (IRIS recon., official ~328 Bs)",QRF(q=0.45) fixed,339,128,164,1412
+paper,"194.10 (IRIS recon., official ~328 Bs)",SE OOB-selected (QRF(0.45)),339,128,164,1412
+paper,"194.10 (IRIS recon., official ~328 Bs)",QRF test-selected (q=0.41),359,144,144,1396
+paper,train-sample P24.2,DecisionTree,200,85,254,1504
+paper,train-sample P24.2,RandomForest,212,52,242,1537
+paper,train-sample P24.2,IRIS_Q42,284,149,170,1440
+paper,train-sample P24.2,QRF(q=0.40) fixed,318,149,136,1440
+paper,train-sample P24.2,QRF(q=0.41) fixed,316,144,138,1445
+paper,train-sample P24.2,QRF(q=0.45) fixed,299,111,155,1478
+paper,train-sample P24.2,SE OOB-selected (QRF(0.43)),311,134,143,1455
+paper,train-sample P24.2,QRF test-selected (q=0.42),315,140,139,1449
+disjoint,189.09 (full-sample P24.2),DecisionTree,192,71,283,1497
+disjoint,189.09 (full-sample P24.2),RandomForest,200,52,275,1516
+disjoint,189.09 (full-sample P24.2),IRIS_Q42,296,125,179,1443
+disjoint,189.09 (full-sample P24.2),QRF(q=0.40) fixed,316,170,159,1398
+disjoint,189.09 (full-sample P24.2),QRF(q=0.41) fixed,309,162,166,1406
+disjoint,189.09 (full-sample P24.2),QRF(q=0.45) fixed,290,134,185,1434
+disjoint,189.09 (full-sample P24.2),SE OOB-selected (QRF(0.40)),316,170,159,1398
+disjoint,189.09 (full-sample P24.2),QRF test-selected (q=0.40),316,170,159,1398
+disjoint,"188.77 (full-sample P24.03, published Table 3)",DecisionTree,191,72,282,1498
+disjoint,"188.77 (full-sample P24.03, published Table 3)",RandomForest,199,52,274,1518
+disjoint,"188.77 (full-sample P24.03, published Table 3)",IRIS_Q42,296,124,177,1446
+disjoint,"188.77 (full-sample P24.03, published Table 3)",QRF(q=0.40) fixed,311,167,162,1403
+disjoint,"188.77 (full-sample P24.03, published Table 3)",QRF(q=0.41) fixed,305,159,168,1411
+disjoint,"188.77 (full-sample P24.03, published Table 3)",QRF(q=0.45) fixed,285,131,188,1439
+disjoint,"188.77 (full-sample P24.03, published Table 3)",SE OOB-selected (QRF(0.40)),311,167,162,1403
+disjoint,"188.77 (full-sample P24.03, published Table 3)",QRF test-selected (q=0.40),311,167,162,1403
+disjoint,"189.05 (IRIS recon., official ~320 Bs)",DecisionTree,192,71,282,1498
+disjoint,"189.05 (IRIS recon., official ~320 Bs)",RandomForest,200,52,274,1517
+disjoint,"189.05 (IRIS recon., official ~320 Bs)",IRIS_Q42,296,125,178,1444
+disjoint,"189.05 (IRIS recon., official ~320 Bs)",QRF(q=0.40) fixed,316,170,158,1399
+disjoint,"189.05 (IRIS recon., official ~320 Bs)",QRF(q=0.41) fixed,309,162,165,1407
+disjoint,"189.05 (IRIS recon., official ~320 Bs)",QRF(q=0.45) fixed,290,134,184,1435
+disjoint,"189.05 (IRIS recon., official ~320 Bs)",SE OOB-selected (QRF(0.40)),316,170,158,1399
+disjoint,"189.05 (IRIS recon., official ~320 Bs)",QRF test-selected (q=0.41),309,162,165,1407
+disjoint,"194.10 (IRIS recon., official ~328 Bs)",DecisionTree,209,70,286,1478
+disjoint,"194.10 (IRIS recon., official ~328 Bs)",RandomForest,218,53,277,1495
+disjoint,"194.10 (IRIS recon., official ~328 Bs)",IRIS_Q42,312,124,183,1424
+disjoint,"194.10 (IRIS recon., official ~328 Bs)",QRF(q=0.40) fixed,337,163,158,1385
+disjoint,"194.10 (IRIS recon., official ~328 Bs)",QRF(q=0.41) fixed,331,155,164,1393
+disjoint,"194.10 (IRIS recon., official ~328 Bs)",QRF(q=0.45) fixed,306,129,189,1419
+disjoint,"194.10 (IRIS recon., official ~328 Bs)",SE OOB-selected (QRF(0.40)),337,163,158,1385
+disjoint,"194.10 (IRIS recon., official ~328 Bs)",QRF test-selected (q=0.40),337,163,158,1385
+disjoint,train-sample P24.2,DecisionTree,190,73,270,1510
+disjoint,train-sample P24.2,RandomForest,190,48,270,1535
+disjoint,train-sample P24.2,IRIS_Q42,281,125,179,1458
+disjoint,train-sample P24.2,QRF(q=0.40) fixed,299,164,161,1419
+disjoint,train-sample P24.2,QRF(q=0.41) fixed,294,158,166,1425
+disjoint,train-sample P24.2,QRF(q=0.45) fixed,276,132,184,1451
+disjoint,train-sample P24.2,SE OOB-selected (QRF(0.39)),303,168,157,1415
+disjoint,train-sample P24.2,QRF test-selected (q=0.40),299,164,161,1419

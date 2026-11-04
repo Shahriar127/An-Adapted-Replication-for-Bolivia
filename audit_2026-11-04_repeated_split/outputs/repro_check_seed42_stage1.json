@@ -1,0 +1,11 @@
+{
+  "identical": true,
+  "max_abs_diff": 0.0,
+  "shape": [
+    150,
+    99
+  ],
+  "convergence_warnings": 0,
+  "fit_failures": 0,
+  "runtime_s": 519.8
+}

@@ -1,0 +1,21 @@
+                     config protocol                model     PA     UC     LE    BPAC  BPAC_lo  BPAC_hi
+      train_models.py (old)    paper                   DT 0.7066 0.5123 0.2029  0.2554   0.1238   0.3692
+      train_models.py (old)    paper                   RF 0.8120 0.5187 0.1116  0.1214  -0.0536   0.2645
+      train_models.py (old)    paper QRF(test-sel q=0.40) 0.6953 0.2950 0.3097  0.6648   0.5830   0.7186
+      train_models.py (old)    paper          QRF(q=0.40) 0.6953 0.2950 0.3097  0.6648   0.5830   0.7186
+      train_models.py (old)    paper          QRF(q=0.45) 0.7311 0.3372 0.2443  0.6271   0.5543   0.6907
+      train_models.py (old) disjoint                   DT 0.7299 0.5961 0.1498 -0.0810  -0.2580   0.0729
+      train_models.py (old) disjoint                   RF 0.7939 0.5791 0.1095 -0.0965  -0.2955   0.0741
+      train_models.py (old) disjoint QRF(test-sel q=0.40) 0.6523 0.3447 0.3500  0.6223   0.5469   0.6714
+      train_models.py (old) disjoint          QRF(q=0.40) 0.6523 0.3447 0.3500  0.6223   0.5469   0.6714
+      train_models.py (old) disjoint          QRF(q=0.45) 0.6772 0.4037 0.2849  0.5404   0.4581   0.6158
+replication_report.py (old)    paper                   DT 0.7633 0.2197 0.2425  0.7332   0.6561   0.7850
+replication_report.py (old)    paper                   RF 0.8875 0.4018 0.0760  0.4023   0.2972   0.4987
+replication_report.py (old)    paper QRF(test-sel q=0.45) 0.8318 0.1934 0.1635  0.7968   0.7550   0.8333
+replication_report.py (old)    paper          QRF(q=0.40) 0.7971 0.1556 0.2154  0.7411   0.6648   0.8127
+replication_report.py (old)    paper          QRF(q=0.45) 0.8318 0.1934 0.1635  0.7968   0.7550   0.8333
+replication_report.py (old) disjoint                   DT 0.5139 0.4270 0.5432  0.4113   0.3062   0.5237
+replication_report.py (old) disjoint                   RF 0.7629 0.5508 0.1399  0.0612  -0.1068   0.2128
+replication_report.py (old) disjoint QRF(test-sel q=0.45) 0.6584 0.3797 0.3225  0.5940   0.5204   0.6512
+replication_report.py (old) disjoint          QRF(q=0.40) 0.6202 0.3273 0.4129  0.5421   0.4447   0.6410
+replication_report.py (old) disjoint          QRF(q=0.45) 0.6584 0.3797 0.3225  0.5940   0.5204   0.6512

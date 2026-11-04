@@ -1,0 +1,23 @@
+{
+  "source_url": "https://siip.produccion.gob.bo/repSIIP2/files/encuesta_hogares/EH2005.rar",
+  "survey": "Bolivia Encuesta de Hogares 2005 (EH 2005), INE Bolivia",
+  "downloaded": "2026-11-03",
+  "files": {
+    "EH2005.rar": {
+      "sha256": "ae7691d4d3805a1128f4e9c01482c6a2889c158fd35b581d7e570cdd42349d9d",
+      "bytes": 10329896
+    },
+    "BASE_EH_2005_(Pob_y_Viv).sav": {
+      "sha256": "b329b4339252c22d252f3636ad2f6d8158add103ecc8a2ec2a9ff0819b208068",
+      "bytes": 15938762
+    },
+    "Bolivia_Equipamiento.sav": {
+      "sha256": "5894d8721223b2b59c116e4b0b14693485f752675bb2907bb3935ee0b74d949a",
+      "bytes": 4674411
+    },
+    "Bolivia_Pecuaria.sav": {
+      "sha256": "ff097b3a65ba9941f86938ab888f6080bb84e82fc1daa4a87901ac930beca9aa",
+      "bytes": 738407
+    }
+  }
+}

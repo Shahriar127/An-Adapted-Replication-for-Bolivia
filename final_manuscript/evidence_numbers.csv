@@ -1,0 +1,608 @@
+key,value,source,selector
+poverty_rate_frozen,0.242,results/sensitivity/config.json,POVERTY_RATE
+line_P24.2,189.0914541666667,results/sensitivity/primary_quantile_selection.csv,threshold 189.09
+line_P24.03,188.7743324791667,results/sensitivity/primary_quantile_selection.csv,threshold 188.77
+implied_rate_row5,24.038,results/a8_audit/a8_data_diagnostics_implied_rate.csv,
+primary|paper|DecisionTree|TA,0.8342305433186491,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|DecisionTree|PA,0.4877153463990072,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|DecisionTree|UC,0.5122846536009926,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|DecisionTree|LE,0.2029283809639765,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|DecisionTree|BPAC,0.178359073761991,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|DecisionTree|BPAC_CI,"[0.078, 0.276]",results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09
+primary|paper|DecisionTree|BPAC_point,0.1789473684210526,results/sensitivity/primary_metrics_bootstrap_ci.csv,point estimate
+primary|paper|RandomForest|TA,0.8538580518844835,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|RandomForest|PA,0.4812666604072719,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|RandomForest|UC,0.5187333395927279,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|RandomForest|LE,0.1116479926550871,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|RandomForest|BPAC,0.0741813134696311,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|RandomForest|BPAC_CI,"[-0.028, 0.172]",results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09
+primary|paper|RandomForest|BPAC_point,0.0757894736842105,results/sensitivity/primary_metrics_bootstrap_ci.csv,point estimate
+primary|paper|IRIS_Q42|TA,0.8399441997063143,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|IRIS_Q42|PA,0.633396283821337,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|IRIS_Q42|UC,0.366603716178663,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|IRIS_Q42|LE,0.3242664927342494,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|IRIS_Q42|BPAC,0.5858236240745717,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|IRIS_Q42|BPAC_CI,"[0.486, 0.657]",results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09
+primary|paper|IRIS_Q42|BPAC_point,0.591578947368421,results/sensitivity/primary_metrics_bootstrap_ci.csv,point estimate
+primary|paper|QRF(q=0.40) fixed|TA,0.8575115026921194,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|QRF(q=0.40) fixed|PA,0.7116060411846803,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|QRF(q=0.40) fixed|UC,0.2883939588153197,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|QRF(q=0.40) fixed|LE,0.3266921753986378,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|QRF(q=0.40) fixed|BPAC,0.6672845793956536,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|QRF(q=0.40) fixed|BPAC_CI,"[0.610, 0.715]",results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09
+primary|paper|QRF(q=0.40) fixed|BPAC_point,0.6736842105263159,results/sensitivity/primary_metrics_bootstrap_ci.csv,point estimate
+primary|paper|QRF(q=0.41) fixed|TA,0.8594601076847773,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|QRF(q=0.41) fixed|PA,0.7073591154859047,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|QRF(q=0.41) fixed|UC,0.2926408845140952,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|QRF(q=0.41) fixed|LE,0.3140181181828692,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|QRF(q=0.41) fixed|BPAC,0.6731402378985063,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|QRF(q=0.41) fixed|BPAC_CI,"[0.614, 0.722]",results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09
+primary|paper|QRF(q=0.41) fixed|BPAC_point,0.6863157894736842,results/sensitivity/primary_metrics_bootstrap_ci.csv,point estimate
+primary|paper|QRF(q=0.45) fixed|TA,0.8662408223201175,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|QRF(q=0.45) fixed|PA,0.6667806295494036,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|QRF(q=0.45) fixed|UC,0.3332193704505963,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|QRF(q=0.45) fixed|LE,0.2440833613644064,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|QRF(q=0.45) fixed|BPAC,0.5775576315451938,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|QRF(q=0.45) fixed|BPAC_CI,"[0.469, 0.674]",results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09
+primary|paper|QRF(q=0.45) fixed|BPAC_point,0.5789473684210527,results/sensitivity/primary_metrics_bootstrap_ci.csv,point estimate
+primary|paper|SE OOB-selected (QRF(0.43))|TA,0.8608296622613804,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|SE OOB-selected (QRF(0.43))|PA,0.6879779356546925,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|SE OOB-selected (QRF(0.43))|UC,0.3120220643453075,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|SE OOB-selected (QRF(0.43))|LE,0.2886987179181625,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|SE OOB-selected (QRF(0.43))|BPAC,0.65302244568716,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|SE OOB-selected (QRF(0.43))|BPAC_CI,"[0.558, 0.713]",results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09
+primary|paper|SE OOB-selected (QRF(0.43))|BPAC_point,0.6652631578947368,results/sensitivity/primary_metrics_bootstrap_ci.csv,point estimate
+primary|paper|QRF test-selected (q=0.42)|TA,0.859834067547724,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|QRF test-selected (q=0.42)|PA,0.694343736134989,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|QRF test-selected (q=0.42)|UC,0.3056562638650109,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|QRF test-selected (q=0.42)|LE,0.2993734815124637,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|QRF test-selected (q=0.42)|BPAC,0.6645780334945295,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|paper|QRF test-selected (q=0.42)|BPAC_CI,"[0.583, 0.716]",results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09
+primary|paper|QRF test-selected (q=0.42)|BPAC_point,0.688421052631579,results/sensitivity/primary_metrics_bootstrap_ci.csv,point estimate
+primary|disjoint|DecisionTree|TA,0.8266882036221244,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|DecisionTree|PA,0.403906090871195,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|DecisionTree|UC,0.596093909128805,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|DecisionTree|LE,0.1497609011649329,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|DecisionTree|BPAC,-0.0424269170926769,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|DecisionTree|BPAC_CI,"[-0.131, 0.044]",results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09
+primary|disjoint|DecisionTree|BPAC_point,-0.0421052631578947,results/sensitivity/primary_metrics_bootstrap_ci.csv,point estimate
+primary|disjoint|RandomForest|TA,0.84,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|RandomForest|PA,0.4209098582348001,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|RandomForest|UC,0.5790901417652,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|RandomForest|LE,0.1094893521669451,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|RandomForest|BPAC,-0.0486909313634547,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|RandomForest|BPAC_CI,"[-0.142, 0.043]",results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09
+primary|disjoint|RandomForest|BPAC_point,-0.0484210526315789,results/sensitivity/primary_metrics_bootstrap_ci.csv,point estimate
+primary|disjoint|IRIS_Q42|TA,0.8515266764561918,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|IRIS_Q42|PA,0.6235670797022481,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|IRIS_Q42|UC,0.3764329202977519,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|IRIS_Q42|LE,0.2628832633220572,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|IRIS_Q42|BPAC,0.5100125087216394,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|IRIS_Q42|BPAC_CI,"[0.407, 0.612]",results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09
+primary|disjoint|IRIS_Q42|BPAC_point,0.5094736842105263,results/sensitivity/primary_metrics_bootstrap_ci.csv,point estimate
+primary|disjoint|QRF(q=0.40) fixed|TA,0.8390783162016642,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|QRF(q=0.40) fixed|PA,0.6658519083517955,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|QRF(q=0.40) fixed|UC,0.3341480916482045,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|QRF(q=0.40) fixed|LE,0.3588385661336976,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|QRF(q=0.40) fixed|BPAC,0.6301891446252018,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|QRF(q=0.40) fixed|BPAC_CI,"[0.571, 0.677]",results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09
+primary|disjoint|QRF(q=0.40) fixed|BPAC_point,0.6421052631578947,results/sensitivity/primary_metrics_bootstrap_ci.csv,point estimate
+primary|disjoint|QRF(q=0.41) fixed|TA,0.8395173764072442,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|QRF(q=0.41) fixed|PA,0.6510262998256644,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|QRF(q=0.41) fixed|UC,0.3489737001743357,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|QRF(q=0.41) fixed|LE,0.3420900251087987,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|QRF(q=0.41) fixed|BPAC,0.6207725726925001,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|QRF(q=0.41) fixed|BPAC_CI,"[0.541, 0.674]",results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09
+primary|disjoint|QRF(q=0.41) fixed|BPAC_point,0.6421052631578947,results/sensitivity/primary_metrics_bootstrap_ci.csv,point estimate
+primary|disjoint|QRF(q=0.45) fixed|TA,0.8439363680861477,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|QRF(q=0.45) fixed|PA,0.6109037442616829,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|QRF(q=0.45) fixed|UC,0.389096255738317,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|QRF(q=0.45) fixed|LE,0.2828540202179743,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|QRF(q=0.45) fixed|BPAC,0.5045780109967068,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|QRF(q=0.45) fixed|BPAC_CI,"[0.403, 0.604]",results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09
+primary|disjoint|QRF(q=0.45) fixed|BPAC_point,0.5031578947368421,results/sensitivity/primary_metrics_bootstrap_ci.csv,point estimate
+primary|disjoint|SE OOB-selected (QRF(0.40))|TA,0.8390783162016642,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|SE OOB-selected (QRF(0.40))|PA,0.6658519083517955,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|SE OOB-selected (QRF(0.40))|UC,0.3341480916482045,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|SE OOB-selected (QRF(0.40))|LE,0.3588385661336976,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|SE OOB-selected (QRF(0.40))|BPAC,0.6301891446252018,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|SE OOB-selected (QRF(0.40))|BPAC_CI,"[0.571, 0.677]",results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09
+primary|disjoint|SE OOB-selected (QRF(0.40))|BPAC_point,0.6421052631578947,results/sensitivity/primary_metrics_bootstrap_ci.csv,point estimate
+primary|disjoint|QRF test-selected (q=0.40)|TA,0.8390783162016642,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|QRF test-selected (q=0.40)|PA,0.6658519083517955,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|QRF test-selected (q=0.40)|UC,0.3341480916482045,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|QRF test-selected (q=0.40)|LE,0.3588385661336976,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|QRF test-selected (q=0.40)|BPAC,0.6301891446252018,results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09; bootstrap mean
+primary|disjoint|QRF test-selected (q=0.40)|BPAC_CI,"[0.571, 0.677]",results/sensitivity/primary_metrics_bootstrap_ci.csv,threshold 189.09
+primary|disjoint|QRF test-selected (q=0.40)|BPAC_point,0.6421052631578947,results/sensitivity/primary_metrics_bootstrap_ci.csv,point estimate
+cvqr|paper|base|TA,0.8370543318649045,results/cv_qr/cv_qr_results.csv,CV QR(0.37)
+cvqr|paper|base|PA,0.665221318311012,results/cv_qr/cv_qr_results.csv,CV QR(0.37)
+cvqr|paper|base|UC,0.334778681688988,results/cv_qr/cv_qr_results.csv,CV QR(0.37)
+cvqr|paper|base|LE,0.3686359520799609,results/cv_qr/cv_qr_results.csv,CV QR(0.37)
+cvqr|paper|base|BPAC,0.6227028811039936,results/cv_qr/cv_qr_results.csv,CV QR(0.37)
+cvqr|paper|base|q,0.37,results/cv_qr/cv_qr_results.csv,CV QR(0.37)
+cvqr|paper|base|BPAC_CI,"[0.557, 0.673]",results/cv_qr/cv_qr_results.csv,
+cvqr|paper|base|TA_CI,"[0.8204, 0.8527]",results/cv_qr/cv_qr_results.csv,
+cvqr|paper|half|TA,0.9341918746940774,results/cv_qr/cv_qr_results.csv,CV QR(0.51)
+cvqr|paper|half|PA,0.4282283588395562,results/cv_qr/cv_qr_results.csv,CV QR(0.51)
+cvqr|paper|half|UC,0.5717716411604438,results/cv_qr/cv_qr_results.csv,CV QR(0.51)
+cvqr|paper|half|LE,0.6233950089922801,results/cv_qr/cv_qr_results.csv,CV QR(0.51)
+cvqr|paper|half|BPAC,0.3335144155692708,results/cv_qr/cv_qr_results.csv,CV QR(0.51)
+cvqr|paper|half|q,0.51,results/cv_qr/cv_qr_results.csv,CV QR(0.51)
+cvqr|paper|half|BPAC_CI,"[0.143, 0.461]",results/cv_qr/cv_qr_results.csv,
+cvqr|paper|half|TA_CI,"[0.9232, 0.9447]",results/cv_qr/cv_qr_results.csv,
+cvqr|paper|double|TA,0.8056128242780225,results/cv_qr/cv_qr_results.csv,CV QR(0.44)
+cvqr|paper|double|PA,0.8417279749679895,results/cv_qr/cv_qr_results.csv,CV QR(0.44)
+cvqr|paper|double|UC,0.1582720250320106,results/cv_qr/cv_qr_results.csv,CV QR(0.44)
+cvqr|paper|double|LE,0.1909327590666222,results/cv_qr/cv_qr_results.csv,CV QR(0.44)
+cvqr|paper|double|BPAC,0.8087527975096007,results/cv_qr/cv_qr_results.csv,CV QR(0.44)
+cvqr|paper|double|q,0.44,results/cv_qr/cv_qr_results.csv,CV QR(0.44)
+cvqr|paper|double|BPAC_CI,"[0.781, 0.832]",results/cv_qr/cv_qr_results.csv,
+cvqr|paper|double|TA_CI,"[0.7881, 0.8228]",results/cv_qr/cv_qr_results.csv,
+cvqr|disjoint|base|TA,0.8393103279490944,results/cv_qr/cv_qr_results.csv,CV QR(0.34)
+cvqr|disjoint|base|PA,0.6783535751749947,results/cv_qr/cv_qr_results.csv,CV QR(0.34)
+cvqr|disjoint|base|UC,0.3216464248250053,results/cv_qr/cv_qr_results.csv,CV QR(0.34)
+cvqr|disjoint|base|LE,0.3703943666288724,results/cv_qr/cv_qr_results.csv,CV QR(0.34)
+cvqr|disjoint|base|BPAC,0.6261580646117836,results/cv_qr/cv_qr_results.csv,CV QR(0.34)
+cvqr|disjoint|base|q,0.34,results/cv_qr/cv_qr_results.csv,CV QR(0.34)
+cvqr|disjoint|base|BPAC_CI,"[0.562, 0.677]",results/cv_qr/cv_qr_results.csv,
+cvqr|disjoint|base|TA_CI,"[0.8238, 0.8546]",results/cv_qr/cv_qr_results.csv,
+cvqr|disjoint|half|TA,0.9349177679882524,results/cv_qr/cv_qr_results.csv,CV QR(0.48)
+cvqr|disjoint|half|PA,0.4429611768095934,results/cv_qr/cv_qr_results.csv,CV QR(0.48)
+cvqr|disjoint|half|UC,0.5570388231904065,results/cv_qr/cv_qr_results.csv,CV QR(0.48)
+cvqr|disjoint|half|LE,0.5205797493607653,results/cv_qr/cv_qr_results.csv,CV QR(0.48)
+cvqr|disjoint|half|BPAC,0.3608614132755769,results/cv_qr/cv_qr_results.csv,CV QR(0.48)
+cvqr|disjoint|half|q,0.48,results/cv_qr/cv_qr_results.csv,CV QR(0.48)
+cvqr|disjoint|half|BPAC_CI,"[0.180, 0.492]",results/cv_qr/cv_qr_results.csv,
+cvqr|disjoint|half|TA_CI,"[0.9251, 0.9447]",results/cv_qr/cv_qr_results.csv,
+cvqr|disjoint|double|TA,0.8112873225648557,results/cv_qr/cv_qr_results.csv,CV QR(0.45)
+cvqr|disjoint|double|PA,0.8432093690983906,results/cv_qr/cv_qr_results.csv,CV QR(0.45)
+cvqr|disjoint|double|UC,0.1567906309016093,results/cv_qr/cv_qr_results.csv,CV QR(0.45)
+cvqr|disjoint|double|LE,0.1789769809123689,results/cv_qr/cv_qr_results.csv,CV QR(0.45)
+cvqr|disjoint|double|BPAC,0.8196015301574442,results/cv_qr/cv_qr_results.csv,CV QR(0.45)
+cvqr|disjoint|double|q,0.45,results/cv_qr/cv_qr_results.csv,CV QR(0.45)
+cvqr|disjoint|double|BPAC_CI,"[0.793, 0.843]",results/cv_qr/cv_qr_results.csv,
+cvqr|disjoint|double|TA_CI,"[0.7934, 0.8282]",results/cv_qr/cv_qr_results.csv,
+cv_pruning_min_gap_SE,6.651836846612038,results/cv_qr/cv_pruning_check.csv,
+paired|paper|CV - IRIS|TA,"-0.003 [-0.008, +0.003]",results/cv_qr/paired_comparisons.csv,
+paired|paper|CV - IRIS|PA,"+0.032 [+0.017, +0.048]",results/cv_qr/paired_comparisons.csv,
+paired|paper|CV - IRIS|UC,"-0.032 [-0.048, -0.017]",results/cv_qr/paired_comparisons.csv,
+paired|paper|CV - IRIS|LE,"+0.044 [+0.025, +0.065]",results/cv_qr/paired_comparisons.csv,
+paired|paper|CV - IRIS|BPAC,"+0.037 [-0.056, +0.126]",results/cv_qr/paired_comparisons.csv,
+paired|paper|SE - IRIS|TA,"+0.021 [+0.008, +0.034]",results/cv_qr/paired_comparisons.csv,
+paired|paper|SE - IRIS|PA,"+0.055 [+0.021, +0.090]",results/cv_qr/paired_comparisons.csv,
+paired|paper|SE - IRIS|UC,"-0.055 [-0.090, -0.021]",results/cv_qr/paired_comparisons.csv,
+paired|paper|SE - IRIS|LE,"-0.036 [-0.074, +0.002]",results/cv_qr/paired_comparisons.csv,
+paired|paper|SE - IRIS|BPAC,"+0.067 [+0.002, +0.137]",results/cv_qr/paired_comparisons.csv,
+paired|paper|CV - SE|TA,"-0.024 [-0.037, -0.011]",results/cv_qr/paired_comparisons.csv,
+paired|paper|CV - SE|PA,"-0.023 [-0.058, +0.009]",results/cv_qr/paired_comparisons.csv,
+paired|paper|CV - SE|UC,"+0.023 [-0.009, +0.058]",results/cv_qr/paired_comparisons.csv,
+paired|paper|CV - SE|LE,"+0.080 [+0.038, +0.122]",results/cv_qr/paired_comparisons.csv,
+paired|paper|CV - SE|BPAC,"-0.030 [-0.109, +0.065]",results/cv_qr/paired_comparisons.csv,
+paired|disjoint|CV - IRIS|TA,"-0.012 [-0.021, -0.004]",results/cv_qr/paired_comparisons.csv,
+paired|disjoint|CV - IRIS|PA,"+0.055 [+0.035, +0.076]",results/cv_qr/paired_comparisons.csv,
+paired|disjoint|CV - IRIS|UC,"-0.055 [-0.076, -0.035]",results/cv_qr/paired_comparisons.csv,
+paired|disjoint|CV - IRIS|LE,"+0.108 [+0.077, +0.141]",results/cv_qr/paired_comparisons.csv,
+paired|disjoint|CV - IRIS|BPAC,"+0.116 [-0.026, +0.226]",results/cv_qr/paired_comparisons.csv,
+paired|disjoint|SE - IRIS|TA,"-0.012 [-0.024, -0.001]",results/cv_qr/paired_comparisons.csv,
+paired|disjoint|SE - IRIS|PA,"+0.042 [+0.008, +0.077]",results/cv_qr/paired_comparisons.csv,
+paired|disjoint|SE - IRIS|UC,"-0.042 [-0.077, -0.008]",results/cv_qr/paired_comparisons.csv,
+paired|disjoint|SE - IRIS|LE,"+0.096 [+0.058, +0.136]",results/cv_qr/paired_comparisons.csv,
+paired|disjoint|SE - IRIS|BPAC,"+0.120 [-0.011, +0.222]",results/cv_qr/paired_comparisons.csv,
+paired|disjoint|CV - SE|TA,"+0.000 [-0.013, +0.013]",results/cv_qr/paired_comparisons.csv,
+paired|disjoint|CV - SE|PA,"+0.013 [-0.024, +0.047]",results/cv_qr/paired_comparisons.csv,
+paired|disjoint|CV - SE|UC,"-0.013 [-0.047, +0.024]",results/cv_qr/paired_comparisons.csv,
+paired|disjoint|CV - SE|LE,"+0.012 [-0.034, +0.059]",results/cv_qr/paired_comparisons.csv,
+paired|disjoint|CV - SE|BPAC,"-0.004 [-0.053, +0.056]",results/cv_qr/paired_comparisons.csv,
+rep|paper|n_splits,30,results/sensitivity/repeated_splits_raw.csv,
+rep|paper|SE OOB-selected|BPAC_mean,0.6792973169622795,results/sensitivity/repeated_splits_raw.csv,
+rep|paper|SE OOB-selected|BPAC_sd,0.030377088133171175,results/sensitivity/repeated_splits_raw.csv,
+rep|paper|QRF(q=0.40) fixed|BPAC_mean,0.6727196340062125,results/sensitivity/repeated_splits_raw.csv,
+rep|paper|QRF(q=0.40) fixed|BPAC_sd,0.04028840576481213,results/sensitivity/repeated_splits_raw.csv,
+rep|paper|QRF(q=0.45) fixed|BPAC_mean,0.5339060401259998,results/sensitivity/repeated_splits_raw.csv,
+rep|paper|QRF(q=0.45) fixed|BPAC_sd,0.07155339685437,results/sensitivity/repeated_splits_raw.csv,
+rep|paper|IRIS_Q42|BPAC_mean,0.4828562137856859,results/sensitivity/repeated_splits_raw.csv,
+rep|paper|IRIS_Q42|BPAC_sd,0.052387039172447955,results/sensitivity/repeated_splits_raw.csv,
+rep|paper|RandomForest|BPAC_mean,0.014150183709886532,results/sensitivity/repeated_splits_raw.csv,
+rep|paper|RandomForest|BPAC_sd,0.07454912018579694,results/sensitivity/repeated_splits_raw.csv,
+rep|paper|QRF test-selected|BPAC_mean,0.7029072746397423,results/sensitivity/repeated_splits_raw.csv,
+rep|paper|QRF test-selected|BPAC_sd,0.020905615484154608,results/sensitivity/repeated_splits_raw.csv,
+rep|paper|SE OOB-selected - IRIS_Q42|dBPAC_mean,0.19644110317659366,results/sensitivity/repeated_splits_raw.csv,
+rep|paper|SE OOB-selected - IRIS_Q42|n_positive,30,results/sensitivity/repeated_splits_raw.csv,
+rep|paper|QRF(q=0.40) fixed - QRF(q=0.45) fixed|dBPAC_mean,0.1388135938802126,results/sensitivity/repeated_splits_raw.csv,
+rep|paper|QRF(q=0.40) fixed - QRF(q=0.45) fixed|n_positive,29,results/sensitivity/repeated_splits_raw.csv,
+rep|paper|QRF test-selected - SE OOB-selected|dBPAC_mean,0.02360995767746279,results/sensitivity/repeated_splits_raw.csv,
+rep|paper|QRF test-selected - SE OOB-selected|n_positive,22,results/sensitivity/repeated_splits_raw.csv,
+rep|paper|QRF40-QRF45|dPA_mean,0.05658311429036455,results/sensitivity/repeated_splits_raw.csv,
+rep|paper|QRF40-QRF45|dLE_mean,0.06774073660229578,results/sensitivity/repeated_splits_raw.csv,
+rep|disjoint|n_splits,30,results/sensitivity/repeated_splits_raw.csv,
+rep|disjoint|SE OOB-selected|BPAC_mean,0.643519557658396,results/sensitivity/repeated_splits_raw.csv,
+rep|disjoint|SE OOB-selected|BPAC_sd,0.028692178309480627,results/sensitivity/repeated_splits_raw.csv,
+rep|disjoint|QRF(q=0.40) fixed|BPAC_mean,0.6375849963621901,results/sensitivity/repeated_splits_raw.csv,
+rep|disjoint|QRF(q=0.40) fixed|BPAC_sd,0.034773745133513195,results/sensitivity/repeated_splits_raw.csv,
+rep|disjoint|QRF(q=0.45) fixed|BPAC_mean,0.48918724480504555,results/sensitivity/repeated_splits_raw.csv,
+rep|disjoint|QRF(q=0.45) fixed|BPAC_sd,0.0600743855156623,results/sensitivity/repeated_splits_raw.csv,
+rep|disjoint|IRIS_Q42|BPAC_mean,0.4812012398551998,results/sensitivity/repeated_splits_raw.csv,
+rep|disjoint|IRIS_Q42|BPAC_sd,0.0539665303360253,results/sensitivity/repeated_splits_raw.csv,
+rep|disjoint|RandomForest|BPAC_mean,-0.052063705726641776,results/sensitivity/repeated_splits_raw.csv,
+rep|disjoint|RandomForest|BPAC_sd,0.053386663972038104,results/sensitivity/repeated_splits_raw.csv,
+rep|disjoint|QRF test-selected|BPAC_mean,0.6655524302501229,results/sensitivity/repeated_splits_raw.csv,
+rep|disjoint|QRF test-selected|BPAC_sd,0.016035629828136135,results/sensitivity/repeated_splits_raw.csv,
+rep|disjoint|SE OOB-selected - IRIS_Q42|dBPAC_mean,0.16231831780319622,results/sensitivity/repeated_splits_raw.csv,
+rep|disjoint|SE OOB-selected - IRIS_Q42|n_positive,30,results/sensitivity/repeated_splits_raw.csv,
+rep|disjoint|QRF(q=0.40) fixed - QRF(q=0.45) fixed|dBPAC_mean,0.14839775155714474,results/sensitivity/repeated_splits_raw.csv,
+rep|disjoint|QRF(q=0.40) fixed - QRF(q=0.45) fixed|n_positive,29,results/sensitivity/repeated_splits_raw.csv,
+rep|disjoint|QRF test-selected - SE OOB-selected|dBPAC_mean,0.022032872591726906,results/sensitivity/repeated_splits_raw.csv,
+rep|disjoint|QRF test-selected - SE OOB-selected|n_positive,21,results/sensitivity/repeated_splits_raw.csv,
+rep|disjoint|QRF40-QRF45|dPA_mean,0.05960674008735668,results/sensitivity/repeated_splits_raw.csv,
+rep|disjoint|QRF40-QRF45|dLE_mean,0.07396867129456194,results/sensitivity/repeated_splits_raw.csv,
+rep|disjoint|SE_choices,"{'QRF(0.37)': 1, 'QRF(0.38)': 5, 'QRF(0.39)': 7, 'QRF(0.40)': 12, 'QRF(0.41)': 1, 'QRF(0.42)': 4}",results/sensitivity/repeated_splits_quantile_choice.csv,
+rep|paper|SE_choices,"{'QRF(0.36)': 1, 'QRF(0.38)': 3, 'QRF(0.39)': 8, 'QRF(0.40)': 8, 'QRF(0.41)': 6, 'QRF(0.42)': 3, 'QRF(0.43)': 1}",results/sensitivity/repeated_splits_quantile_choice.csv,
+thr|disjoint|DecisionTree|188.77|mean,0.004798695014191245,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|IRIS_Q42|188.77|mean,0.0038269143171822304,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|QRF test-selected|188.77|mean,-0.0017552705726743094,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|QRF(q=0.40) fixed|188.77|mean,-0.0025197389639172287,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|QRF(q=0.41) fixed|188.77|mean,-0.007441902963245991,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|QRF(q=0.45) fixed|188.77|mean,-0.010068914705993241,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|RandomForest|188.77|mean,-0.0001759011217628617,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|SE OOB-selected|188.77|mean,-0.002991688539395284,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|DecisionTree|188.77|mean,0.000689710546834293,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|IRIS_Q42|188.77|mean,0.004877798773728245,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|QRF test-selected|188.77|mean,-0.003872226662015773,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|QRF(q=0.40) fixed|188.77|mean,-0.0036453324687725774,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|QRF(q=0.41) fixed|188.77|mean,-0.0023501956002773567,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|QRF(q=0.45) fixed|188.77|mean,-0.003644590834911295,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|RandomForest|188.77|mean,3.9070842751321e-05,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|SE OOB-selected|188.77|mean,-0.002013664463760149,results/sensitivity/repeated_splits_raw.csv,
+thr|all|188.77|max_abs,0.0799442231075695,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|DecisionTree|189.05|mean,0.0010398365199140807,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|IRIS_Q42|189.05|mean,0.000726979008197141,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|QRF test-selected|189.05|mean,0.00021534409133772877,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|QRF(q=0.40) fixed|189.05|mean,0.0008522803580423159,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|QRF(q=0.41) fixed|189.05|mean,-0.0007464620086827874,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|QRF(q=0.45) fixed|189.05|mean,0.0004695209425165788,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|RandomForest|189.05|mean,-2.6307848220554915e-05,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|SE OOB-selected|189.05|mean,0.000890905461526137,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|DecisionTree|189.05|mean,0.0010999630833516002,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|IRIS_Q42|189.05|mean,0.0012183223295762788,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|QRF test-selected|189.05|mean,0.0001752535903208896,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|QRF(q=0.40) fixed|189.05|mean,0.00021634290679541554,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|QRF(q=0.41) fixed|189.05|mean,0.0008118471355485417,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|QRF(q=0.45) fixed|189.05|mean,0.0010176152407929426,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|RandomForest|189.05|mean,0.0005373499810806709,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|SE OOB-selected|189.05|mean,0.0011214104474496112,results/sensitivity/repeated_splits_raw.csv,
+thr|all|189.05|max_abs,0.02066115702479332,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|DecisionTree|194.10|mean,0.03348597454879642,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|IRIS_Q42|194.10|mean,0.02078947096174265,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|QRF test-selected|194.10|mean,0.00868548953270155,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|QRF(q=0.40) fixed|194.10|mean,0.010274588895776227,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|QRF(q=0.41) fixed|194.10|mean,0.010142230649498289,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|QRF(q=0.45) fixed|194.10|mean,0.01950943150912424,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|RandomForest|194.10|mean,0.03990703059510094,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|SE OOB-selected|194.10|mean,0.007906845404165771,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|DecisionTree|194.10|mean,0.040532882009337814,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|IRIS_Q42|194.10|mean,0.01966715798131478,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|QRF test-selected|194.10|mean,0.005043768478304689,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|QRF(q=0.40) fixed|194.10|mean,0.005725672569799852,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|QRF(q=0.41) fixed|194.10|mean,0.013754416830562095,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|QRF(q=0.45) fixed|194.10|mean,0.029244587629359848,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|RandomForest|194.10|mean,0.04139223992093367,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|SE OOB-selected|194.10|mean,0.006805064897751141,results/sensitivity/repeated_splits_raw.csv,
+thr|all|194.10|max_abs,0.17558115015742132,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|DecisionTree|train-sample|mean,0.011958738395305294,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|IRIS_Q42|train-sample|mean,0.011064865989671189,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|QRF test-selected|train-sample|mean,0.0014259883017310848,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|QRF(q=0.40) fixed|train-sample|mean,0.00628852729661995,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|QRF(q=0.41) fixed|train-sample|mean,0.0025024615838172876,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|QRF(q=0.45) fixed|train-sample|mean,0.004460610578128131,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|RandomForest|train-sample|mean,0.021701886461540705,results/sensitivity/repeated_splits_raw.csv,
+thr|disjoint|SE OOB-selected|train-sample|mean,-0.000806471381104575,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|DecisionTree|train-sample|mean,0.006643947140341029,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|IRIS_Q42|train-sample|mean,0.005715812953075824,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|QRF test-selected|train-sample|mean,-0.0023942090661096833,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|QRF(q=0.40) fixed|train-sample|mean,0.0009011998523081877,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|QRF(q=0.41) fixed|train-sample|mean,-0.00020786681088485654,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|QRF(q=0.45) fixed|train-sample|mean,-0.00013323302376681557,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|RandomForest|train-sample|mean,0.0030366264728058224,results/sensitivity/repeated_splits_raw.csv,
+thr|paper|SE OOB-selected|train-sample|mean,-0.0024602920251275123,results/sensitivity/repeated_splits_raw.csv,
+thr|all|train-sample|max_abs,0.2860468815524995,results/sensitivity/repeated_splits_raw.csv,
+train_line_min,179.3610984444444,results/sensitivity/repeated_splits_raw.csv,
+train_line_max,200.9581108333333,results/sensitivity/repeated_splits_raw.csv,
+corr|paper|0 pre-freeze|IRIS QR(0.42)|BPAC,0.611,results/audit/correction_impact.csv,
+corr|paper|0 pre-freeze|IRIS QR(0.42)|PA,0.6619,results/audit/correction_impact.csv,
+corr|paper|0 pre-freeze|QRF(0.40) fixed|BPAC,0.6648,results/audit/correction_impact.csv,
+corr|paper|0 pre-freeze|QRF(0.40) fixed|PA,0.6953,results/audit/correction_impact.csv,
+corr|paper|0 pre-freeze|QRF(0.41) fixed|BPAC,0.6727,results/audit/correction_impact.csv,
+corr|paper|0 pre-freeze|QRF(0.41) fixed|PA,0.7021,results/audit/correction_impact.csv,
+corr|paper|0 pre-freeze|selected: QRF(0.45)|BPAC,0.6271,results/audit/correction_impact.csv,
+corr|paper|0 pre-freeze|selected: QRF(0.45)|PA,0.7311,results/audit/correction_impact.csv,
+corr|paper|1 +C1 metrics|IRIS QR(0.42)|BPAC,0.5858,results/audit/correction_impact.csv,
+corr|paper|1 +C1 metrics|IRIS QR(0.42)|PA,0.6334,results/audit/correction_impact.csv,
+corr|paper|1 +C1 metrics|QRF(0.40) fixed|BPAC,0.6737,results/audit/correction_impact.csv,
+corr|paper|1 +C1 metrics|QRF(0.40) fixed|PA,0.705,results/audit/correction_impact.csv,
+corr|paper|1 +C1 metrics|QRF(0.41) fixed|BPAC,0.6697,results/audit/correction_impact.csv,
+corr|paper|1 +C1 metrics|QRF(0.41) fixed|PA,0.6988,results/audit/correction_impact.csv,
+corr|paper|1 +C1 metrics|selected: QRF(0.40)|BPAC,0.6737,results/audit/correction_impact.csv,
+corr|paper|1 +C1 metrics|selected: QRF(0.40)|PA,0.705,results/audit/correction_impact.csv,
+corr|paper|2 +C2 all-leaf QRF|IRIS QR(0.42)|BPAC,0.5858,results/audit/correction_impact.csv,
+corr|paper|2 +C2 all-leaf QRF|IRIS QR(0.42)|PA,0.6334,results/audit/correction_impact.csv,
+corr|paper|2 +C2 all-leaf QRF|QRF(0.40) fixed|BPAC,0.6673,results/audit/correction_impact.csv,
+corr|paper|2 +C2 all-leaf QRF|QRF(0.40) fixed|PA,0.7116,results/audit/correction_impact.csv,
+corr|paper|2 +C2 all-leaf QRF|QRF(0.41) fixed|BPAC,0.6731,results/audit/correction_impact.csv,
+corr|paper|2 +C2 all-leaf QRF|QRF(0.41) fixed|PA,0.7074,results/audit/correction_impact.csv,
+corr|paper|2 +C2 all-leaf QRF|selected: QRF(0.40)|BPAC,0.6673,results/audit/correction_impact.csv,
+corr|paper|2 +C2 all-leaf QRF|selected: QRF(0.40)|PA,0.7116,results/audit/correction_impact.csv,
+corr|paper|3 +C3 OOB selection|IRIS QR(0.42)|BPAC,0.5858,results/audit/correction_impact.csv,
+corr|paper|3 +C3 OOB selection|IRIS QR(0.42)|PA,0.6334,results/audit/correction_impact.csv,
+corr|paper|3 +C3 OOB selection|QRF(0.40) fixed|BPAC,0.6673,results/audit/correction_impact.csv,
+corr|paper|3 +C3 OOB selection|QRF(0.40) fixed|PA,0.7116,results/audit/correction_impact.csv,
+corr|paper|3 +C3 OOB selection|QRF(0.41) fixed|BPAC,0.6731,results/audit/correction_impact.csv,
+corr|paper|3 +C3 OOB selection|QRF(0.41) fixed|PA,0.7074,results/audit/correction_impact.csv,
+corr|paper|3 +C3 OOB selection|selected: QRF(0.43)|BPAC,0.653,results/audit/correction_impact.csv,
+corr|paper|3 +C3 OOB selection|selected: QRF(0.43)|PA,0.688,results/audit/correction_impact.csv,
+corr|disjoint|0 pre-freeze|IRIS QR(0.42)|BPAC,0.5741,results/audit/correction_impact.csv,
+corr|disjoint|0 pre-freeze|IRIS QR(0.42)|PA,0.7039,results/audit/correction_impact.csv,
+corr|disjoint|0 pre-freeze|QRF(0.40) fixed|BPAC,0.6223,results/audit/correction_impact.csv,
+corr|disjoint|0 pre-freeze|QRF(0.40) fixed|PA,0.6523,results/audit/correction_impact.csv,
+corr|disjoint|0 pre-freeze|QRF(0.41) fixed|BPAC,0.6226,results/audit/correction_impact.csv,
+corr|disjoint|0 pre-freeze|QRF(0.41) fixed|PA,0.6583,results/audit/correction_impact.csv,
+corr|disjoint|0 pre-freeze|selected: QRF(0.40)|BPAC,0.6223,results/audit/correction_impact.csv,
+corr|disjoint|0 pre-freeze|selected: QRF(0.40)|PA,0.6523,results/audit/correction_impact.csv,
+corr|disjoint|1 +C1 metrics|IRIS QR(0.42)|BPAC,0.51,results/audit/correction_impact.csv,
+corr|disjoint|1 +C1 metrics|IRIS QR(0.42)|PA,0.6236,results/audit/correction_impact.csv,
+corr|disjoint|1 +C1 metrics|QRF(0.40) fixed|BPAC,0.625,results/audit/correction_impact.csv,
+corr|disjoint|1 +C1 metrics|QRF(0.40) fixed|PA,0.6553,results/audit/correction_impact.csv,
+corr|disjoint|1 +C1 metrics|QRF(0.41) fixed|BPAC,0.6104,results/audit/correction_impact.csv,
+corr|disjoint|1 +C1 metrics|QRF(0.41) fixed|PA,0.6448,results/audit/correction_impact.csv,
+corr|disjoint|1 +C1 metrics|selected: QRF(0.40)|BPAC,0.625,results/audit/correction_impact.csv,
+corr|disjoint|1 +C1 metrics|selected: QRF(0.40)|PA,0.6553,results/audit/correction_impact.csv,
+corr|disjoint|2 +C2 all-leaf QRF|IRIS QR(0.42)|BPAC,0.51,results/audit/correction_impact.csv,
+corr|disjoint|2 +C2 all-leaf QRF|IRIS QR(0.42)|PA,0.6236,results/audit/correction_impact.csv,
+corr|disjoint|2 +C2 all-leaf QRF|QRF(0.40) fixed|BPAC,0.6302,results/audit/correction_impact.csv,
+corr|disjoint|2 +C2 all-leaf QRF|QRF(0.40) fixed|PA,0.6659,results/audit/correction_impact.csv,
+corr|disjoint|2 +C2 all-leaf QRF|QRF(0.41) fixed|BPAC,0.6208,results/audit/correction_impact.csv,
+corr|disjoint|2 +C2 all-leaf QRF|QRF(0.41) fixed|PA,0.651,results/audit/correction_impact.csv,
+corr|disjoint|2 +C2 all-leaf QRF|selected: QRF(0.40)|BPAC,0.6302,results/audit/correction_impact.csv,
+corr|disjoint|2 +C2 all-leaf QRF|selected: QRF(0.40)|PA,0.6659,results/audit/correction_impact.csv,
+corr|disjoint|3 +C3 OOB selection|IRIS QR(0.42)|BPAC,0.51,results/audit/correction_impact.csv,
+corr|disjoint|3 +C3 OOB selection|IRIS QR(0.42)|PA,0.6236,results/audit/correction_impact.csv,
+corr|disjoint|3 +C3 OOB selection|QRF(0.40) fixed|BPAC,0.6302,results/audit/correction_impact.csv,
+corr|disjoint|3 +C3 OOB selection|QRF(0.40) fixed|PA,0.6659,results/audit/correction_impact.csv,
+corr|disjoint|3 +C3 OOB selection|QRF(0.41) fixed|BPAC,0.6208,results/audit/correction_impact.csv,
+corr|disjoint|3 +C3 OOB selection|QRF(0.41) fixed|PA,0.651,results/audit/correction_impact.csv,
+corr|disjoint|3 +C3 OOB selection|selected: QRF(0.40)|BPAC,0.6302,results/audit/correction_impact.csv,
+corr|disjoint|3 +C3 OOB selection|selected: QRF(0.40)|PA,0.6659,results/audit/correction_impact.csv,
+legacy|train_models.py (old)|paper|DT|BPAC,0.1784,results/audit/config_audit.csv,
+legacy|train_models.py (old)|paper|RF|BPAC,0.0742,results/audit/config_audit.csv,
+legacy|train_models.py (old)|paper|QRF(test-sel q=0.40)|BPAC,0.6737,results/audit/config_audit.csv,
+legacy|train_models.py (old)|paper|QRF(q=0.40)|BPAC,0.6737,results/audit/config_audit.csv,
+legacy|train_models.py (old)|paper|QRF(q=0.45)|BPAC,0.5699,results/audit/config_audit.csv,
+legacy|train_models.py (old)|disjoint|DT|BPAC,-0.0424,results/audit/config_audit.csv,
+legacy|train_models.py (old)|disjoint|RF|BPAC,-0.0487,results/audit/config_audit.csv,
+legacy|train_models.py (old)|disjoint|QRF(test-sel q=0.40)|BPAC,0.625,results/audit/config_audit.csv,
+legacy|train_models.py (old)|disjoint|QRF(q=0.40)|BPAC,0.625,results/audit/config_audit.csv,
+legacy|train_models.py (old)|disjoint|QRF(q=0.45)|BPAC,0.4774,results/audit/config_audit.csv,
+legacy|replication_report.py (old)|paper|DT|BPAC,0.7491,results/audit/config_audit.csv,
+legacy|replication_report.py (old)|paper|RF|BPAC,0.2724,results/audit/config_audit.csv,
+legacy|replication_report.py (old)|paper|QRF(test-sel q=0.40)|BPAC,0.7844,results/audit/config_audit.csv,
+legacy|replication_report.py (old)|paper|QRF(q=0.40)|BPAC,0.7844,results/audit/config_audit.csv,
+legacy|replication_report.py (old)|paper|QRF(q=0.45)|BPAC,0.7732,results/audit/config_audit.csv,
+legacy|replication_report.py (old)|disjoint|DT|BPAC,0.4567,results/audit/config_audit.csv,
+legacy|replication_report.py (old)|disjoint|RF|BPAC,0.0383,results/audit/config_audit.csv,
+legacy|replication_report.py (old)|disjoint|QRF(test-sel q=0.40)|BPAC,0.5864,results/audit/config_audit.csv,
+legacy|replication_report.py (old)|disjoint|QRF(q=0.40)|BPAC,0.5864,results/audit/config_audit.csv,
+legacy|replication_report.py (old)|disjoint|QRF(q=0.45)|BPAC,0.561,results/audit/config_audit.csv,
+a8|B0 frozen|QRF(0.40)|BPAC_mean,0.6844079247202763,results/a8_audit/a8_summary.csv,
+a8|B0 frozen|QRF(0.40)|dBPAC_vs_B0,0.0,results/a8_audit/a8_summary.csv,
+a8|B0 frozen|QRF(0.40)|gap_in_SDs,6.630529501012859,results/a8_audit/a8_summary.csv,
+a8|B0 frozen|QRF(0.41)|BPAC_mean,0.6683480266516578,results/a8_audit/a8_summary.csv,
+a8|B0 frozen|QRF(0.41)|dBPAC_vs_B0,0.0,results/a8_audit/a8_summary.csv,
+a8|B0 frozen|QRF(0.41)|gap_in_SDs,3.9594982628192583,results/a8_audit/a8_summary.csv,
+a8|B0 frozen|SE|BPAC_mean,0.6850756629337843,results/a8_audit/a8_summary.csv,
+a8|B0 frozen|SE|dBPAC_vs_B0,0.0,results/a8_audit/a8_summary.csv,
+a8|B0 frozen|SE|gap_in_SDs,7.229547770543952,results/a8_audit/a8_summary.csv,
+a8|E1 one value/leaf|QRF(0.40)|BPAC_mean,0.6835969814215694,results/a8_audit/a8_summary.csv,
+a8|E1 one value/leaf|QRF(0.40)|dBPAC_vs_B0,-0.0008109432987069,results/a8_audit/a8_summary.csv,
+a8|E1 one value/leaf|QRF(0.40)|gap_in_SDs,6.825241875618435,results/a8_audit/a8_summary.csv,
+a8|E1 one value/leaf|QRF(0.41)|BPAC_mean,0.6633743603195963,results/a8_audit/a8_summary.csv,
+a8|E1 one value/leaf|QRF(0.41)|dBPAC_vs_B0,-0.0049736663320615,results/a8_audit/a8_summary.csv,
+a8|E1 one value/leaf|QRF(0.41)|gap_in_SDs,3.4933665728949124,results/a8_audit/a8_summary.csv,
+a8|E1 one value/leaf|SE|BPAC_mean,0.6888928026807424,results/a8_audit/a8_summary.csv,
+a8|E1 one value/leaf|SE|dBPAC_vs_B0,0.003817139746958,results/a8_audit/a8_summary.csv,
+a8|E1 one value/leaf|SE|gap_in_SDs,7.7964261290195935,results/a8_audit/a8_summary.csv,
+a8|E2 R node rule|QRF(0.40)|BPAC_mean,0.7281626979972392,results/a8_audit/a8_summary.csv,
+a8|E2 R node rule|QRF(0.40)|dBPAC_vs_B0,0.0437547732769628,results/a8_audit/a8_summary.csv,
+a8|E2 R node rule|QRF(0.40)|gap_in_SDs,8.87127549193583,results/a8_audit/a8_summary.csv,
+a8|E2 R node rule|QRF(0.41)|BPAC_mean,0.7271714329516228,results/a8_audit/a8_summary.csv,
+a8|E2 R node rule|QRF(0.41)|dBPAC_vs_B0,0.0588234062999649,results/a8_audit/a8_summary.csv,
+a8|E2 R node rule|QRF(0.41)|gap_in_SDs,9.431527810410474,results/a8_audit/a8_summary.csv,
+a8|E2 R node rule|SE|BPAC_mean,0.7231355692613131,results/a8_audit/a8_summary.csv,
+a8|E2 R node rule|SE|dBPAC_vs_B0,0.0380599063275287,results/a8_audit/a8_summary.csv,
+a8|E2 R node rule|SE|gap_in_SDs,6.510821943065912,results/a8_audit/a8_summary.csv,
+a8|E3 R qrf procedure|QRF(0.40)|BPAC_mean,0.677883674927201,results/a8_audit/a8_summary.csv,
+a8|E3 R qrf procedure|QRF(0.40)|dBPAC_vs_B0,-0.0065242497930753,results/a8_audit/a8_summary.csv,
+a8|E3 R qrf procedure|QRF(0.40)|gap_in_SDs,5.030435097308359,results/a8_audit/a8_summary.csv,
+a8|E3 R qrf procedure|QRF(0.41)|BPAC_mean,0.6609456217718932,results/a8_audit/a8_summary.csv,
+a8|E3 R qrf procedure|QRF(0.41)|dBPAC_vs_B0,-0.0074024048797646,results/a8_audit/a8_summary.csv,
+a8|E3 R qrf procedure|QRF(0.41)|gap_in_SDs,3.207549246783972,results/a8_audit/a8_summary.csv,
+a8|E3 R qrf procedure|SE|BPAC_mean,0.6809029891453326,results/a8_audit/a8_summary.csv,
+a8|E3 R qrf procedure|SE|dBPAC_vs_B0,-0.0041726737884516,results/a8_audit/a8_summary.csv,
+a8|E3 R qrf procedure|SE|gap_in_SDs,6.528628303250492,results/a8_audit/a8_summary.csv,
+a8|E4 full R emulation|QRF(0.40)|BPAC_mean,0.7384385853247817,results/a8_audit/a8_summary.csv,
+a8|E4 full R emulation|QRF(0.40)|dBPAC_vs_B0,0.0540306606045053,results/a8_audit/a8_summary.csv,
+a8|E4 full R emulation|QRF(0.40)|gap_in_SDs,9.665159833323386,results/a8_audit/a8_summary.csv,
+a8|E4 full R emulation|QRF(0.41)|BPAC_mean,0.7408445883942918,results/a8_audit/a8_summary.csv,
+a8|E4 full R emulation|QRF(0.41)|dBPAC_vs_B0,0.0724965617426339,results/a8_audit/a8_summary.csv,
+a8|E4 full R emulation|QRF(0.41)|gap_in_SDs,8.753765566619196,results/a8_audit/a8_summary.csv,
+a8|E4 full R emulation|SE|BPAC_mean,0.7247362525146673,results/a8_audit/a8_summary.csv,
+a8|E4 full R emulation|SE|dBPAC_vs_B0,0.039660589580883,results/a8_audit/a8_summary.csv,
+a8|E4 full R emulation|SE|gap_in_SDs,5.18976417870546,results/a8_audit/a8_summary.csv,
+a8|E5 OOB dedup|QRF(0.40)|BPAC_mean,0.6844079247202763,results/a8_audit/a8_summary.csv,
+a8|E5 OOB dedup|QRF(0.40)|dBPAC_vs_B0,0.0,results/a8_audit/a8_summary.csv,
+a8|E5 OOB dedup|QRF(0.40)|gap_in_SDs,6.630529501012859,results/a8_audit/a8_summary.csv,
+a8|E5 OOB dedup|QRF(0.41)|BPAC_mean,0.6683480266516578,results/a8_audit/a8_summary.csv,
+a8|E5 OOB dedup|QRF(0.41)|dBPAC_vs_B0,0.0,results/a8_audit/a8_summary.csv,
+a8|E5 OOB dedup|QRF(0.41)|gap_in_SDs,3.9594982628192583,results/a8_audit/a8_summary.csv,
+a8|E5 OOB dedup|SE|BPAC_mean,0.6822000124116964,results/a8_audit/a8_summary.csv,
+a8|E5 OOB dedup|SE|dBPAC_vs_B0,-0.0028756505220879,results/a8_audit/a8_summary.csv,
+a8|E5 OOB dedup|SE|gap_in_SDs,7.065091395858127,results/a8_audit/a8_summary.csv,
+a8|E6 regions one-hot|QRF(0.40)|BPAC_mean,0.6712982791676965,results/a8_audit/a8_summary.csv,
+a8|E6 regions one-hot|QRF(0.40)|dBPAC_vs_B0,-0.0131096455525798,results/a8_audit/a8_summary.csv,
+a8|E6 regions one-hot|QRF(0.40)|gap_in_SDs,4.575209407245252,results/a8_audit/a8_summary.csv,
+a8|E6 regions one-hot|QRF(0.41)|BPAC_mean,0.6556442747981901,results/a8_audit/a8_summary.csv,
+a8|E6 regions one-hot|QRF(0.41)|dBPAC_vs_B0,-0.0127037518534677,results/a8_audit/a8_summary.csv,
+a8|E6 regions one-hot|QRF(0.41)|gap_in_SDs,3.0256297043614078,results/a8_audit/a8_summary.csv,
+a8|E6 regions one-hot|SE|BPAC_mean,0.6875636641796499,results/a8_audit/a8_summary.csv,
+a8|E6 regions one-hot|SE|dBPAC_vs_B0,0.0024880012458655,results/a8_audit/a8_summary.csv,
+a8|E6 regions one-hot|SE|gap_in_SDs,8.333360424928495,results/a8_audit/a8_summary.csv,
+a8|E7 log target|QRF(0.40)|BPAC_mean,0.683666694761227,results/a8_audit/a8_summary.csv,
+a8|E7 log target|QRF(0.40)|dBPAC_vs_B0,-0.0007412299590493,results/a8_audit/a8_summary.csv,
+a8|E7 log target|QRF(0.40)|gap_in_SDs,8.92083971121894,results/a8_audit/a8_summary.csv,
+a8|E7 log target|QRF(0.41)|BPAC_mean,0.6809955288750069,results/a8_audit/a8_summary.csv,
+a8|E7 log target|QRF(0.41)|dBPAC_vs_B0,0.012647502223349,results/a8_audit/a8_summary.csv,
+a8|E7 log target|QRF(0.41)|gap_in_SDs,5.407030488246142,results/a8_audit/a8_summary.csv,
+a8|E7 log target|SE|BPAC_mean,0.682817082647036,results/a8_audit/a8_summary.csv,
+a8|E7 log target|SE|dBPAC_vs_B0,-0.0022585802867483,results/a8_audit/a8_summary.csv,
+a8|E7 log target|SE|gap_in_SDs,6.94233241461632,results/a8_audit/a8_summary.csv,
+a8|E8 line P24.03|QRF(0.40)|BPAC_mean,0.6821822207002999,results/a8_audit/a8_summary.csv,
+a8|E8 line P24.03|QRF(0.40)|dBPAC_vs_B0,-0.0022257040199764,results/a8_audit/a8_summary.csv,
+a8|E8 line P24.03|QRF(0.40)|gap_in_SDs,6.754700470520818,results/a8_audit/a8_summary.csv,
+a8|E8 line P24.03|QRF(0.41)|BPAC_mean,0.6671690955768351,results/a8_audit/a8_summary.csv,
+a8|E8 line P24.03|QRF(0.41)|dBPAC_vs_B0,-0.0011789310748226,results/a8_audit/a8_summary.csv,
+a8|E8 line P24.03|QRF(0.41)|gap_in_SDs,3.93011149871923,results/a8_audit/a8_summary.csv,
+a8|E8 line P24.03|SE|BPAC_mean,0.6825972279768014,results/a8_audit/a8_summary.csv,
+a8|E8 line P24.03|SE|dBPAC_vs_B0,-0.0024784349569828,results/a8_audit/a8_summary.csv,
+a8|E8 line P24.03|SE|gap_in_SDs,7.705163284738137,results/a8_audit/a8_summary.csv,
+a8|E9 R emulation+P24.03|QRF(0.40)|BPAC_mean,0.7365862958245076,results/a8_audit/a8_summary.csv,
+a8|E9 R emulation+P24.03|QRF(0.40)|dBPAC_vs_B0,0.0521783711042312,results/a8_audit/a8_summary.csv,
+a8|E9 R emulation+P24.03|QRF(0.40)|gap_in_SDs,9.979406645569442,results/a8_audit/a8_summary.csv,
+a8|E9 R emulation+P24.03|QRF(0.41)|BPAC_mean,0.7381121408853856,results/a8_audit/a8_summary.csv,
+a8|E9 R emulation+P24.03|QRF(0.41)|dBPAC_vs_B0,0.0697641142337277,results/a8_audit/a8_summary.csv,
+a8|E9 R emulation+P24.03|QRF(0.41)|gap_in_SDs,9.62645353611588,results/a8_audit/a8_summary.csv,
+a8|E9 R emulation+P24.03|SE|BPAC_mean,0.7270832719025948,results/a8_audit/a8_summary.csv,
+a8|E9 R emulation+P24.03|SE|dBPAC_vs_B0,0.0420076089688105,results/a8_audit/a8_summary.csv,
+a8|E9 R emulation+P24.03|SE|gap_in_SDs,6.107872945892143,results/a8_audit/a8_summary.csv,
+fingerprint|G_ALIMENTOS_pc,5.82 / 62.90,results/a8_audit/a8_data_diagnostics_fingerprint.csv,base P24.03
+fingerprint|G_ALIM_DENTRO_pc + G_NO_ALIMENTARIO_pc,5.70 / 61.14,results/a8_audit/a8_data_diagnostics_fingerprint.csv,base P24.03
+fingerprint|G_TOTAL / sqrt(hhsize),5.73 / 59.86,results/a8_audit/a8_data_diagnostics_fingerprint.csv,base P24.03
+fingerprint|G_TOTAL / hhsize^0.75,5.70 / 58.88,results/a8_audit/a8_data_diagnostics_fingerprint.csv,base P24.03
+fingerprint|G_TOTAL_pc - G_VIVIENDA_pc,6.07 / 59.13,results/a8_audit/a8_data_diagnostics_fingerprint.csv,base P24.03
+fingerprint|G_TOTAL_pc - G_EDUCACION_pc,6.12 / 57.95,results/a8_audit/a8_data_diagnostics_fingerprint.csv,base P24.03
+fingerprint|G_TOTAL_pc (frozen),6.07 / 57.00,results/a8_audit/a8_data_diagnostics_fingerprint.csv,base P24.03
+fingerprint|G_TOTAL household,6.63 / 56.31,results/a8_audit/a8_data_diagnostics_fingerprint.csv,base P24.03
+fingerprint|y_percapB (income),14.37 / 42.02,results/a8_audit/a8_data_diagnostics_fingerprint.csv,base P24.03
+row5_ours_frozen,TA 84.65 PA 61.1 UC 38.9 LE 24.95 BPAC 47.15,results/a8_audit/a8_data_diagnostics_row5.csv,
+row5_best_variant,G_TOTAL_pc/P24.03/no regions/level: TA 84.14 PA 61.0 UC 39.0 LE 26.99 BPAC 48.98,results/a8_audit/a8_data_diagnostics_row5.csv,
+row5_n_variants,21,results/a8_audit/a8_data_diagnostics_row5.csv,
+a2|paper|base|IRIS QR(0.38) in-sample best|BPAC,"0.623 [0.556, 0.672]",results/table_a2/table_a2_results.csv,
+a2|paper|base|rate_full,0.2420460107684777,results/table_a2/table_a2_results.csv,
+a2|paper|base|CV QR(0.37)|BPAC,"0.623 [0.557, 0.673]",results/table_a2/table_a2_results.csv,
+a2|paper|base|rate_full,0.2420460107684777,results/table_a2/table_a2_results.csv,
+a2|paper|base|SE QRF(0.43)|BPAC,"0.653 [0.558, 0.713]",results/table_a2/table_a2_results.csv,
+a2|paper|base|rate_full,0.2420460107684777,results/table_a2/table_a2_results.csv,
+a2|paper|base|IRIS QR(0.42) not re-tuned|BPAC,"0.586 [0.486, 0.657]",results/table_a2/table_a2_results.csv,
+a2|paper|base|rate_full,0.2420460107684777,results/table_a2/table_a2_results.csv,
+a2|paper|half|IRIS QR(0.51) in-sample best|BPAC,"0.334 [0.143, 0.461]",results/table_a2/table_a2_results.csv,
+a2|paper|half|rate_full,0.0609397944199706,results/table_a2/table_a2_results.csv,
+a2|paper|half|CV QR(0.51)|BPAC,"0.334 [0.143, 0.461]",results/table_a2/table_a2_results.csv,
+a2|paper|half|rate_full,0.0609397944199706,results/table_a2/table_a2_results.csv,
+a2|paper|half|SE QRF(0.27)|BPAC,"0.492 [0.336, 0.602]",results/table_a2/table_a2_results.csv,
+a2|paper|half|rate_full,0.0609397944199706,results/table_a2/table_a2_results.csv,
+a2|paper|half|IRIS QR(0.42) not re-tuned|BPAC,"0.233 [-0.021, 0.433]",results/table_a2/table_a2_results.csv,
+a2|paper|half|rate_full,0.0609397944199706,results/table_a2/table_a2_results.csv,
+a2|paper|double|IRIS QR(0.45) in-sample best|BPAC,"0.811 [0.781, 0.833]",results/table_a2/table_a2_results.csv,
+a2|paper|double|rate_full,0.5709740577581988,results/table_a2/table_a2_results.csv,
+a2|paper|double|CV QR(0.44)|BPAC,"0.809 [0.781, 0.832]",results/table_a2/table_a2_results.csv,
+a2|paper|double|rate_full,0.5709740577581988,results/table_a2/table_a2_results.csv,
+a2|paper|double|SE QRF(0.53)|BPAC,"0.837 [0.798, 0.859]",results/table_a2/table_a2_results.csv,
+a2|paper|double|rate_full,0.5709740577581988,results/table_a2/table_a2_results.csv,
+a2|paper|double|IRIS QR(0.42) not re-tuned|BPAC,"0.790 [0.759, 0.815]",results/table_a2/table_a2_results.csv,
+a2|paper|double|rate_full,0.5709740577581988,results/table_a2/table_a2_results.csv,
+a2|disjoint|base|IRIS QR(0.36) in-sample best|BPAC,"0.639 [0.564, 0.687]",results/table_a2/table_a2_results.csv,
+a2|disjoint|base|rate_full,0.2420460107684777,results/table_a2/table_a2_results.csv,
+a2|disjoint|base|CV QR(0.34)|BPAC,"0.626 [0.562, 0.677]",results/table_a2/table_a2_results.csv,
+a2|disjoint|base|rate_full,0.2420460107684777,results/table_a2/table_a2_results.csv,
+a2|disjoint|base|SE QRF(0.40)|BPAC,"0.630 [0.571, 0.677]",results/table_a2/table_a2_results.csv,
+a2|disjoint|base|rate_full,0.2420460107684777,results/table_a2/table_a2_results.csv,
+a2|disjoint|base|IRIS QR(0.42) not re-tuned|BPAC,"0.510 [0.407, 0.612]",results/table_a2/table_a2_results.csv,
+a2|disjoint|base|rate_full,0.2420460107684777,results/table_a2/table_a2_results.csv,
+a2|disjoint|half|IRIS QR(0.44) in-sample best|BPAC,"0.393 [0.219, 0.516]",results/table_a2/table_a2_results.csv,
+a2|disjoint|half|rate_full,0.0609397944199706,results/table_a2/table_a2_results.csv,
+a2|disjoint|half|CV QR(0.48)|BPAC,"0.361 [0.180, 0.492]",results/table_a2/table_a2_results.csv,
+a2|disjoint|half|rate_full,0.0609397944199706,results/table_a2/table_a2_results.csv,
+a2|disjoint|half|SE QRF(0.25)|BPAC,"0.379 [0.211, 0.493]",results/table_a2/table_a2_results.csv,
+a2|disjoint|half|rate_full,0.0609397944199706,results/table_a2/table_a2_results.csv,
+a2|disjoint|half|IRIS QR(0.42) not re-tuned|BPAC,"0.368 [0.189, 0.510]",results/table_a2/table_a2_results.csv,
+a2|disjoint|half|rate_full,0.0609397944199706,results/table_a2/table_a2_results.csv,
+a2|disjoint|double|IRIS QR(0.46) in-sample best|BPAC,"0.820 [0.788, 0.842]",results/table_a2/table_a2_results.csv,
+a2|disjoint|double|rate_full,0.5709740577581988,results/table_a2/table_a2_results.csv,
+a2|disjoint|double|CV QR(0.45)|BPAC,"0.820 [0.793, 0.843]",results/table_a2/table_a2_results.csv,
+a2|disjoint|double|rate_full,0.5709740577581988,results/table_a2/table_a2_results.csv,
+a2|disjoint|double|SE QRF(0.52)|BPAC,"0.830 [0.801, 0.851]",results/table_a2/table_a2_results.csv,
+a2|disjoint|double|rate_full,0.5709740577581988,results/table_a2/table_a2_results.csv,
+a2|disjoint|double|IRIS QR(0.42) not re-tuned|BPAC,"0.792 [0.762, 0.821]",results/table_a2/table_a2_results.csv,
+a2|disjoint|double|rate_full,0.5709740577581988,results/table_a2/table_a2_results.csv,
+scan|disjoint|n_thresholds,82,audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_family_ranking.csv,
+scan|disjoint|n_QRF_family_first,82,audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_family_ranking.csv,
+scan|disjoint|n_SE_below_IRIS,0,audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_family_ranking.csv,
+scan|disjoint|SE_minus_IRIS_range,+0.116 to +0.203,audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_family_ranking.csv,
+scan|disjoint|worst_QRF_minus_IRIS_min,0.094688221709007,audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_family_ranking.csv,
+scan|disjoint|n_RF_DT_order_RF_first,20,audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_family_ranking.csv,
+scan|paper|n_thresholds,82,audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_family_ranking.csv,
+scan|paper|n_QRF_family_first,82,audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_family_ranking.csv,
+scan|paper|n_SE_below_IRIS,13,audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_family_ranking.csv,
+scan|paper|SE_minus_IRIS_range,-0.055 to +0.116,audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_family_ranking.csv,
+scan|paper|worst_QRF_minus_IRIS_min,-0.0549999999999999,audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_family_ranking.csv,
+scan|paper|n_RF_DT_order_RF_first,17,audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_family_ranking.csv,
+scan|disjoint|n_paired_CI_excl0,38,audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_metrics.csv,
+scan|paper|n_paired_CI_excl0,15,audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_metrics.csv,
+scan|paper|QRF040_minus_IRIS_min,0.02067183462532296,audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_metrics.csv,
+qpath|QRF|q0.34|BPAC,0.4989473684210526,audit_2026-11-04_step5_quantile_path/outputs/quantile_path_metrics.csv,
+qpath|QRF|q0.36|BPAC,0.5536842105263158,audit_2026-11-04_step5_quantile_path/outputs/quantile_path_metrics.csv,
+qpath|QRF|q0.40|BPAC,0.6421052631578947,audit_2026-11-04_step5_quantile_path/outputs/quantile_path_metrics.csv,
+qpath|QRF|q0.41|BPAC,0.6421052631578947,audit_2026-11-04_step5_quantile_path/outputs/quantile_path_metrics.csv,
+qpath|QRF|q0.42|BPAC,0.5873684210526315,audit_2026-11-04_step5_quantile_path/outputs/quantile_path_metrics.csv,
+qpath|linear QR|q0.34|BPAC,0.6294736842105262,audit_2026-11-04_step5_quantile_path/outputs/quantile_path_metrics.csv,
+qpath|linear QR|q0.36|BPAC,0.6631578947368422,audit_2026-11-04_step5_quantile_path/outputs/quantile_path_metrics.csv,
+qpath|linear QR|q0.40|BPAC,0.5663157894736842,audit_2026-11-04_step5_quantile_path/outputs/quantile_path_metrics.csv,
+qpath|linear QR|q0.41|BPAC,0.5326315789473683,audit_2026-11-04_step5_quantile_path/outputs/quantile_path_metrics.csv,
+qpath|linear QR|q0.42|BPAC,0.5094736842105263,audit_2026-11-04_step5_quantile_path/outputs/quantile_path_metrics.csv,
+qpath|QRF|selected_q,0.4,audit_2026-11-04_step5_quantile_path/outputs/quantile_path_selection_summary.csv,
+qpath|QRF|test_BPAC_at_selected,0.6421052631578947,audit_2026-11-04_step5_quantile_path/outputs/quantile_path_selection_summary.csv,
+qpath|QRF|hindsight_q,0.4,audit_2026-11-04_step5_quantile_path/outputs/quantile_path_selection_summary.csv,
+qpath|QRF|hindsight_BPAC,0.6421052631578947,audit_2026-11-04_step5_quantile_path/outputs/quantile_path_selection_summary.csv,
+qpath|linear QR|selected_q,0.34,audit_2026-11-04_step5_quantile_path/outputs/quantile_path_selection_summary.csv,
+qpath|linear QR|test_BPAC_at_selected,0.6294736842105262,audit_2026-11-04_step5_quantile_path/outputs/quantile_path_selection_summary.csv,
+qpath|linear QR|hindsight_q,0.36,audit_2026-11-04_step5_quantile_path/outputs/quantile_path_selection_summary.csv,
+qpath|linear QR|hindsight_BPAC,0.6631578947368422,audit_2026-11-04_step5_quantile_path/outputs/quantile_path_selection_summary.csv,
+qpath|max_abs_PA_plus_UC_minus_1,1.1102230246251565e-16,audit_2026-11-04_step5_quantile_path/outputs/quantile_path_metrics.csv,
+qpath|max_abs_BPAC_piecewise_residual,2.220446049250313e-16,audit_2026-11-04_step5_quantile_path/outputs/quantile_path_metrics.csv,
+pilot|1000,"CV-QR q=0.33 BPAC 0.625; QRF QRF(0.41) BPAC 0.664; d=-0.039 [-0.077, +0.000]",audit_2026-11-04_repeated_split/outputs/pilot_per_split_results.csv,
+pilot|1001,"CV-QR q=0.34 BPAC 0.626; QRF QRF(0.40) BPAC 0.694; d=-0.068 [-0.110, +0.004]",audit_2026-11-04_repeated_split/outputs/pilot_per_split_results.csv,
+pilot|1002,"CV-QR q=0.34 BPAC 0.659; QRF QRF(0.39) BPAC 0.697; d=-0.038 [-0.084, +0.025]",audit_2026-11-04_repeated_split/outputs/pilot_per_split_results.csv,
+pilot|convergence_warnings_total,0,audit_2026-11-04_repeated_split/outputs/pilot_per_split_results.csv,
+pilot|fit_failures_total,0,audit_2026-11-04_repeated_split/outputs/pilot_per_split_results.csv,
+pilot|repro_check_identical,True,audit_2026-11-04_repeated_split/outputs/repro_check_seed42_stage1.json,
+codebook_all_checks_passed,True,results/audit/data_construction_audit.txt,
+codebook_n_checks_ok,34,results/audit/data_construction_audit.txt,
+disc|paper|testsel_minus_SE_n_pos,22,results/sensitivity/repeated_splits_raw.csv,189.09; BPAC point
+disc|paper|testsel_minus_SE_n_tie,8,results/sensitivity/repeated_splits_raw.csv,ties = both rules chose the same q
+disc|paper|testsel_minus_SE_n_neg,0,results/sensitivity/repeated_splits_raw.csv,
+disc|paper|QRF041_BPAC_mean,0.6576068266264025,results/sensitivity/repeated_splits_raw.csv,30-split mean
+disc|disjoint|testsel_minus_SE_n_pos,21,results/sensitivity/repeated_splits_raw.csv,189.09; BPAC point
+disc|disjoint|testsel_minus_SE_n_tie,9,results/sensitivity/repeated_splits_raw.csv,ties = both rules chose the same q
+disc|disjoint|testsel_minus_SE_n_neg,0,results/sensitivity/repeated_splits_raw.csv,
+disc|disjoint|QRF041_BPAC_mean,0.6265227797179556,results/sensitivity/repeated_splits_raw.csv,30-split mean
+disc|scan|rate_full_170,0.2031326480665687,audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_metrics.csv,
+disc|scan|rate_full_210,0.2841409691629956,audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_metrics.csv,
+disc|scan|paper|170.0|SE OOB-selected,0.5813953488372093,audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_metrics.csv,BPAC point
+disc|scan|paper|170.0|QRF(q=0.40) fixed,0.6201550387596899,audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_metrics.csv,BPAC point
+disc|scan|paper|170.0|QRF(q=0.41) fixed,0.5813953488372093,audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_metrics.csv,BPAC point
+disc|scan|paper|170.0|IRIS_Q42,0.599483204134367,audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_metrics.csv,BPAC point
+disc|scan|paper|174.5|SE OOB-selected,0.5675000000000001,audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_metrics.csv,BPAC point
+disc|scan|paper|174.5|QRF(q=0.40) fixed,0.675,audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_metrics.csv,BPAC point
+disc|scan|paper|174.5|QRF(q=0.41) fixed,0.6325000000000001,audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_metrics.csv,BPAC point
+disc|scan|paper|174.5|IRIS_Q42,0.6225,audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_metrics.csv,BPAC point
+disc|scan|paper|SE_choice_where_below_IRIS,"QRF(0.41), QRF(0.42)",audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_metrics.csv,
+disc|scan|paper|SE_choice_counts_elsewhere,"{'QRF(0.45)': 23, 'QRF(0.44)': 20, 'QRF(0.43)': 13, 'QRF(0.42)': 10, 'QRF(0.41)': 3}",audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_metrics.csv,
+disc|scan|paper|QRF041_minus_IRIS_n_neg,6,audit_2026-11-04_step5_threshold_scan/outputs/threshold_scan_metrics.csv,

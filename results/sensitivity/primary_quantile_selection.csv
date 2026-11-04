@@ -1,0 +1,11 @@
+protocol,threshold,line,se_oob_selected,q_test_selected
+paper,189.09 (full-sample P24.2),189.09145416666667,QRF(0.43),0.42
+paper,"188.77 (full-sample P24.03, published Table 3)",188.7743324791667,QRF(0.43),0.42
+paper,"189.05 (IRIS recon., official ~320 Bs)",189.05,QRF(0.43),0.42
+paper,"194.10 (IRIS recon., official ~328 Bs)",194.1,QRF(0.45),0.41
+paper,train-sample P24.2,185.07951733333334,QRF(0.43),0.42
+disjoint,189.09 (full-sample P24.2),189.09145416666667,QRF(0.40),0.4
+disjoint,"188.77 (full-sample P24.03, published Table 3)",188.7743324791667,QRF(0.40),0.4
+disjoint,"189.05 (IRIS recon., official ~320 Bs)",189.05,QRF(0.40),0.41
+disjoint,"194.10 (IRIS recon., official ~328 Bs)",194.1,QRF(0.40),0.4
+disjoint,train-sample P24.2,185.52002844444448,QRF(0.39),0.4

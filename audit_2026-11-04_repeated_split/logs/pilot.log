@@ -1,0 +1,4 @@
+repro check: {'identical': True, 'max_abs_diff': 0.0, 'shape': [150, 99], 'convergence_warnings': 0, 'fit_failures': 0, 'runtime_s': 519.8}
+seed 1000: CV-QR q=0.33 BPAC=0.6252 | QRF QRF(0.41) BPAC=0.6641 | dBPAC=-0.0388 | warn=0 fail=0 | 1512.4s
+seed 1001: CV-QR q=0.34 BPAC=0.6263 | QRF QRF(0.40) BPAC=0.6940 | dBPAC=-0.0678 | warn=0 fail=0 | 1569.0s
+seed 1002: CV-QR q=0.34 BPAC=0.6594 | QRF QRF(0.39) BPAC=0.6972 | dBPAC=-0.0378 | warn=0 fail=0 | 1544.9s

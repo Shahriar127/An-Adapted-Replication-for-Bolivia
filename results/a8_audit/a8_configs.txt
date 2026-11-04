@@ -1,0 +1,10 @@
+B0 frozen: frozen primary (quantile-forest, min_samples_leaf=5, all leaf obs)  {}
+E1 one value/leaf: quantile-forest max_samples_leaf=1 (one in-bag value per leaf)  {'msl': 1}
+E2 R node rule: RF+QRF: min_samples_split=6, min_samples_leaf=1 (R nodesize=5)  {'node': {'min_samples_split': 6, 'min_samples_leaf': 1}}
+E3 R qrf procedure: R quantregForest 1.3-5 leaf values + type-7 + R OOB (frozen node rule)  {'rqrf': True}
+E4 full R emulation: E2 + E3 combined  {'node': {'min_samples_split': 6, 'min_samples_leaf': 1}, 'rqrf': True}
+E5 OOB dedup: frozen, but OOB treats duplicated households as one (selection only)  {'dedup': True}
+E6 regions one-hot: frozen, regions as 9 binary columns for forests  {'onehot': True}
+E7 log target: frozen, forests trained on log(1+y), quantiles back-transformed  {'logy': True}
+E8 line P24.03: frozen, poverty line = P24.03 (188.77 Bs)  {'p2403': True}
+E9 R emulation+P24.03: E4 + E8 combined  {'node': {'min_samples_split': 6, 'min_samples_leaf': 1}, 'rqrf': True, 'p2403': True}

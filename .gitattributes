@@ -1,0 +1,5 @@
+# Keep byte-verified R source files exactly as downloaded (their SHA-256 sums are recorded)
+audit_2026-11-04_repeated_split/evidence/r_source/* -text
+*.npy binary
+*.npz binary
+*.png binary

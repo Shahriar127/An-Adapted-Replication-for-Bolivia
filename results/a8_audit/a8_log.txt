@@ -1,0 +1,55 @@
+seed 42 done (27s)
+seed 1000 done (64s)
+seed 1001 done (96s)
+seed 1002 done (137s)
+seed 1003 done (180s)
+seed 1004 done (221s)
+seed 1005 done (251s)
+seed 1006 done (285s)
+seed 1007 done (324s)
+seed 1008 done (357s)
+seed 1009 done (392s)
+seed 1010 done (434s)
+seed 1011 done (468s)
+seed 1012 done (503s)
+seed 1013 done (547s)
+seed 1014 done (587s)
+seed 1015 done (617s)
+seed 1016 done (652s)
+seed 1017 done (690s)
+/home/shahriar127/.local/lib/python3.14/site-packages/quantile_forest/_quantile_forest.py:727: UserWarning: Some inputs do not have OOB scores. This probably means too few trees were used to compute any reliable OOB estimates.
+  warn(
+seed 1018 done (723s)
+seed 1019 done (755s)
+               config     model  TA_mean  PA_mean  UC_mean  LE_mean  BPAC_mean  BPAC_std  dBPAC_vs_B0  gap_in_SDs
+            B0 frozen QRF(0.40)    0.856    0.713    0.287    0.297      0.684     0.028        0.000       6.631
+            B0 frozen QRF(0.41)    0.856    0.700    0.300    0.282      0.668     0.042        0.000       3.959
+            B0 frozen        SE    0.855    0.714    0.286    0.301      0.685     0.025        0.000       7.230
+    E1 one value/leaf QRF(0.40)    0.857    0.711    0.289    0.288      0.684     0.027       -0.001       6.825
+    E1 one value/leaf QRF(0.41)    0.858    0.699    0.301    0.272      0.663     0.046       -0.005       3.493
+    E1 one value/leaf        SE    0.858    0.718    0.282    0.295      0.689     0.024        0.004       7.796
+       E2 R node rule QRF(0.40)    0.875    0.764    0.236    0.270      0.728     0.026        0.044       8.871
+       E2 R node rule QRF(0.41)    0.875    0.753    0.247    0.259      0.727     0.024        0.059       9.432
+       E2 R node rule        SE    0.876    0.758    0.242    0.263      0.723     0.034        0.038       6.511
+   E3 R qrf procedure QRF(0.40)    0.856    0.708    0.292    0.292      0.678     0.035       -0.007       5.030
+   E3 R qrf procedure QRF(0.41)    0.856    0.696    0.304    0.278      0.661     0.050       -0.007       3.208
+   E3 R qrf procedure        SE    0.855    0.712    0.288    0.300      0.681     0.027       -0.004       6.529
+  E4 full R emulation QRF(0.40)    0.880    0.772    0.228    0.257      0.738     0.024        0.054       9.665
+  E4 full R emulation QRF(0.41)    0.882    0.764    0.236    0.243      0.741     0.027        0.072       8.754
+  E4 full R emulation        SE    0.881    0.758    0.242    0.239      0.725     0.043        0.040       5.190
+         E5 OOB dedup QRF(0.40)    0.856    0.713    0.287    0.297      0.684     0.028        0.000       6.631
+         E5 OOB dedup QRF(0.41)    0.856    0.700    0.300    0.282      0.668     0.042        0.000       3.959
+         E5 OOB dedup        SE    0.855    0.714    0.286    0.302      0.682     0.026       -0.003       7.065
+   E6 regions one-hot QRF(0.40)    0.856    0.708    0.292    0.292      0.671     0.037       -0.013       4.575
+   E6 regions one-hot QRF(0.41)    0.857    0.697    0.303    0.277      0.656     0.051       -0.013       3.026
+   E6 regions one-hot        SE    0.856    0.714    0.286    0.296      0.688     0.022        0.002       8.333
+        E7 log target QRF(0.40)    0.856    0.722    0.278    0.307      0.684     0.020       -0.001       8.921
+        E7 log target QRF(0.41)    0.857    0.709    0.291    0.290      0.681     0.033        0.013       5.407
+        E7 log target        SE    0.857    0.715    0.285    0.293      0.683     0.026       -0.002       6.942
+       E8 line P24.03 QRF(0.40)    0.856    0.711    0.289    0.299      0.682     0.027       -0.002       6.755
+       E8 line P24.03 QRF(0.41)    0.857    0.699    0.301    0.284      0.667     0.042       -0.001       3.930
+       E8 line P24.03        SE    0.856    0.712    0.288    0.302      0.683     0.023       -0.002       7.705
+E9 R emulation+P24.03 QRF(0.40)    0.880    0.771    0.229    0.260      0.737     0.024        0.052       9.979
+E9 R emulation+P24.03 QRF(0.41)    0.881    0.762    0.238    0.245      0.738     0.025        0.070       9.626
+E9 R emulation+P24.03        SE    0.882    0.758    0.242    0.241      0.727     0.037        0.042       6.108
+done in 755s

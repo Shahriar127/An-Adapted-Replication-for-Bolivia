@@ -1,0 +1,48 @@
+[paper] CV done in 2235s
+[disjoint] CV done in 41353s
+ line_index  stage1_best_q  best_excluded_q  stage1_gap  gap_in_SE protocol   line      stage2_grid
+          0           0.37             0.26    0.128122  20.356734    paper   base 0.27-0.61 (35 q)
+          1           0.51             0.62    0.180261  10.725672    paper   half 0.27-0.61 (35 q)
+          2           0.44             0.26    0.124677  41.283930    paper double 0.27-0.61 (35 q)
+          0           0.34             0.23    0.163223  24.052463 disjoint   base 0.24-0.56 (33 q)
+          1           0.46             0.57    0.109739   6.651837 disjoint   half 0.24-0.56 (33 q)
+          2           0.45             0.23    0.193174  60.191780 disjoint double 0.24-0.56 (33 q)
+protocol   line  iterations  chosen_q
+   paper   base          10      0.37
+   paper   base          50      0.37
+   paper   base         100      0.37
+   paper   base         250      0.36
+   paper   base         500      0.37
+   paper   half          10      0.50
+   paper   half          50      0.51
+   paper   half         100      0.51
+   paper   half         250      0.51
+   paper   half         500      0.51
+   paper double          10      0.45
+   paper double          50      0.44
+   paper double         100      0.44
+   paper double         250      0.44
+   paper double         500      0.44
+disjoint   base          10      0.33
+disjoint   base          50      0.34
+disjoint   base         100      0.34
+disjoint   base         250      0.34
+disjoint   base         500      0.34
+disjoint   half          10      0.44
+disjoint   half          50      0.46
+disjoint   half         100      0.46
+disjoint   half         250      0.48
+disjoint   half         500      0.48
+disjoint double          10      0.44
+disjoint double          50      0.45
+disjoint double         100      0.45
+disjoint double         250      0.45
+disjoint double         500      0.45
+protocol   line       model     TA     PA     UC     LE   BPAC  BPAC_lo  BPAC_hi
+   paper   base CV QR(0.37) 0.8371 0.6652 0.3348 0.3686 0.6227   0.5570   0.6732
+   paper   half CV QR(0.51) 0.9342 0.4282 0.5718 0.6234 0.3335   0.1429   0.4608
+   paper double CV QR(0.44) 0.8056 0.8417 0.1583 0.1909 0.8088   0.7808   0.8325
+disjoint   base CV QR(0.34) 0.8393 0.6784 0.3216 0.3704 0.6262   0.5622   0.6772
+disjoint   half CV QR(0.48) 0.9349 0.4430 0.5570 0.5206 0.3609   0.1804   0.4918
+disjoint double CV QR(0.45) 0.8113 0.8432 0.1568 0.1790 0.8196   0.7930   0.8428
+done in 41353s

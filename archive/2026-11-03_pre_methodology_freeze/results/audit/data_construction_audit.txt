@@ -1,0 +1,53 @@
+1. Household-level variables (person file) — is groupby('folio').first() exact?
+  [OK ] miembros    constant within every household (numero de miembros del hogar (Total))
+  [OK ] G_TOTAL_pc  constant within every household (GASTO CORRIENTE TOTAL DEL HOGAR (BS/MES) per cápita (Bs/mes))
+  [OK ] urb_rur     constant within every household (area urbana y rural)
+  [OK ] depto       constant within every household (departamento)
+  [OK ] s7_02       constant within every household (2. la vivienda que ocupa el hogar es:)
+  [OK ] s7_05       constant within every household (5. material predominante en las paredes de la vivienda)
+  [OK ] s7_08       constant within every household (8. cual es el material mas utilizado en los pisos)
+  [OK ] s7_19       constant within every household (19. tiene un cuarto solo para cocinar?)
+  [OK ] miembros equals number of person rows per household
+  [OK ] s1_05==1 is 'jefe o jefa del hogar'
+  [OK ] exactly one head per household
+
+2. Value labels used for binary features
+  [OK ] urb_rur==2 -> 'rural'
+  [OK ] s7_02==1 -> 'alquilada'
+  [OK ] s7_05==1 -> 'ladrillo/bloques de cemento/hormigón'
+  [OK ] s7_05==5 -> 'madera'
+  [OK ] s7_08==1 -> 'tierra'
+  [OK ] s7_08==5 -> 'cemento'
+  [OK ] s7_19==1 -> 'si'
+
+3. Durable goods (Equipamiento) — one record per (household, item)?
+  [OK ] exactly one row per (folio, s6_16cod) → .first() loses nothing
+  [OK ] all 22 items recorded for every household
+  [OK ] s6_16: 1=Si (owns), 2=No
+  [OK ] s6_16cod==1 -> 'Catre o cama'
+  [OK ] s6_16cod==7 -> 'Refrigerador o Freezer'
+  [OK ] s6_16cod==9 -> 'Computadora'
+  [OK ] s6_16cod==10 -> 'Radiograbador'
+  [OK ] s6_16cod==12 -> 'Televisor'
+  [OK ] s6_16cod==13 -> 'Reproductor de video, VHS, DVD, etc'
+  [OK ] s6_16cod==18 -> 'Ventilador'
+  [OK ] s6_16cod==22 -> 'Automovil (para uso del hogar'
+  [OK ] item 1: count s6_17 present and >=1 whenever owned
+  [OK ] item 9: count s6_17 present and >=1 whenever owned
+  [info] fridge owned but count missing: 1 (irrelevant: fridge is binary)
+
+4. Livestock (Pecuaria) — sheep
+  [OK ] codb=='B' -> 'Ovinos' (sheep)
+  [OK ] one sheep record per household (sum == value)
+  [OK ] s8_10 (stock last month) present iff s8_05==1 (raised sheep)
+  [info] duplicate (folio,codb) rows: 2 — categories ['H'] (not used)
+  [info] households in livestock module: 1340 of 4086; others get sheep=0
+  [info] sheep stock = s8_10 'CUANTOS ANIMALES TENIA HASTA EL MES ANTERIOR'
+
+5. Known approximations (not errors, but not verifiable against the paper)
+  - num_kitchens: s7_19 is binary (dedicated kitchen yes/no); paper says 'number'
+  - sublease: s7_02==1 'alquilada' (rented); no sublease category exists
+  - regions: depto 1–9 (ordinal for trees, dummies for IRIS)
+  - G_TOTAL_pc == 0 for 1 household(s)
+
+ALL CHECKS PASSED
