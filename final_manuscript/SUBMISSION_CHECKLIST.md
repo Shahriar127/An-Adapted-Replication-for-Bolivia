@@ -40,7 +40,8 @@ Rebuild after any edit to the Markdown: `python3 final_manuscript/build_docs.py`
 - [!] **Supervisor listed as third (last) author**, the usual position for a supervisor. If he should instead be acknowledged only, move him to the Acknowledgements and remove him from the byline, `LICENSE` and `CITATION.cff`.
 - [!] **Affiliation assumed the same for all three authors:** Department of CSE, MBSTU, Tangail, Bangladesh. Correct it if a co-author has a different affiliation.
 - [ ] **Funding and acknowledgements** (Declarations). Competing interests are pre-filled as "none", marked [Confirm.]; confirm or edit.
-- [ ] **Repository URL / DOI** in "Data and code availability". This repository (github.com/Shahriar127/An-Adapted-Replication-for-Bolivia) is currently **private**. Make it public, or archive a tagged release on Zenodo to get a DOI, then insert the URL/DOI in the manuscript and rebuild.
+- [x] **Repository URL** inserted in "Data and code availability" (2026-11-07): https://github.com/Shahriar127/An-Adapted-Replication-for-Bolivia
+- [ ] **Make the repository public** before submission (it is private, so reviewers would get a 404). Optional: archive a tagged release on Zenodo and add the DOI.
 - [ ] **Target journal**, then check its word limit (body about 8,000 words), citation style and figure rules.
 - [ ] Confirm the **INE Bolivia data terms** if the journal's data editor asks.
 - [ ] A **cover letter** (journal-specific).
