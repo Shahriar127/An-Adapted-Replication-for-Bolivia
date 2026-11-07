@@ -554,7 +554,7 @@ We do not claim that the forest outperforms the published method or linear quant
 ---
 
 **Data and code availability.**
-* A replication package accompanies this article **[repository URL / DOI to be inserted]**. It contains all code, the frozen methodology, unit tests, aggregate results, the tables and figures, and SHA-256 checksums of the raw survey files. `run_all.sh` reproduces the frozen pipeline; `run_audits.sh` and the `audit_*` directories reproduce the audits.
+* A replication package accompanies this article and is available at https://github.com/Shahriar127/An-Adapted-Replication-for-Bolivia. It contains all code, the frozen methodology, unit tests, aggregate results, the tables and figures, and SHA-256 checksums of the raw survey files. `run_all.sh` reproduces the frozen pipeline; `run_audits.sh` and the `audit_*` directories reproduce the audits.
 * The raw survey files are not redistributed, because we found no open licence permitting redistribution. They can be downloaded from INE Bolivia; the source, file checksums and variable construction are documented in the package. Superseded pre-freeze results are kept in the project's version history.
 
 **Figures:**
