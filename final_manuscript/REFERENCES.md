@@ -14,6 +14,9 @@
 
 | Status | Reference |
 |---|---|
+| V | Instituto Nacional de Estadística. (2005). *Encuesta de Hogares 2005 (EH 2005)* [Data set]. INE Bolivia. Retrieved November 3, 2026, from https://siip.produccion.gob.bo/repSIIP2/files/encuesta_hogares/EH2005.rar (data citation; file hashes in `SHA256SUMS`) |
+| V | Klasen, S., & Lange, S. (2015). *Accuracy and poverty impacts of proxy means-tested transfers: An empirical assessment for Bolivia* (Courant Research Centre: Poverty, Equity and Growth Discussion Paper No. 164). University of Göttingen. http://www2.vwl.wiso.uni-goettingen.de/courant-papers/CRC-PEG_DP_164.pdf (verified 2026-11-06 via RePEc IDEAS RePEc:got:gotcrc:164; described from its abstract only) |
+| V | McBride, L., & Nichols, A. (2015). *Improved poverty targeting through machine learning: An application to the USAID Poverty Assessment Tools* [Working paper]. http://www.econthatmatters.com/wp-content/uploads/2015/01/improvedtargeting_21jan2015.pdf (verified 2026-11-06 via the IHSN citation catalogue, entry 60412; source of the TP+FP typo in Table 2) |
 | V | Ahmed, A. U., & Bouis, H. E. (2002). Weighing what's practical: Proxy means tests for targeting food subsidies in Egypt. *Food Policy, 27*(5–6), 519–540. https://doi.org/10.1016/S0306-9192(02)00064-7 |
 | V | Aiken, E. L., Bedoya, G., Blumenstock, J. E., & Coville, A. (2023). Program targeting with machine learning and mobile phone data: Evidence from an anti-poverty intervention in Afghanistan. *Journal of Development Economics, 161*, Article 103016. https://doi.org/10.1016/j.jdeveco.2022.103016 |
 | V | Aiken, E., Bellue, S., Karlan, D., Udry, C., & Blumenstock, J. E. (2022). Machine learning and phone data can improve targeting of humanitarian aid. *Nature, 603*(7903), 864–870. https://doi.org/10.1038/s41586-022-04484-9 |
@@ -76,7 +79,7 @@
 | Athey & Imbens (2019), *Annual Review of Economics* 11, 685–725 (doi:10.1146/annurev-economics-080217-053433) | Verified; general overview, not needed beyond Mullainathan & Spiess (2017). |
 | Roberts et al. (2017), *Ecography* 40(8), 913–929 (doi:10.1111/ecog.02881) | Verified; about structured (spatial/temporal) dependence, not duplicated observations. Not cited. |
 | "Poverty classification using machine learning: The case of Jordan" (*Sustainability*, 2021, doi:10.3390/su13031412) | Found in search; MDPI applied classification study, not a PMT evaluation. Not cited. Authors not checked. |
-| 2015 RePEc working papers on PMT accuracy for Bolivia ("Accuracy and poverty impacts of proxy means-tested transfers: An empirical assessment for Bolivia") | Found in OpenAlex; authors, series and number not retrieved (metadata query timed out). **Potentially highly relevant (same country). Verify and read before submission.** |
+| 2015 RePEc working papers on PMT accuracy for Bolivia ("Accuracy and poverty impacts of proxy means-tested transfers: An empirical assessment for Bolivia") | Found in OpenAlex; authors, series and number not retrieved (metadata query timed out). **Resolved 2026-11-06:** Klasen & Lange (2015), CRC-PEG DP 164; now cited in §2 and listed in §A. |
 
 ## C. Literature search log (Step 3, 2026-11-04)
 
@@ -92,4 +95,4 @@
 
 **Known-item checks:** DOIs of well-known works on ML in economics, leakage, cross-validation, out-of-bag error, classifier comparison, replication and poverty-line choice were resolved directly.
 
-**Result for the gap statement (§1):** no retrieved study jointly examines validation overlap, test-set tuning, poverty-line reconstruction and metric definitions for a published ML-for-PMT result. The manuscript states this as a search result, not as a proven absence.
+**Result for the gap statement (introduction):** no retrieved study jointly examines validation overlap, test-set tuning, poverty-line reconstruction and metric definitions for a published ML-for-PMT result. The manuscript states this as a search result, not as a proven absence.

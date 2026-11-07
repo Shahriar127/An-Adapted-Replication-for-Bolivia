@@ -3,9 +3,9 @@ replication_report.py
 ─────────────────────
 Generates a comprehensive replication verification report for:
 
-  McBride & Nichols (2015)
-  "Improved Poverty Targeting Through Machine Learning:
-   An Application to the USAID Poverty Assessment Tools"
+  McBride & Nichols (2018)
+  "Retooling Poverty Targeting Using Out-of-Sample Validation and Machine
+   Learning", World Bank Economic Review 32(3):531-550
 
 Verifications:
   1. Dataset / household count
@@ -48,7 +48,7 @@ def w(*args, **kw):
 # ══════════════════════════════════════════════════════════════════════════════
 w("=" * 72)
 w("ADAPTED REPLICATION REPORT")
-w("McBride & Nichols (2015): Improved Poverty Targeting Through ML")
+w("McBride & Nichols (2018), WBER 32(3):531-550: Retooling Poverty Targeting")
 w("Adapted replication using a reconstructed poverty threshold and")
 w("documented implementation choices. Not an exact replication: the paper's")
 w("seed, household subset, threshold and preprocessing are not public.")
@@ -457,16 +457,19 @@ w(f"    BPAC: our SE choice {se_label} = {_m('SE','BPAC'):.2f}%")
 w("""
   Whether poverty-line differences (188.77–194.10 Bs) matter is tested
   empirically in sensitivity_analysis.py (results/sensitivity/).
-  Possible causes of the remaining gaps (hypotheses, not tested):
+  Possible causes of the remaining gaps (as listed at the freeze):
     1. Unknown random seed — paper's split may produce a harder test set.
     2. IRIS trained on a private randomly selected subset (not full 4,086 HH).
     3. R randomForest vs Python quantile-forest implementation differences.
     4. 3 variable approximations (regions ordinal, sublease, num_kitchens).
 
-  These explanations remain hypotheses and require further investigation.
+  Causes 1, 3 and 4 were tested afterwards in the A8 audit
+  (results/a8_audit/A8_AUDIT.md): split variation, implementation (R
+  emulation) and feature coding are ruled out; the welfare-variable
+  distribution is confirmed to differ. A8 remains unresolved.
 
   REPLICATION LABEL:
-  "Adapted replication of McBride & Nichols (2015), Bolivia EH 2005.
+  "Adapted replication of McBride & Nichols (2018), Bolivia EH 2005.
    Poverty line reconstructed as the 24.2th percentile of G_TOTAL_pc
    (≈189.09 Bs/month per capita), per the stated poverty rate of 24.2%.
    The exact IRIS-defined threshold was not publicly available; the IRIS

@@ -1,0 +1,9 @@
+protocol,model,"188.77 (full-sample P24.03, published Table 3)","189.05 (IRIS recon., official ~320 Bs)","194.10 (IRIS recon., official ~328 Bs)",train-sample P24.2
+disjoint,SE (OOB),-0.003,0.001,0.008,-0.001
+disjoint,QRF(0.40),-0.003,0.001,0.01,0.006
+disjoint,IRIS QR(0.42),0.004,0.001,0.021,0.011
+disjoint,RF,0.0,0.0,0.04,0.022
+paper,SE (OOB),-0.002,0.001,0.007,-0.002
+paper,QRF(0.40),-0.004,0.0,0.006,0.001
+paper,IRIS QR(0.42),0.005,0.001,0.02,0.006
+paper,RF,0.0,0.001,0.041,0.003

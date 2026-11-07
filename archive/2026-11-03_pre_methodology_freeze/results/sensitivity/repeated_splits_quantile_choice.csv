@@ -1,9 +1,0 @@
-protocol,threshold,q_cv_mode,q_cv_values,q_test_values
-disjoint,"189.05 (IRIS recon., official ~320 Bs)",0.4,{0.4: np.int64(30)},"{0.35: np.int64(1), 0.4: np.int64(28), 0.45: np.int64(1)}"
-disjoint,189.09 (full-sample P24.2),0.4,{0.4: np.int64(30)},"{0.35: np.int64(1), 0.4: np.int64(28), 0.45: np.int64(1)}"
-disjoint,"194.10 (IRIS recon., official ~328 Bs)",0.4,{0.4: np.int64(30)},"{0.35: np.int64(1), 0.4: np.int64(26), 0.45: np.int64(3)}"
-disjoint,train-sample P24.2,0.4,"{0.4: np.int64(29), 0.45: np.int64(1)}","{0.35: np.int64(1), 0.4: np.int64(28), 0.45: np.int64(1)}"
-paper,"189.05 (IRIS recon., official ~320 Bs)",0.4,{0.4: np.int64(30)},"{0.35: np.int64(1), 0.4: np.int64(27), 0.45: np.int64(2)}"
-paper,189.09 (full-sample P24.2),0.4,{0.4: np.int64(30)},"{0.35: np.int64(1), 0.4: np.int64(27), 0.45: np.int64(2)}"
-paper,"194.10 (IRIS recon., official ~328 Bs)",0.4,"{0.4: np.int64(29), 0.45: np.int64(1)}","{0.35: np.int64(1), 0.4: np.int64(23), 0.45: np.int64(6)}"
-paper,train-sample P24.2,0.4,"{0.4: np.int64(29), 0.45: np.int64(1)}","{0.35: np.int64(1), 0.4: np.int64(27), 0.45: np.int64(2)}"

@@ -1,5 +1,5 @@
-decimal numbers in manuscript: 484
-unmatched (need manual review): 16
+decimal numbers in manuscript: 433
+unmatched (need manual review): 10
 0.374
 0.99
 1.17
@@ -7,12 +7,6 @@ unmatched (need manual review): 16
 177.5
 189.05
 194.10
-3.1
 3.14
 378.18
-4.5
-5.1
-6.2
-6.3
-6.4
 94.55

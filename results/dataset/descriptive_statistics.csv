@@ -1,0 +1,23 @@
+variable,description,mean,sd,min,p25,median,p75,max,share_nonzero,n_missing
+hhsize,Household size (members),4.1349,2.1833,1.0,2.0,4.0,5.0,18.0,1.0,0
+hhsize2,Household size squared,21.8627,22.7047,1.0,4.0,16.0,25.0,324.0,1.0,0
+age_head,Age of household head (years),45.5137,15.8468,12.0,33.0,44.0,56.0,98.0,1.0,0
+age_head2,Age of head squared,2322.5582,1569.6081,144.0,1089.0,1936.0,3136.0,9604.0,1.0,0
+regions,Department (1-9; ordinal code),4.3414,2.3111,1.0,2.0,4.0,7.0,9.0,1.0,0
+rural,Rural area (0/1),0.4285,0.4949,0.0,0.0,0.0,1.0,1.0,0.4285,0
+sublease,"Rented dwelling, proxy for 'sublease' (0/1)",0.1412,0.3483,0.0,0.0,0.0,0.0,1.0,0.1412,0
+brick_wall,Brick/cement-block walls (0/1),0.3786,0.4851,0.0,0.0,0.0,1.0,1.0,0.3786,0
+wood_wall,Wood walls (0/1),0.0592,0.2361,0.0,0.0,0.0,0.0,1.0,0.0592,0
+dirt_floor,Dirt floor (0/1),0.315,0.4646,0.0,0.0,0.0,1.0,1.0,0.315,0
+cement_floor,Cement floor (0/1),0.3735,0.4838,0.0,0.0,0.0,1.0,1.0,0.3735,0
+fridge,Owns refrigerator/freezer (0/1),0.2934,0.4554,0.0,0.0,0.0,1.0,1.0,0.2934,0
+radio,Owns radio/recorder (0/1),0.5509,0.4975,0.0,0.0,1.0,1.0,1.0,0.5509,0
+tv,Owns television (0/1),0.5959,0.4908,0.0,0.0,1.0,1.0,1.0,0.5959,0
+dvd,Owns video/DVD player (0/1),0.2178,0.4128,0.0,0.0,0.0,0.0,1.0,0.2178,0
+fan,Owns fan (0/1),0.0972,0.2962,0.0,0.0,0.0,0.0,1.0,0.0972,0
+car,Owns car (0/1),0.0617,0.2406,0.0,0.0,0.0,0.0,1.0,0.0617,0
+num_beds,Number of beds,2.7521,1.6118,0.0,2.0,3.0,4.0,12.0,0.9535,0
+num_kitchens,Separate kitchen room (0/1; proxy for 'number of kitchens'),0.7606,0.4267,0.0,1.0,1.0,1.0,1.0,0.7606,0
+num_computers,Number of computers,0.103,0.3295,0.0,0.0,0.0,0.0,3.0,0.0957,0
+sheep,Number of sheep,4.7744,16.6778,0.0,0.0,0.0,0.0,240.0,0.1694,0
+G_TOTAL_pc,TARGET: monthly per-capita household expenditure (Bs),457.0894,455.3796,0.0,195.121,329.4203,556.674,5499.2133,0.9998,0

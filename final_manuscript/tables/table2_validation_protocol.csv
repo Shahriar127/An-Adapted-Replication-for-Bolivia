@@ -1,0 +1,6 @@
+model,published_mean,published_sd,disjoint_mean,disjoint_sd,difference
+SE (OOB-selected QRF),0.679,0.03,0.644,0.029,-0.036
+QRF(0.40) fixed,0.673,0.04,0.638,0.035,-0.035
+QRF(0.45) fixed,0.534,0.072,0.489,0.06,-0.045
+IRIS QR(0.42),0.483,0.052,0.481,0.054,-0.002
+RF (conditional mean),0.014,0.075,-0.052,0.053,-0.066

@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this code or results, please cite the article and this replication package."
+title: "Replication package: Validation Design, Quantile Tuning, and Threshold Reconstruction in Machine-Learning Proxy Means Tests: An Adapted Replication for Bolivia"
+type: software
+license: MIT
+date-released: 2026-11-07
+authors:
+  - family-names: "Mahim"
+    given-names: "Md. Shahriar Jubair"
+    email: "shahriarjubair27@gmail.com"
+    affiliation: "Department of Computer Science and Engineering, Mawlana Bhashani Science and Technology University (MBSTU), Tangail, Bangladesh"
+  - family-names: "Masud"
+    given-names: "Abdullah Al"
+    affiliation: "Department of Computer Science and Engineering, Mawlana Bhashani Science and Technology University (MBSTU), Tangail, Bangladesh"
+  - family-names: "Hossain"
+    given-names: "A S M Delowar"
+    affiliation: "Department of Computer Science and Engineering, Mawlana Bhashani Science and Technology University (MBSTU), Tangail, Bangladesh"
+references:
+  - type: article
+    authors:
+      - family-names: "McBride"
+        given-names: "Linden"
+      - family-names: "Nichols"
+        given-names: "Austin"
+    title: "Retooling Poverty Targeting Using Out-of-Sample Validation and Machine Learning"
+    journal: "World Bank Economic Review"
+    volume: 32
+    issue: 3
+    start: 531
+    end: 550
+    year: 2018
+    doi: "10.1093/wber/lhw056"

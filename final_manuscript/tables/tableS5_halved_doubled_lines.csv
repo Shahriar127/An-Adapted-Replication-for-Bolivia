@@ -1,0 +1,13 @@
+line,line_value,poverty_rate_full,model,BPAC,BPAC_lo,BPAC_hi
+base,189.09,0.242,IRIS QR(0.38) in-sample best,0.623,0.556,0.672
+base,189.09,0.242,CV QR(0.37),0.623,0.557,0.673
+base,189.09,0.242,SE QRF(0.43),0.653,0.558,0.713
+base,189.09,0.242,IRIS QR(0.42) not re-tuned,0.586,0.486,0.657
+half,94.55,0.061,IRIS QR(0.51) in-sample best,0.334,0.143,0.461
+half,94.55,0.061,CV QR(0.51),0.334,0.143,0.461
+half,94.55,0.061,SE QRF(0.27),0.492,0.336,0.602
+half,94.55,0.061,IRIS QR(0.42) not re-tuned,0.233,-0.021,0.433
+double,378.18,0.571,IRIS QR(0.45) in-sample best,0.811,0.781,0.833
+double,378.18,0.571,CV QR(0.44),0.809,0.781,0.832
+double,378.18,0.571,SE QRF(0.53),0.837,0.798,0.859
+double,378.18,0.571,IRIS QR(0.42) not re-tuned,0.79,0.759,0.815

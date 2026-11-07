@@ -17,7 +17,7 @@ seed 1014 done (587s)
 seed 1015 done (617s)
 seed 1016 done (652s)
 seed 1017 done (690s)
-/home/shahriar127/.local/lib/python3.14/site-packages/quantile_forest/_quantile_forest.py:727: UserWarning: Some inputs do not have OOB scores. This probably means too few trees were used to compute any reliable OOB estimates.
+<site-packages>/quantile_forest/_quantile_forest.py:727: UserWarning: Some inputs do not have OOB scores. This probably means too few trees were used to compute any reliable OOB estimates.
   warn(
 seed 1018 done (723s)
 seed 1019 done (755s)

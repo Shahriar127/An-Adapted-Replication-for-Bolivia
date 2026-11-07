@@ -2,29 +2,10 @@
 
 ## Abstract
 
-**Background.** Proxy means tests (PMTs) predict household welfare from easily verified characteristics in order to target transfers. McBride and Nichols (2018) report that cross-validation and quantile regression forests (QRF) can improve the out-of-sample accuracy of the USAID Poverty Assessment Tools.
+Proxy means tests (PMTs) predict household welfare from easily verified characteristics in order to target transfers. McBride and Nichols (2018) reported that cross-validation and quantile regression forests (QRF) improve the out-of-sample accuracy of the USAID Poverty Assessment Tools. We re-analyse their Bolivia data (Encuesta de Hogares 2005, N = 4,086) under a methodology frozen against the article. We compare the IRIS quantile-regression benchmark, a cross-validated linear quantile regression (CV-QR) and an out-of-bag-selected QRF under overlapping and disjoint validation splits, reconstructed poverty lines and two metric definitions. The CV-QR result replicates (selected quantile 0.37 vs 0.38; BPAC 0.623 vs 0.579). The published QRF result does not (0.653 vs 0.502): an implementation audit rules out software and split variation, and model-free diagnostics show that our welfare variable differs from the authors'. The overlapping split raises QRF accuracy by about 0.035 BPAC and leaves the linear benchmark essentially unchanged. Test-set quantile selection adds 0.022–0.024. The working-paper metric formula shifts the benchmark's BPAC by 0.025–0.064. Reconstructed poverty lines barely change accuracy and do not change method rankings. On single-split evidence, much of the QRF advantage over the fixed-quantile benchmark reflects the choice of quantile; against a tuned linear model the difference is small and unsettled. Evaluation choices move PMT accuracy by amounts comparable to the reported machine-learning gains. Benchmarks should be tuned on the same footing as machine-learning models, validated on disjoint data, and reported with explicit formulas and constructed data.
 
-**Research problem.** Reported gains depend on evaluation choices that published studies specify only partly: the accuracy formula, the train–test protocol, how the targeting quantile is selected, and the poverty line. We ask how sensitive machine-learning targeting results are to reconstructed poverty thresholds and alternative validation procedures.
+**JEL classification:** I32, I38, C52, C53
 
-**Data and methods.**
-* We re-analyse the Bolivia Encuesta de Hogares 2005 (N = 4,086 households) using a methodology frozen against the published article.
-* The models are the IRIS quantile-regression benchmark, a cross-validated linear quantile regression (CV-QR), and a stochastic-ensemble QRF selected on out-of-bag accuracy.
-* Results are compared under the published overlapping bootstrap split and under a disjoint split, with training-only model selection, several reconstructed poverty lines, and the published and earlier metric definitions.
+**Key words:** proxy means test, poverty targeting, machine learning, quantile regression forest, replication, out-of-sample validation, Bolivia
 
-**Results.**
-* **What replicates:** the published CV-QR result (selected quantile 0.37 vs 0.38 published; BPAC 0.623 vs 0.579).
-* **What does not:** the published QRF result. Our QRF scores higher (BPAC 0.653 vs 0.502). An implementation audit, including an emulation of the original R procedure, rules out software differences and split variation. Model-free diagnostics show that our welfare variable differs from the authors'.
-* **Validation design:** the overlapping split raises QRF accuracy by about 0.035 BPAC and leaves the linear benchmark essentially unchanged.
-* **Quantile selection:** choosing the quantile on test data adds about 0.022–0.024 BPAC.
-* **Thresholds:** reconstructed poverty lines barely change mean accuracy over 30 splits, and in a single-split scan from 170 to 210 Bs they do not change the ranking of method families.
-* **Metric definition:** using the 2015 working-paper formula shifts the benchmark's BPAC by 0.025–0.064.
-* **Forest vs tuning:** on single-split evidence, most of the QRF advantage over the fixed-quantile benchmark reflects the choice of quantile. Against a quantile-tuned linear model the difference is small and unsettled; a three-split pilot leans towards the forest under the overlapping protocol.
-
-**Contribution.** A transparent, reproducible adapted replication, plus evidence that the evaluation choices themselves move results by amounts comparable to the reported machine-learning gains.
-
-**Limitations.**
-* One country and survey.
-* An unidentified difference in the welfare aggregate (unresolved discrepancy A8).
-* The QRF-versus-CV-QR comparison rests on one split per protocol plus a three-split pilot.
-
-*Identical to the abstract in `MANUSCRIPT.md`. Every number is traceable via `CLAIM_EVIDENCE_TABLE.md`.*
+*Identical to the abstract in `MANUSCRIPT.md`.*

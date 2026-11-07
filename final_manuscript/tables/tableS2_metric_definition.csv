@@ -1,0 +1,7 @@
+protocol,model,metric,working_paper_TPplusFP,published_TPplusFN
+paper,IRIS QR(0.42),BPAC,0.611,0.586
+paper,IRIS QR(0.42),PA,0.662,0.633
+paper,QRF(0.40) fixed,BPAC,0.665,0.674
+disjoint,IRIS QR(0.42),BPAC,0.574,0.51
+disjoint,IRIS QR(0.42),PA,0.704,0.624
+disjoint,QRF(0.40) fixed,BPAC,0.622,0.625

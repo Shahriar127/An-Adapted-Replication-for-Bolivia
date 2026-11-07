@@ -61,4 +61,7 @@ fig.text(0.01, 0.005, "Bands: 95% bootstrap CI (test-sample uncertainty, 1,000 d
          fontsize=7, color=MUTED)
 fig.tight_layout(rect=(0, 0.03, 1, 0.95))
 fig.savefig(os.path.join(OUT, "bpac_vs_threshold.png"), dpi=200, facecolor=SURF)
+fig.savefig(os.path.join(OUT, "bpac_vs_threshold.pdf"), facecolor=SURF)   # vector copy for journal submission
 print("saved", os.path.join(OUT, "bpac_vs_threshold.png"))
+
+# Journal versions of this figure: final_manuscript/figures/make_journal_figures.py

@@ -1,9 +1,0 @@
-protocol,threshold,line,q_cv_selected,q_test_selected
-paper,189.09 (full-sample P24.2),189.09145416666667,0.45,0.4
-paper,"189.05 (IRIS recon., official ~320 Bs)",189.05,0.45,0.4
-paper,"194.10 (IRIS recon., official ~328 Bs)",194.1,0.45,0.4
-paper,train-sample P24.2,185.07951733333334,0.4,0.4
-disjoint,189.09 (full-sample P24.2),189.09145416666667,0.4,0.4
-disjoint,"189.05 (IRIS recon., official ~320 Bs)",189.05,0.4,0.4
-disjoint,"194.10 (IRIS recon., official ~328 Bs)",194.1,0.4,0.4
-disjoint,train-sample P24.2,185.52002844444448,0.4,0.4

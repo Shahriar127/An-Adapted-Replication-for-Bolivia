@@ -1,32 +1,32 @@
-# ── Restricted: raw survey microdata (INE Bolivia licence; not redistributed) ──
-data/
+# ── Restricted: raw survey microdata (INE Bolivia; not redistributed) ──
+data/**
+!data/bolivia/
+!data/bolivia/README.md
 *.sav
 *.rar
 
-# ── Restricted: household-level predictions and household-level plots ──
+# ── Restricted: household-level outputs (regenerated locally by train_models.py) ──
 results/Bolivia/predictions.csv
 results/Bolivia/actual_vs_predicted.png
 results/Bolivia/qrf_intervals.png
-archive/**/predictions.csv
-archive/**/*.png
+results/Bolivia/train_models_log.txt
 
-# ── Copyrighted article PDF (obtain from the publisher, doi:10.1093/wber/lhw056) ──
+# ── Copyrighted article PDF (doi:10.1093/wber/lhw056) ──
 reference/
 
-# ── Unused synthetic-data prototype (no reported result uses it) ──
-synthetic_poverty_dataset.csv
-generate_synthetic_poverty_dataset.py
-results/all_predictions.csv
-results/model_comparison.csv
-results/confusion_matrices.csv
-results/*.png
-archive/**/all_predictions.csv
-archive/2026-11-03_pre_methodology_freeze/results/model_comparison.csv
-archive/2026-11-03_pre_methodology_freeze/results/confusion_matrices.csv
+# ── Build outputs (regenerate with: python3 final_manuscript/build_docs.py) ──
+final_manuscript/submission/
+MANIFEST.sha256
+*.tar.gz
 
-# ── Python / OS clutter ──
+# ── Python / editor / OS clutter ──
 __pycache__/
-*.pyc
+*.py[cod]
 .venv/
+venv/
 .ipynb_checkpoints/
+.idea/
+.vscode/
+*.swp
 .DS_Store
+Thumbs.db

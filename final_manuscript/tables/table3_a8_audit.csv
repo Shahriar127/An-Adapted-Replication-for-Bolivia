@@ -1,0 +1,11 @@
+config,BPAC_mean,BPAC_std,dBPAC_vs_B0,gap_in_SDs
+B0 frozen,0.685,0.025,0.0,7.23
+E1 one value/leaf,0.689,0.024,0.004,7.796
+E2 R node rule,0.723,0.034,0.038,6.511
+E3 R qrf procedure,0.681,0.027,-0.004,6.529
+E4 full R emulation,0.725,0.043,0.04,5.19
+E5 OOB dedup,0.682,0.026,-0.003,7.065
+E6 regions one-hot,0.688,0.022,0.002,8.333
+E7 log target,0.683,0.026,-0.002,6.942
+E8 line P24.03,0.683,0.023,-0.002,7.705
+E9 R emulation+P24.03,0.727,0.037,0.042,6.108
