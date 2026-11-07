@@ -1,0 +1,14 @@
+item,value
+N households,4086.0
+N features,21.0
+"poverty line P24.2 (Bs/person/month, frozen)",189.09145416666667
+poverty rate at P24.2,0.24204601076847773
+"poverty line P24.03 (Bs, sensitivity)",188.7743324791667
+rate at half the P24.2 line,0.06093979441997063
+rate at double the P24.2 line,0.5709740577581988
+households with G_TOTAL_pc == 0,1.0
+share rural,0.4285364659813999
+welfare P10 (Bs),120.99713541666665
+welfare P50 (Bs),329.4203125
+welfare P90 (Bs),917.955736079322
+welfare mean (Bs),457.089410274045

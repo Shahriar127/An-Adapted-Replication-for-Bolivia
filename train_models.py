@@ -1,31 +1,36 @@
 """
-Replication of McBride & Nichols (2015)
-"Improved Poverty Targeting Through Machine Learning:
- An Application to the USAID Poverty Assessment Tools"
+Adapted replication of McBride & Nichols (2018)
+"Retooling Poverty Targeting Using Out-of-Sample Validation and Machine
+ Learning", World Bank Economic Review 32(3):531-550, doi:10.1093/wber/lhw056.
 
 WHAT THIS SCRIPT DOES
 ─────────────────────
-Adapted replication of the paper's methodology (reconstructed poverty threshold,
-documented implementation choices) using the same survey datasets:
-  • Bolivia   — 2005 Encuesta de Hogares (EH2005) — DOWNLOADED AUTOMATICALLY
-  • East Timor — 2001 Living Standards Survey (TLSS) — manual download required
-  • Malawi    — 2004-2005 Second Integrated Household Survey (IHS2) — manual download
+Primary model run (seed 42, published protocol) for Bolivia EH 2005, under the
+frozen methodology in METHODOLOGY_REFERENCE.md (reconstructed poverty threshold,
+documented implementation choices). Configuration, data construction, splits,
+metrics and model selection all come from common.py.
+  • Bolivia    — 2005 Encuesta de Hogares (EH 2005); raw files must be placed
+                 in data/bolivia/ (see README.md, Section 3)
+  • East Timor / Malawi — out of scope (loaders are placeholders only)
 
-SPLIT STRATEGY (paper p. 13)
-  Draw WITH REPLACEMENT two bootstrap samples of size N/2 from each country's data.
+SPLIT STRATEGY (paper p. 539) [S1]
+  Draw WITH REPLACEMENT two samples of size N/2 from the data.
   One is the training sample; the other is the test sample.
-  Evaluate on 1000 bootstrapped re-draws of the test sample.
+  Evaluate on 1000 bootstrapped re-draws of the test sample [S4].
 
-MODELS  (paper p. 7–10)
-  1. Regression Tree (Decision Tree Regressor)
-  2. Random Forest  — 500 trees, 1/3 features per split
-  3. Quantile Regression Forest — 500 trees; quantile selected by BPAC
+MODELS
+  1. Regression tree (reference model; not in the paper)
+  2. Random forest  — 500 trees, 1/3 of features per split
+  3. Quantile regression forest — 500 trees; stochastic-ensemble choice by
+     best OUT-OF-BAG BPAC on the training sample [S7][S8]
 
-METRICS  (paper Table 2 formulas)
-  PA   = TP / (TP+FP)                 denominator = predicted poor
-  UC   = FN / (TP+FN)                 denominator = true poor
-  LE   = FP / (TP+FN)                 IRIS unconventional; can exceed 1
-  BPAC = TP/(TP+FP) − |FN/(TP+FP) − FP/(TP+FP)|   all terms share TP+FP
+METRICS  (published Table 2, p. 534) [M2-M6]
+  Every rate except TA uses the denominator TP+FN (the true very poor):
+  PA   = TP / (TP+FN)
+  UC   = FN / (TP+FN)
+  LE   = FP / (TP+FN)                 can exceed 1
+  BPAC = PA − |UC − LE|
+  (The 2015 working paper printed TP+FP for PA and BPAC; that typo is NOT used.)
 """
 
 import os, warnings, sys
@@ -53,7 +58,7 @@ os.makedirs(RESULTS_DIR, exist_ok=True)
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  METRIC FUNCTIONS  (Table 2, McBride & Nichols 2015)
+#  METRIC FUNCTIONS  (published Table 2, McBride & Nichols 2018, p. 534)
 # ══════════════════════════════════════════════════════════════════════════════
 
 targeting_metrics = C.targeting_metrics   # paper Table 2 (see common.py)
@@ -155,7 +160,7 @@ DATA_LOADERS = {
 # ══════════════════════════════════════════════════════════════════════════════
 
 def paper_split(X, y, seed):
-    """Paper p.13: two INDEPENDENT N/2 draws with replacement (overlapping)."""
+    """Paper p.539 [S1]: two INDEPENDENT N/2 draws with replacement (overlapping)."""
     tr, te = C.paper_split_idx(len(X), seed)
     return (X.iloc[tr].reset_index(drop=True), y.iloc[tr].reset_index(drop=True),
             X.iloc[te].reset_index(drop=True), y.iloc[te].reset_index(drop=True),
@@ -539,17 +544,17 @@ Split strategy:
   This script follows that procedure. NB: train and test overlap (~40%
   of unique test households also appear in training).
 
-Metrics (Table 2 formulas):
-  PA   = TP/(TP+FP)         ← denominator is PREDICTED poor
-  UC   = FN/(TP+FN)         ← denominator is TRUE poor
-  LE   = FP/(TP+FN)         ← IRIS unconventional; can exceed 1 (footnote 7)
-  BPAC = TP/(TP+FP) - |FN/(TP+FP) - FP/(TP+FP)|
-         All three sub-terms use TP+FP; NOT the same as standalone UC/LE.
+Metrics (published Table 2, p.534):
+  PA   = TP/(TP+FN)         ← every rate except TA uses the TRUE poor (TP+FN)
+  UC   = FN/(TP+FN)
+  LE   = FP/(TP+FN)         ← can exceed 1
+  BPAC = PA - |UC - LE|
+         (The 2015 working paper printed TP+FP; that typo is not used.)
 
 Poverty line (Bolivia):
-  Calibrated to 24.2th percentile of G_TOTAL_pc (full sample, data-derived)
-  → matches the paper's
-  reported 24.2% poverty rate.  Does NOT use any official threshold.
+  24.2th percentile of G_TOTAL_pc (full sample, data-derived), following
+  the paper's text ("24.2 percent", p.538; Table 3 says 24.03%).
+  Does NOT use any official threshold.
 
 QRF quantile selection:
   Best OOB BPAC on the TRAINING sample over RF and QRF(0.01..0.99),

@@ -40,6 +40,7 @@ DERIVED = {0.034: "gap widening paper (0.088-0.054)", 0.067: "gap widening disjo
 for k in DERIVED:
     vals.add(round(k, 3))
 txt = open(os.path.join(HERE, "MANUSCRIPT.md")).read()
+txt = txt.split("\n## References", 1)[0]   # reference list (DOIs, pages) is not checked
 nums = re.findall(r"(?<![\w.])[−+-]?\d+\.\d+", txt)
 unmatched = []
 for n in nums:

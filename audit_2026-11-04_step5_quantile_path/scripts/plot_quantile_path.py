@@ -58,4 +58,7 @@ fig.text(0.01, 0.005, "PA and UC are redundant: under the published definitions 
          fontsize=7, color=MUTED)
 fig.tight_layout(rect=(0, 0.03, 1, 0.95))
 fig.savefig(os.path.join(OUT, "quantile_path.png"), dpi=200, facecolor=SURF)
+fig.savefig(os.path.join(OUT, "quantile_path.pdf"), facecolor=SURF)   # vector copy for journal submission
 print("saved", os.path.join(OUT, "quantile_path.png"))
+
+# Journal versions of this figure: final_manuscript/figures/make_journal_figures.py

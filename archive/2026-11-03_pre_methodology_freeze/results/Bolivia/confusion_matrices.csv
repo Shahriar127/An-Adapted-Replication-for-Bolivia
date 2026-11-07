@@ -1,4 +1,0 @@
-Model,TP,FP,FN,TN
-Decision Tree,232,96,243,1472
-Random Forest,229,53,246,1515
-QRF (q=0.45),315,116,160,1452
